@@ -1,0 +1,716 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A0252A12472AA950080C448 /* MorePlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0252A02472AA950080C448 /* MorePlayersViewController.swift */; };
+		3A0252A32472BAAE0080C448 /* SelectCaptainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0252A22472BAAE0080C448 /* SelectCaptainViewController.swift */; };
+		3A0252A52472C7280080C448 /* BullsPointCalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0252A42472C7280080C448 /* BullsPointCalculationViewController.swift */; };
+		3A16B31E249B36B70006D89E /* sidemenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16B31D249B36B70006D89E /* sidemenuCell.swift */; };
+		3A1D735324921A18002D7AB3 /* letsplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D735224921A18002D7AB3 /* letsplayViewController.swift */; };
+		3A226C0824A1DFD300D0AB44 /* BetterluckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A226C0724A1DFD300D0AB44 /* BetterluckViewController.swift */; };
+		3A2CB30324D1852F00B74764 /* RewardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2CB30224D1852F00B74764 /* RewardTableViewCell.swift */; };
+		3A2FFEDD24C019E700B74EB8 /* SignUpProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2FFEDC24C019E700B74EB8 /* SignUpProfileViewController.swift */; };
+		3A360F7D246E961C00FB95C4 /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A360F7C246E961C00FB95C4 /* HowToPlayViewController.swift */; };
+		3A360F7F246EB11500FB95C4 /* LegalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A360F7E246EB11500FB95C4 /* LegalityViewController.swift */; };
+		3A3C070C246C3E55009D65B0 /* MyHallOfFameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C070B246C3E55009D65B0 /* MyHallOfFameViewController.swift */; };
+		3A42590124C0313D0027F4E8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42590024C0313D0027F4E8 /* LoginModel.swift */; };
+		3A4448DC24D02DBF00482F44 /* razorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4448DB24D02DBF00482F44 /* razorViewController.swift */; };
+		3A478DBD249110FF006A8533 /* CongratulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A478DBC249110FF006A8533 /* CongratulationViewController.swift */; };
+		3A4DE77A246D31400037969E /* WeeklyLeaderBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4DE779246D31400037969E /* WeeklyLeaderBoardViewController.swift */; };
+		3A4DE77C246D327B0037969E /* leaderBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4DE77B246D327B0037969E /* leaderBoardCell.swift */; };
+		3A4DE77E246D480D0037969E /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4DE77D246D480D0037969E /* RewardsViewController.swift */; };
+		3A4DE780246D4F4F0037969E /* AddCashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4DE77F246D4F4F0037969E /* AddCashViewController.swift */; };
+		3A4DE782246D679A0037969E /* HowToWorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4DE781246D679A0037969E /* HowToWorksViewController.swift */; };
+		3A53479224696A3E00E99240 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53479124696A3E00E99240 /* LoginViewController.swift */; };
+		3A5347962469762100E99240 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5347952469762100E99240 /* OTPViewController.swift */; };
+		3A5ABC34249738D100FFA09D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5ABC33249738D100FFA09D /* Constant.swift */; };
+		3A5D2A5E24A0D28D007C212B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D2A5D24A0D28D007C212B /* CollectionViewCell.swift */; };
+		3A5D2A6024A0D465007C212B /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D2A5F24A0D465007C212B /* model.swift */; };
+		3A67E9B2246FEFC900789A32 /* ActiveModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A67E9B1246FEFC900789A32 /* ActiveModeViewController.swift */; };
+		3A6835E124A9D569005B6077 /* SavedBatsmanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6835E024A9D569005B6077 /* SavedBatsmanTableViewCell.swift */; };
+		3A723D972472DAE3004E2AAF /* ChooseTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A723D962472DAE3004E2AAF /* ChooseTeamViewController.swift */; };
+		3A723D992472F4F8004E2AAF /* ChooseTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A723D982472F4F8004E2AAF /* ChooseTeamTableViewCell.swift */; };
+		3A79F81E24A479D5007BC669 /* secondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79F81D24A479D5007BC669 /* secondTableViewCell.swift */; };
+		3A79F82024A479DE007BC669 /* thirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79F81F24A479DE007BC669 /* thirdTableViewCell.swift */; };
+		3A79F82224A479E6007BC669 /* fourthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A79F82124A479E6007BC669 /* fourthTableViewCell.swift */; };
+		3A8587322499FEEA005EA0AB /* WevViewLeagalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8587312499FEEA005EA0AB /* WevViewLeagalityViewController.swift */; };
+		3A858736249A016A005EA0AB /* WevViewHowToWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A858735249A016A005EA0AB /* WevViewHowToWorkViewController.swift */; };
+		3A85873C249A0667005EA0AB /* WebViewHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85873B249A0667005EA0AB /* WebViewHelpViewController.swift */; };
+		3A85873F249A23B8005EA0AB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85873E249A23B8005EA0AB /* Model.swift */; };
+		3A9088DC24C6F4DA00B34104 /* SelectSpecialPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9088DB24C6F4DA00B34104 /* SelectSpecialPlayerViewController.swift */; };
+		3A9A9F0724C2EE800089A6E9 /* SavedFinalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A9F0624C2EE800089A6E9 /* SavedFinalModel.swift */; };
+		3A9F232124C86C1C00B37B14 /* ResultContestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F232024C86C1C00B37B14 /* ResultContestTableViewCell.swift */; };
+		3A9F232324C874A600B37B14 /* TeamResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F232224C874A600B37B14 /* TeamResultViewController.swift */; };
+		3AA4944C246BD92000EB45E2 /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4944B246BD92000EB45E2 /* CustomTabbarController.swift */; };
+		3AA4944E246BD98600EB45E2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4944D246BD98600EB45E2 /* HomeViewController.swift */; };
+		3AA49450246BD99300EB45E2 /* ContestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4944F246BD99300EB45E2 /* ContestViewController.swift */; };
+		3AA49452246BD9B600EB45E2 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA49451246BD9B600EB45E2 /* WalletViewController.swift */; };
+		3AA49454246BD9C000EB45E2 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA49453246BD9C000EB45E2 /* MoreViewController.swift */; };
+		3AC5B519246ED93000F23701 /* HelpCentreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC5B518246ED93000F23701 /* HelpCentreViewController.swift */; };
+		3AC67F2224C8352600F17BF6 /* Razorpay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC67F2024C8351A00F17BF6 /* Razorpay.xcframework */; };
+		3AC67F2324C8352700F17BF6 /* Razorpay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC67F2024C8351A00F17BF6 /* Razorpay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		3AC7AE11246FC2B4000B2083 /* FantasiPointSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7AE10246FC2B4000B2083 /* FantasiPointSystem.swift */; };
+		3ACECF1924695C9E003354CF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACECF1824695C9E003354CF /* RegisterViewController.swift */; };
+		3AD0943724728F6C0069310A /* SelectYourTradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0943624728F6C0069310A /* SelectYourTradeViewController.swift */; };
+		3AD09439247294C20069310A /* SelectTradeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD09438247294C20069310A /* SelectTradeTableViewCell.swift */; };
+		3ADAAD15246C359A003B0E3F /* MyRefferalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADAAD14246C359A003B0E3F /* MyRefferalsViewController.swift */; };
+		3AE2D43F2490D985002DC0F4 /* contestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2D43E2490D985002DC0F4 /* contestVC.swift */; };
+		3AF0244E246D1121009D8D5F /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF0244D246D1121009D8D5F /* MyProfileViewController.swift */; };
+		3AFE93EA24C9529000E61381 /* teamresultcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE93E924C9529000E61381 /* teamresultcell.swift */; };
+		A5A79FAC01E209FCCA6F6B5D /* Pods_PinterestApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93F51586B569D1049BB900E /* Pods_PinterestApplication.framework */; };
+		DAB9FCFC1FC8E4C300CF64A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9FCFB1FC8E4C300CF64A7 /* AppDelegate.swift */; };
+		DAB9FCFE1FC8E4C300CF64A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9FCFD1FC8E4C300CF64A7 /* ViewController.swift */; };
+		DAB9FD011FC8E4C300CF64A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB9FCFF1FC8E4C300CF64A7 /* Main.storyboard */; };
+		DAB9FD031FC8E4C300CF64A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB9FD021FC8E4C300CF64A7 /* Assets.xcassets */; };
+		DAB9FD061FC8E4C300CF64A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB9FD041FC8E4C300CF64A7 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3AE67BDA24C8227A00F23BA4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3AC67F2324C8352700F17BF6 /* Razorpay.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3A0252A02472AA950080C448 /* MorePlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePlayersViewController.swift; sourceTree = "<group>"; };
+		3A0252A22472BAAE0080C448 /* SelectCaptainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCaptainViewController.swift; sourceTree = "<group>"; };
+		3A0252A42472C7280080C448 /* BullsPointCalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsPointCalculationViewController.swift; sourceTree = "<group>"; };
+		3A16B31D249B36B70006D89E /* sidemenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sidemenuCell.swift; sourceTree = "<group>"; };
+		3A1D735224921A18002D7AB3 /* letsplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letsplayViewController.swift; sourceTree = "<group>"; };
+		3A226C0724A1DFD300D0AB44 /* BetterluckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterluckViewController.swift; sourceTree = "<group>"; };
+		3A2CB30224D1852F00B74764 /* RewardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardTableViewCell.swift; sourceTree = "<group>"; };
+		3A2FFEDC24C019E700B74EB8 /* SignUpProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProfileViewController.swift; sourceTree = "<group>"; };
+		3A360F7C246E961C00FB95C4 /* HowToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
+		3A360F7E246EB11500FB95C4 /* LegalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalityViewController.swift; sourceTree = "<group>"; };
+		3A3C070B246C3E55009D65B0 /* MyHallOfFameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHallOfFameViewController.swift; sourceTree = "<group>"; };
+		3A42590024C0313D0027F4E8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		3A4448DB24D02DBF00482F44 /* razorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = razorViewController.swift; sourceTree = "<group>"; };
+		3A478DBC249110FF006A8533 /* CongratulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationViewController.swift; sourceTree = "<group>"; };
+		3A4DE779246D31400037969E /* WeeklyLeaderBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyLeaderBoardViewController.swift; sourceTree = "<group>"; };
+		3A4DE77B246D327B0037969E /* leaderBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leaderBoardCell.swift; sourceTree = "<group>"; };
+		3A4DE77D246D480D0037969E /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
+		3A4DE77F246D4F4F0037969E /* AddCashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCashViewController.swift; sourceTree = "<group>"; };
+		3A4DE781246D679A0037969E /* HowToWorksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToWorksViewController.swift; sourceTree = "<group>"; };
+		3A53479124696A3E00E99240 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3A5347952469762100E99240 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		3A5ABC33249738D100FFA09D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		3A5D2A5D24A0D28D007C212B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		3A5D2A5F24A0D465007C212B /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		3A67E9B1246FEFC900789A32 /* ActiveModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveModeViewController.swift; sourceTree = "<group>"; };
+		3A6835E024A9D569005B6077 /* SavedBatsmanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedBatsmanTableViewCell.swift; sourceTree = "<group>"; };
+		3A723D962472DAE3004E2AAF /* ChooseTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTeamViewController.swift; sourceTree = "<group>"; };
+		3A723D982472F4F8004E2AAF /* ChooseTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTeamTableViewCell.swift; sourceTree = "<group>"; };
+		3A79F81D24A479D5007BC669 /* secondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondTableViewCell.swift; sourceTree = "<group>"; };
+		3A79F81F24A479DE007BC669 /* thirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thirdTableViewCell.swift; sourceTree = "<group>"; };
+		3A79F82124A479E6007BC669 /* fourthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fourthTableViewCell.swift; sourceTree = "<group>"; };
+		3A8587312499FEEA005EA0AB /* WevViewLeagalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WevViewLeagalityViewController.swift; sourceTree = "<group>"; };
+		3A858735249A016A005EA0AB /* WevViewHowToWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WevViewHowToWorkViewController.swift; sourceTree = "<group>"; };
+		3A85873B249A0667005EA0AB /* WebViewHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewHelpViewController.swift; sourceTree = "<group>"; };
+		3A85873E249A23B8005EA0AB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3A9088DB24C6F4DA00B34104 /* SelectSpecialPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSpecialPlayerViewController.swift; sourceTree = "<group>"; };
+		3A9A9F0624C2EE800089A6E9 /* SavedFinalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFinalModel.swift; sourceTree = "<group>"; };
+		3A9F232024C86C1C00B37B14 /* ResultContestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultContestTableViewCell.swift; sourceTree = "<group>"; };
+		3A9F232224C874A600B37B14 /* TeamResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamResultViewController.swift; sourceTree = "<group>"; };
+		3AA4944B246BD92000EB45E2 /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
+		3AA4944D246BD98600EB45E2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3AA4944F246BD99300EB45E2 /* ContestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestViewController.swift; sourceTree = "<group>"; };
+		3AA49451246BD9B600EB45E2 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		3AA49453246BD9C000EB45E2 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		3AC5B518246ED93000F23701 /* HelpCentreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCentreViewController.swift; sourceTree = "<group>"; };
+		3AC67F2024C8351A00F17BF6 /* Razorpay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Razorpay.xcframework; sourceTree = "<group>"; };
+		3AC7AE10246FC2B4000B2083 /* FantasiPointSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasiPointSystem.swift; sourceTree = "<group>"; };
+		3ACECF1824695C9E003354CF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3AD0943624728F6C0069310A /* SelectYourTradeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectYourTradeViewController.swift; sourceTree = "<group>"; };
+		3AD09438247294C20069310A /* SelectTradeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTradeTableViewCell.swift; sourceTree = "<group>"; };
+		3ADAAD14246C359A003B0E3F /* MyRefferalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRefferalsViewController.swift; sourceTree = "<group>"; };
+		3AE2D43E2490D985002DC0F4 /* contestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contestVC.swift; sourceTree = "<group>"; };
+		3AF0244D246D1121009D8D5F /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		3AFE93E924C9529000E61381 /* teamresultcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teamresultcell.swift; sourceTree = "<group>"; };
+		B933583CB232BFE67CE48194 /* Pods-PinterestApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinterestApplication.debug.xcconfig"; path = "Target Support Files/Pods-PinterestApplication/Pods-PinterestApplication.debug.xcconfig"; sourceTree = "<group>"; };
+		C30364A19600B565C05C6B20 /* Pods-PinterestApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinterestApplication.release.xcconfig"; path = "Target Support Files/Pods-PinterestApplication/Pods-PinterestApplication.release.xcconfig"; sourceTree = "<group>"; };
+		C93F51586B569D1049BB900E /* Pods_PinterestApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinterestApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAB9FCF81FC8E4C200CF64A7 /* bulls11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bulls11.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAB9FCFB1FC8E4C300CF64A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DAB9FCFD1FC8E4C300CF64A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DAB9FD001FC8E4C300CF64A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DAB9FD021FC8E4C300CF64A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DAB9FD051FC8E4C300CF64A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DAB9FD071FC8E4C300CF64A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DAB9FCF51FC8E4C200CF64A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5A79FAC01E209FCCA6F6B5D /* Pods_PinterestApplication.framework in Frameworks */,
+				3AC67F2224C8352600F17BF6 /* Razorpay.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31FE7227F8CB7E998E082A0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C93F51586B569D1049BB900E /* Pods_PinterestApplication.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A360F7B246E95BD00FB95C4 /* Other Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7AE10246FC2B4000B2083 /* FantasiPointSystem.swift */,
+				3A360F7E246EB11500FB95C4 /* LegalityViewController.swift */,
+				3A360F7C246E961C00FB95C4 /* HowToPlayViewController.swift */,
+				3A67E9B1246FEFC900789A32 /* ActiveModeViewController.swift */,
+				3A4DE77B246D327B0037969E /* leaderBoardCell.swift */,
+				3AC5B518246ED93000F23701 /* HelpCentreViewController.swift */,
+				3A4DE781246D679A0037969E /* HowToWorksViewController.swift */,
+				3A4DE77F246D4F4F0037969E /* AddCashViewController.swift */,
+			);
+			path = "Other Controllers";
+			sourceTree = "<group>";
+		};
+		3A590FC6246C07180071D0DA /* tab controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3AA4944B246BD92000EB45E2 /* CustomTabbarController.swift */,
+				3AA4944D246BD98600EB45E2 /* HomeViewController.swift */,
+				3AA4944F246BD99300EB45E2 /* ContestViewController.swift */,
+				3AA49451246BD9B600EB45E2 /* WalletViewController.swift */,
+				3AA49453246BD9C000EB45E2 /* MoreViewController.swift */,
+			);
+			path = "tab controllers";
+			sourceTree = "<group>";
+		};
+		3A5ABC32249738B800FFA09D /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				3A5ABC33249738D100FFA09D /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		3A85873D249A23A7005EA0AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A85873E249A23B8005EA0AB /* Model.swift */,
+				3A42590024C0313D0027F4E8 /* LoginModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3AEA89D22473C0E1001F3EF3 /* HomeScreens */ = {
+			isa = PBXGroup;
+			children = (
+				3AD0943624728F6C0069310A /* SelectYourTradeViewController.swift */,
+				3A0252A42472C7280080C448 /* BullsPointCalculationViewController.swift */,
+				3A723D962472DAE3004E2AAF /* ChooseTeamViewController.swift */,
+				3A723D982472F4F8004E2AAF /* ChooseTeamTableViewCell.swift */,
+				3A0252A22472BAAE0080C448 /* SelectCaptainViewController.swift */,
+				3A0252A02472AA950080C448 /* MorePlayersViewController.swift */,
+				3AD09438247294C20069310A /* SelectTradeTableViewCell.swift */,
+			);
+			path = HomeScreens;
+			sourceTree = "<group>";
+		};
+		3AF0244C246D108B009D8D5F /* Side Menu Bar Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A4DE77D246D480D0037969E /* RewardsViewController.swift */,
+				3A4DE779246D31400037969E /* WeeklyLeaderBoardViewController.swift */,
+				3AF0244D246D1121009D8D5F /* MyProfileViewController.swift */,
+				3A3C070B246C3E55009D65B0 /* MyHallOfFameViewController.swift */,
+				3ADAAD14246C359A003B0E3F /* MyRefferalsViewController.swift */,
+				3A2CB30224D1852F00B74764 /* RewardTableViewCell.swift */,
+			);
+			path = "Side Menu Bar Controllers";
+			sourceTree = "<group>";
+		};
+		DA96087B1FD71A1900C8EE06 /* Log_Authentications */ = {
+			isa = PBXGroup;
+			children = (
+				DAB9FCFD1FC8E4C300CF64A7 /* ViewController.swift */,
+				3A5347952469762100E99240 /* OTPViewController.swift */,
+				3A53479124696A3E00E99240 /* LoginViewController.swift */,
+				3ACECF1824695C9E003354CF /* RegisterViewController.swift */,
+				3A2FFEDC24C019E700B74EB8 /* SignUpProfileViewController.swift */,
+			);
+			path = Log_Authentications;
+			sourceTree = "<group>";
+		};
+		DAB9FCEF1FC8E4C200CF64A7 = {
+			isa = PBXGroup;
+			children = (
+				DAB9FCFA1FC8E4C200CF64A7 /* PinterestApplication */,
+				DAB9FCF91FC8E4C200CF64A7 /* Products */,
+				FD7EF5BC260708D11DC00939 /* Pods */,
+				31FE7227F8CB7E998E082A0A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DAB9FCF91FC8E4C200CF64A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DAB9FCF81FC8E4C200CF64A7 /* bulls11.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DAB9FCFA1FC8E4C200CF64A7 /* PinterestApplication */ = {
+			isa = PBXGroup;
+			children = (
+				3AC67F2024C8351A00F17BF6 /* Razorpay.xcframework */,
+				3A85873D249A23A7005EA0AB /* Models */,
+				3A5ABC32249738B800FFA09D /* Constant */,
+				3AEA89D22473C0E1001F3EF3 /* HomeScreens */,
+				3A360F7B246E95BD00FB95C4 /* Other Controllers */,
+				3AF0244C246D108B009D8D5F /* Side Menu Bar Controllers */,
+				3A590FC6246C07180071D0DA /* tab controllers */,
+				DA96087B1FD71A1900C8EE06 /* Log_Authentications */,
+				DAB9FCFB1FC8E4C300CF64A7 /* AppDelegate.swift */,
+				3AE2D43E2490D985002DC0F4 /* contestVC.swift */,
+				3A5D2A5F24A0D465007C212B /* model.swift */,
+				3A6835E024A9D569005B6077 /* SavedBatsmanTableViewCell.swift */,
+				3A5D2A5D24A0D28D007C212B /* CollectionViewCell.swift */,
+				3A478DBC249110FF006A8533 /* CongratulationViewController.swift */,
+				DAB9FCFF1FC8E4C300CF64A7 /* Main.storyboard */,
+				3A8587312499FEEA005EA0AB /* WevViewLeagalityViewController.swift */,
+				3A858735249A016A005EA0AB /* WevViewHowToWorkViewController.swift */,
+				3A1D735224921A18002D7AB3 /* letsplayViewController.swift */,
+				3A16B31D249B36B70006D89E /* sidemenuCell.swift */,
+				DAB9FD021FC8E4C300CF64A7 /* Assets.xcassets */,
+				3A226C0724A1DFD300D0AB44 /* BetterluckViewController.swift */,
+				DAB9FD041FC8E4C300CF64A7 /* LaunchScreen.storyboard */,
+				DAB9FD071FC8E4C300CF64A7 /* Info.plist */,
+				3A85873B249A0667005EA0AB /* WebViewHelpViewController.swift */,
+				3A79F81D24A479D5007BC669 /* secondTableViewCell.swift */,
+				3A79F81F24A479DE007BC669 /* thirdTableViewCell.swift */,
+				3A79F82124A479E6007BC669 /* fourthTableViewCell.swift */,
+				3A9A9F0624C2EE800089A6E9 /* SavedFinalModel.swift */,
+				3A9088DB24C6F4DA00B34104 /* SelectSpecialPlayerViewController.swift */,
+				3A9F232024C86C1C00B37B14 /* ResultContestTableViewCell.swift */,
+				3A9F232224C874A600B37B14 /* TeamResultViewController.swift */,
+				3AFE93E924C9529000E61381 /* teamresultcell.swift */,
+				3A4448DB24D02DBF00482F44 /* razorViewController.swift */,
+			);
+			path = PinterestApplication;
+			sourceTree = "<group>";
+		};
+		FD7EF5BC260708D11DC00939 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B933583CB232BFE67CE48194 /* Pods-PinterestApplication.debug.xcconfig */,
+				C30364A19600B565C05C6B20 /* Pods-PinterestApplication.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DAB9FCF71FC8E4C200CF64A7 /* PinterestApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAB9FD0A1FC8E4C300CF64A7 /* Build configuration list for PBXNativeTarget "PinterestApplication" */;
+			buildPhases = (
+				6C507CC63859E0A7CFFCF9E7 /* [CP] Check Pods Manifest.lock */,
+				DAB9FCF41FC8E4C200CF64A7 /* Sources */,
+				DAB9FCF51FC8E4C200CF64A7 /* Frameworks */,
+				DAB9FCF61FC8E4C200CF64A7 /* Resources */,
+				A165FB34CD5E574B524CAF9A /* [CP] Embed Pods Frameworks */,
+				3AE67BDA24C8227A00F23BA4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PinterestApplication;
+			productName = PinterestApplication;
+			productReference = DAB9FCF81FC8E4C200CF64A7 /* bulls11.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DAB9FCF01FC8E4C200CF64A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Gary Tokman";
+				TargetAttributes = {
+					DAB9FCF71FC8E4C200CF64A7 = {
+						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1150;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DAB9FCF31FC8E4C200CF64A7 /* Build configuration list for PBXProject "PinterestApplication" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DAB9FCEF1FC8E4C200CF64A7;
+			productRefGroup = DAB9FCF91FC8E4C200CF64A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAB9FCF71FC8E4C200CF64A7 /* PinterestApplication */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DAB9FCF61FC8E4C200CF64A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAB9FD061FC8E4C300CF64A7 /* LaunchScreen.storyboard in Resources */,
+				DAB9FD031FC8E4C300CF64A7 /* Assets.xcassets in Resources */,
+				DAB9FD011FC8E4C300CF64A7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C507CC63859E0A7CFFCF9E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PinterestApplication-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A165FB34CD5E574B524CAF9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PinterestApplication/Pods-PinterestApplication-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ALCameraViewController/ALCameraViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/MHLoadingButton/MHLoadingButton.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ALCameraViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MHLoadingButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PinterestApplication/Pods-PinterestApplication-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DAB9FCF41FC8E4C200CF64A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AC7AE11246FC2B4000B2083 /* FantasiPointSystem.swift in Sources */,
+				3A5347962469762100E99240 /* OTPViewController.swift in Sources */,
+				3A6835E124A9D569005B6077 /* SavedBatsmanTableViewCell.swift in Sources */,
+				DAB9FCFE1FC8E4C300CF64A7 /* ViewController.swift in Sources */,
+				3A79F82224A479E6007BC669 /* fourthTableViewCell.swift in Sources */,
+				3AE2D43F2490D985002DC0F4 /* contestVC.swift in Sources */,
+				3A2FFEDD24C019E700B74EB8 /* SignUpProfileViewController.swift in Sources */,
+				3A16B31E249B36B70006D89E /* sidemenuCell.swift in Sources */,
+				3A9A9F0724C2EE800089A6E9 /* SavedFinalModel.swift in Sources */,
+				3A5ABC34249738D100FFA09D /* Constant.swift in Sources */,
+				3AF0244E246D1121009D8D5F /* MyProfileViewController.swift in Sources */,
+				3A8587322499FEEA005EA0AB /* WevViewLeagalityViewController.swift in Sources */,
+				3A723D992472F4F8004E2AAF /* ChooseTeamTableViewCell.swift in Sources */,
+				DAB9FCFC1FC8E4C300CF64A7 /* AppDelegate.swift in Sources */,
+				3A79F82024A479DE007BC669 /* thirdTableViewCell.swift in Sources */,
+				3A53479224696A3E00E99240 /* LoginViewController.swift in Sources */,
+				3A4DE77C246D327B0037969E /* leaderBoardCell.swift in Sources */,
+				3A0252A12472AA950080C448 /* MorePlayersViewController.swift in Sources */,
+				3A3C070C246C3E55009D65B0 /* MyHallOfFameViewController.swift in Sources */,
+				3A9088DC24C6F4DA00B34104 /* SelectSpecialPlayerViewController.swift in Sources */,
+				3AA4944C246BD92000EB45E2 /* CustomTabbarController.swift in Sources */,
+				3A723D972472DAE3004E2AAF /* ChooseTeamViewController.swift in Sources */,
+				3AA49454246BD9C000EB45E2 /* MoreViewController.swift in Sources */,
+				3A0252A52472C7280080C448 /* BullsPointCalculationViewController.swift in Sources */,
+				3AA49452246BD9B600EB45E2 /* WalletViewController.swift in Sources */,
+				3AA49450246BD99300EB45E2 /* ContestViewController.swift in Sources */,
+				3A4DE782246D679A0037969E /* HowToWorksViewController.swift in Sources */,
+				3A1D735324921A18002D7AB3 /* letsplayViewController.swift in Sources */,
+				3AFE93EA24C9529000E61381 /* teamresultcell.swift in Sources */,
+				3A858736249A016A005EA0AB /* WevViewHowToWorkViewController.swift in Sources */,
+				3AC5B519246ED93000F23701 /* HelpCentreViewController.swift in Sources */,
+				3A478DBD249110FF006A8533 /* CongratulationViewController.swift in Sources */,
+				3A42590124C0313D0027F4E8 /* LoginModel.swift in Sources */,
+				3A4448DC24D02DBF00482F44 /* razorViewController.swift in Sources */,
+				3AA4944E246BD98600EB45E2 /* HomeViewController.swift in Sources */,
+				3A85873C249A0667005EA0AB /* WebViewHelpViewController.swift in Sources */,
+				3A360F7F246EB11500FB95C4 /* LegalityViewController.swift in Sources */,
+				3ADAAD15246C359A003B0E3F /* MyRefferalsViewController.swift in Sources */,
+				3A85873F249A23B8005EA0AB /* Model.swift in Sources */,
+				3A9F232124C86C1C00B37B14 /* ResultContestTableViewCell.swift in Sources */,
+				3A67E9B2246FEFC900789A32 /* ActiveModeViewController.swift in Sources */,
+				3A360F7D246E961C00FB95C4 /* HowToPlayViewController.swift in Sources */,
+				3A5D2A6024A0D465007C212B /* model.swift in Sources */,
+				3A4DE77A246D31400037969E /* WeeklyLeaderBoardViewController.swift in Sources */,
+				3A79F81E24A479D5007BC669 /* secondTableViewCell.swift in Sources */,
+				3A2CB30324D1852F00B74764 /* RewardTableViewCell.swift in Sources */,
+				3A226C0824A1DFD300D0AB44 /* BetterluckViewController.swift in Sources */,
+				3A5D2A5E24A0D28D007C212B /* CollectionViewCell.swift in Sources */,
+				3A4DE77E246D480D0037969E /* RewardsViewController.swift in Sources */,
+				3ACECF1924695C9E003354CF /* RegisterViewController.swift in Sources */,
+				3A4DE780246D4F4F0037969E /* AddCashViewController.swift in Sources */,
+				3A0252A32472BAAE0080C448 /* SelectCaptainViewController.swift in Sources */,
+				3AD09439247294C20069310A /* SelectTradeTableViewCell.swift in Sources */,
+				3A9F232324C874A600B37B14 /* TeamResultViewController.swift in Sources */,
+				3AD0943724728F6C0069310A /* SelectYourTradeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DAB9FCFF1FC8E4C300CF64A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAB9FD001FC8E4C300CF64A7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DAB9FD041FC8E4C300CF64A7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAB9FD051FC8E4C300CF64A7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DAB9FD081FC8E4C300CF64A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DAB9FD091FC8E4C300CF64A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DAB9FD0B1FC8E4C300CF64A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B933583CB232BFE67CE48194 /* Pods-PinterestApplication.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5A7X3J52B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PinterestApplication",
+				);
+				INFOPLIST_FILE = PinterestApplication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = myBullsProject;
+				PRODUCT_NAME = bulls11;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DAB9FD0C1FC8E4C300CF64A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C30364A19600B565C05C6B20 /* Pods-PinterestApplication.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5A7X3J52B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PinterestApplication",
+				);
+				INFOPLIST_FILE = PinterestApplication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = myBullsProject;
+				PRODUCT_NAME = bulls11;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DAB9FCF31FC8E4C200CF64A7 /* Build configuration list for PBXProject "PinterestApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAB9FD081FC8E4C300CF64A7 /* Debug */,
+				DAB9FD091FC8E4C300CF64A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAB9FD0A1FC8E4C300CF64A7 /* Build configuration list for PBXNativeTarget "PinterestApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAB9FD0B1FC8E4C300CF64A7 /* Debug */,
+				DAB9FD0C1FC8E4C300CF64A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DAB9FCF01FC8E4C200CF64A7 /* Project object */;
+}
