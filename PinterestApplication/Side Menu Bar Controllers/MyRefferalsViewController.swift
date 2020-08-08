@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class MyRefferalsViewController: UIViewController {
 
     @IBOutlet weak var myView: UIView!
+    @IBOutlet weak var refferalcode: UILabel!
+    @IBOutlet weak var filed: UITextField!
     
     let cornerRadius: CGFloat = 6.0
     
     fileprivate func CustomNavBar(){
+        filed.attributedPlaceholder = NSAttributedString(string: "Enter Code", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         title = "My Referrals"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -33,21 +37,19 @@ class MyRefferalsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = ""
-
+        self.refferalcode.text = KeychainWrapper.standard.string(forKey: "refferalCode")
         CustomNavBar()
         CustomizeView()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func share(_ sender: Any){
+        let code = self.refferalcode.text
+        let image = #imageLiteral(resourceName: "bulls point")
+        let shares = [code, image] as [Any]
+        let activityVC = UIActivityViewController(activityItems: shares, applicationActivities: nil)
+               activityVC.popoverPresentationController?.sourceView = self.view
+               self.present(activityVC, animated: true, completion: nil)
+               print("hurray !!!!!!")
     }
-    */
-
 }

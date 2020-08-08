@@ -178,12 +178,12 @@ class ContestViewController: UIViewController {
         self.List_URL = "http://projectstatus.co.in/Bulls11/api/authentication/date-list"
         Fetch_Data()
         tableView3.isHidden = true
-        tableView2.isHidden = false
+        tableView.isHidden = false
     }
     
     @IBAction func weekly(_ sender: Any){
          Fetch_Data2()
-        tableView2.isHidden = true
+        tableView.isHidden = true
         tableView3.isHidden = false
     }
     
@@ -254,7 +254,7 @@ extension ContestViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
         } else if tableView.tag == 3 {
             let cell = tableView3.dequeueReusableCell(withIdentifier: "resultcontestcell") as! ResultContestTableViewCell
-            cell.price_Amount.text = "₹" + model.prizeAmount[indexPath.row]
+            cell.price_Amount.text =  model.prizeAmount[indexPath.row]
             cell.price_Kitty.text = model.totalSlots[indexPath.row]
             return cell
         }
@@ -300,10 +300,15 @@ extension ContestViewController: UITableViewDelegate, UITableViewDataSource{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
              let vc = storyboard.instantiateViewController(withIdentifier: "refferal")
              vc.modalPresentationStyle = .fullScreen
+                vc.hidesBottomBarWhenPushed = true
              self.navigationController?.pushViewController(vc, animated: true)
                  
              } else if indexPath.row == 6 {
-             
+             let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                  let vc = storyboard.instantiateViewController(withIdentifier: "bullspointcalculation")
+                                  vc.modalPresentationStyle = .fullScreen
+                                  self.navigationController?.pushViewController(vc, animated: true)
+                        
              } else if indexPath.row == 7 {
                UserDefaults.standard.removeObject(forKey: "UserHasSubmittedPassword")
                KeychainWrapper.standard.removeAllKeys()
@@ -318,11 +323,11 @@ extension ContestViewController: UITableViewDelegate, UITableViewDataSource{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "teamresult") as! TeamResultViewController
         vc.d_ID = model.dateID[indexPath.row]
-            vc.API_URL = "https://projectstatus.co.in/Bulls11/api/authentication/my-team"
+        vc.API_URL = "https://projectstatus.co.in/Bulls11/api/authentication/my-team"
         self.navigationController?.pushViewController(vc, animated: true)
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "teamresult") as! TeamResultViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "weeklyresult") as! WeeklyResultViewController
             vc.d_ID = model.dateID[indexPath.row]
             vc.API_URL = "https://projectstatus.co.in/Bulls11/api/authentication/my-weekly-team"
             self.navigationController?.pushViewController(vc, animated: true)

@@ -34,15 +34,10 @@ class contestVC: UIViewController {
     var amount = "0"
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.topItem?.title = ""
         Fetch_Data()
         print("numb:-\(numb)")
-        if numb == "win" {
-        startTimer()
-        } else {
-            print("alright")
-        }
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-     print("recount:- \(counter)")
+        self.value.text = "1/\(model.id.count)"
     }
     
     
@@ -123,55 +118,6 @@ class contestVC: UIViewController {
         }
     }
     
-    func getResult2() {
-        var userid = KeychainWrapper.standard.string(forKey: "userID")
-        let header:HTTPHeaders = [
-            "X-API-KEY": "\(self.Api_Key)"
-        ]
-        
-        let parameter = [
-            "user_id": userid ,
-            "result": WhichResult,
-            "amount": amount
-        ]
-        
-        print("pararms= \(parameter)")
-        AF.request("https://projectstatus.co.in/Bulls11/api/authentication/quick-quiz-result", method: .post, parameters: parameter,encoding: JSONEncoding.default, headers: header).authenticate(username: "admin", password: "1234").responseJSON { response in
-            switch response.result {
-            case .success:
-                print(response.result)
-                let result = try? JSON(data: response.data!)
-                print("myresult:- \(String(describing: result!["data"]))")
-            case .failure:
-                print(response.error?.errorDescription)
-            }
-        }
-    }
-    
-    /**
-        Scroll to Next Cell
-        */
-      @objc func scrollToNextCell(){
-
-          //get Collection View Instance
-          //get cell size
-        
-        let cellSize = CGSize(width: self.view.frame.width, height: self.view.frame.height);
-
-          //get current content Offset of the Collection view
-          let contentOffset = collectionv.contentOffset;
-self.nextbtn.tag += 1
-        print("tag:- \(self.nextbtn.tag)")
-          //scroll to next cell
-        collectionv.scrollRectToVisible(CGRect(x: contentOffset.x + cellSize.width, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true);
-        
-      }
-    
-    func startTimer() {
-        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(scrollToNextCell), userInfo: nil, repeats: true);
-        self.nextbtn.tag += 1
-    }
-    
     @IBAction func next(_ sender: Any) {
             self.nextbtn.tag += 1
               one += 1
@@ -188,7 +134,7 @@ self.nextbtn.tag += 1
                             self.collectionv.scrollToItem(at: nextItem, at: .left, animated: true)
                         }
         print("mycound:- \(model.id.count)")
-        if self.nextbtn.tag == model.id.count {
+        if self.nextbtn.tag == model.id.count + 1 {
             print("no more")
             print("right:- \(model.rightans)")
             print("choose:- \(model.choose_Answer)")
@@ -213,7 +159,6 @@ self.nextbtn.tag += 1
                      vc.modalPresentationStyle = .fullScreen
                      self.present(vc, animated: true, completion: nil)
                   }
-                  getResult2()
                   getResult()
                   let dateFormatter : DateFormatter = DateFormatter()
                   dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -224,24 +169,14 @@ self.nextbtn.tag += 1
                   print("mydate:- \(dateString)")
                   print("mytime:-\(interval)")
               } else {
-            if model.choose_Answer == model.rightans {
-               print("winner")
-               self.WhichResult = "pass"
-                print("re:- \(self.WhichResult)")
-               let storyboard = UIStoryboard(name: "Main", bundle: nil)
-               let vc = storyboard.instantiateViewController(withIdentifier: "congratulation")
-               vc.modalPresentationStyle = .fullScreen
-               self.present(vc, animated: true, completion: nil)
-            } else {
-              self.WhichResult = "fail"
-               print("re:- \(self.WhichResult)")
-               print("buhhhhhhh")
-               let storyboard = UIStoryboard(name: "Main", bundle: nil)
-               let vc = storyboard.instantiateViewController(withIdentifier: "betterluck")
-               vc.modalPresentationStyle = .fullScreen
-               self.present(vc, animated: true, completion: nil)
-            }
-            getResult2()
+           let dateFormatter : DateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "yyyy-MM-dd"
+           let date = Date()
+           let dateString = dateFormatter.string(from: date)
+           let interval = date.timeIntervalSince1970
+           let isTimeSaved: Bool = KeychainWrapper.standard.set(dateString, forKey: "DateSaved")
+           print("mydate:- \(dateString)")
+           print("mytime:-\(interval)")
             getResult()
                   print("enjoy")
             
@@ -278,83 +213,3 @@ extension Array where Element: Hashable {
         return Array(thisSet.symmetricDifference(otherSet))
     }
 }
-
-/*
- self.nextbtn.tag += 1
-       var one = 1
-       one += 1
-       model.value = one
-       self.value.text = "\(model.value)/3"
-       print("mytag:- \(self.nextbtn.tag)")
-       // print("mytag:- \(model.chooseoption)")
-       print("mychoose:- \(model.choose_Answer)")
-       print("right:- \(model.rightans)")
-       let visibleItems: NSArray = self.collectionv.indexPathsForVisibleItems as NSArray
-       let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
-       let nextItem: IndexPath = IndexPath(item: currentItem.item + 1, section: 0)
-       if nextItem.row < model.id.count {
-           self.collectionv.scrollToItem(at: nextItem, at: .left, animated: true)
-       }
-       if self.nextbtn.tag == 4 {
-           print("no more")
-           timer.invalidate()
-           print("count:- \(counter)")
-           if model.choose_Answer == model.rightans {
-               print("winner")
-               self.WhichResult = "pass"
-               print("re:- \(self.WhichResult)")
-               let storyboard = UIStoryboard(name: "Main", bundle: nil)
-               let vc = storyboard.instantiateViewController(withIdentifier: "congratulation")
-               vc.modalPresentationStyle = .fullScreen
-               self.present(vc, animated: true, completion: nil)
-           } else {
-               self.WhichResult = "fail"
-               print("re:- \(self.WhichResult)")
-               print("buhhhhhhh")
-               let storyboard = UIStoryboard(name: "Main", bundle: nil)
-               let vc = storyboard.instantiateViewController(withIdentifier: "betterluck")
-               vc.modalPresentationStyle = .fullScreen
-               self.present(vc, animated: true, completion: nil)
-           }
-           getResult()
-           let dateFormatter : DateFormatter = DateFormatter()
-           dateFormatter.dateFormat = "yyyy-MM-dd"
-           let date = Date()
-           let dateString = dateFormatter.string(from: date)
-           let interval = date.timeIntervalSince1970
-           let isTimeSaved: Bool = KeychainWrapper.standard.set(dateString, forKey: "DateSaved")
-           print("mydate:- \(dateString)")
-           print("mytime:-\(interval)")
-       } else {
-           print("enjoy")
-           if model.choose_Answer == model.rightans {
-               print("winner")
-               self.WhichResult = "pass"
-               print("re:- \(self.WhichResult)")
-               let storyboard = UIStoryboard(name: "Main", bundle: nil)
-               let vc = storyboard.instantiateViewController(withIdentifier: "congratulation")
-               vc.modalPresentationStyle = .fullScreen
-               self.present(vc, animated: true, completion: nil)
-           } else {
-               self.WhichResult = "fail"
-               print("re:- \(self.WhichResult)")
-               print("buhhhhhhh")
-               let storyboard = UIStoryboard(name: "Main", bundle: nil)
-               let vc = storyboard.instantiateViewController(withIdentifier: "betterluck")
-               vc.modalPresentationStyle = .fullScreen
-               self.present(vc, animated: true, completion: nil)
-           }
-           getResult()
-       }
-       //        if model.choose_Answer == model.rightans {
-       //            print("win")
-       //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-       //            let vc = storyboard.instantiateViewController(withIdentifier: "congratulation")
-       //            vc.modalPresentationStyle = .fullScreen
-       //            self.navigationController?.pushViewController(vc, animated: true)
-       //        } else {
-       //            print("loose")
-       //
-       //        }
-   }
- */

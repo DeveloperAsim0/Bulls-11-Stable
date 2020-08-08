@@ -14,12 +14,14 @@ class leaderBoardCell: UITableViewCell {
     @IBOutlet weak var userIcon: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var points: UILabel!
-    
-    
-    
+    @IBOutlet weak var rank: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.userIcon.layer.cornerRadius = self.userIcon.bounds.width/2
+        self.userIcon.layer.borderColor = UIColor.white.cgColor
+        self.userIcon.layer.borderWidth = 1
+        self.userIcon.layer.masksToBounds = true
         // Initialization code
     }
 

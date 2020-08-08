@@ -57,7 +57,7 @@ class letsplayViewController: UIViewController {
     @IBOutlet weak var totalprizeLbl4:UIButton!
     
     var teamtype = String()
-    var mycoins = String()
+    var mycoins = Int()
     var saveFees = [String]()
     var savefirstprize = [String]()
     var saveprittykit = [String]()
@@ -152,6 +152,30 @@ class letsplayViewController: UIViewController {
         fourthview.layer.shadowColor = UIColor.lightGray.cgColor
     }
     
+    fileprivate func Method(){
+        // for btn
+        self.lbl.text = "Fee - ₹" + model.savingFee1
+        self.lbl2.text = "Fee - ₹" + model.savingFee2
+        self.lbl3.text = "Fee - ₹" + model.savingFee3
+        self.lbl4.text = "Fee - ₹" + model.savingFee4
+        
+        // for lbls
+        self.priceKittylbl1.text = "Paid User -" + model.savingPaidUsers1
+        self.priceKittylbl2.text = "Paid User -" + model.savingPaidUsers1
+        self.priceKittylbl13.text = "Paid User -" + model.savingPaidUsers1
+        self.priceKittylbl14.text = "Paid User -" + model.savingPaidUsers1
+
+        self.totalprizeLbl1.titleLabel?.text = "Total Slots -" + model.savingTotalUsers
+        self.totalprizeLbl2.titleLabel?.text = "Total Slots -" + model.savingTotalUsers
+        self.totalprizeLbl3.titleLabel?.text = "Total Slots -" + model.savingTotalUsers
+        self.totalprizeLbl4.titleLabel?.text = "Total Slots -" + model.savingTotalUsers
+
+        self.firstprizeLbl1.titleLabel?.text = "Free User -" + model.savingFreeUsers
+        self.firstprizeLbl2.titleLabel?.text = "Free User -" + model.savingFreeUsers
+        self.firstprizeLbl3.titleLabel?.text = "Free User -" + model.savingFreeUsers
+        self.firstprizeLbl4.titleLabel?.text = "Free User -" + model.savingFreeUsers
+    }
+    
     let Profile_URL = "http://projectstatus.co.in/Bulls11/api/authentication/game-price-details"
     let Api_Key = "BULLS11@2020"
     let myurl = "http://projectstatus.co.in/Bulls11/api/authentication/user/"
@@ -166,43 +190,12 @@ class letsplayViewController: UIViewController {
                    case .success:
                     print(response.result)
                     let result = try? JSON(data: response.data!)
-                    let sult = result!.dictionaryValue
-//                    self.saveFees.append(fees)
-                    print("fees:- \(sult["data"]!.arrayValue)")
-                    let data = sult["data"]!.arrayValue
-                    self.saveFees.removeAll()
-                    self.savetotalprize.removeAll()
-                    self.saveprittykit.removeAll()
-                    self.savefirstprize.removeAll()
-                    for i in data {
-                        let fees = i["fee"].stringValue
-                        self.saveFees.append(fees)
-                        let firstprize = i["first_price"].stringValue
-                        self.savefirstprize.append(firstprize)
-                        let prittykit = i["price_kitty"].stringValue
-                        self.saveprittykit.append(prittykit)
-                    }
-                    // for btn
-                    self.lbl.text = "Fee - ₹" + model.savingFee1
-                    self.lbl2.text = "Fee - ₹" + model.savingFee2
-                    self.lbl3.text = "Fee - ₹" + model.savingFee3
-                    self.lbl4.text = "Fee - ₹" + model.savingFee4
                     
-                    // for lbls
-                    self.priceKittylbl1.text = "Paid User -" + model.savingPaidUsers1
-                    self.priceKittylbl2.text = "Paid User -" + model.savingPaidUsers1
-                    self.priceKittylbl13.text = "Paid User -" + model.savingPaidUsers1
-                    self.priceKittylbl14.text = "Paid User -" + model.savingPaidUsers1
-
-                    self.totalprizeLbl1.titleLabel?.text = "Total Slots -" + model.savingTotalUsers
-                    self.totalprizeLbl2.titleLabel?.text = "Total Slots -" + model.savingTotalUsers
-                    self.totalprizeLbl3.titleLabel?.text = "Total Slots -" + model.savingTotalUsers
-                    self.totalprizeLbl4.titleLabel?.text = "Total Slots -" + model.savingTotalUsers
-
-                    self.firstprizeLbl1.titleLabel?.text = "Free User -" + model.savingFreeUsers
-                    self.firstprizeLbl2.titleLabel?.text = "Free User -" + model.savingFreeUsers
-                    self.firstprizeLbl3.titleLabel?.text = "Free User -" + model.savingFreeUsers
-                    self.firstprizeLbl4.titleLabel?.text = "Free User -" + model.savingFreeUsers
+                    for i in result!.arrayValue {
+                        print("myvalue:- \(i["game_play_points"].stringValue)")
+                        let points = i["game_play_points"].stringValue
+                        self.pointslbl.text = points
+                    }
                     break
                    case .failure:
                     print(response.error.debugDescription)
@@ -231,7 +224,7 @@ class letsplayViewController: UIViewController {
                        case .success:
                         print(response.result)
                         let result = try? JSON(data: response.data!)
-                        print("result:- \(String(describing: result))")
+                        print("dailyresult:- \(String(describing: result))")
                         break
                        case .failure:
                         print(response.error?.errorDescription)
@@ -253,7 +246,7 @@ class letsplayViewController: UIViewController {
                     print("myResult:- \(result!.dictionaryValue)")
                     let finalResult = result!.dictionaryValue
                     let bullspoints = finalResult["bull_points"]?.stringValue
-                    let bullscoins = finalResult["bulls_coin"]?.stringValue
+                    let bullscoins = finalResult["bulls_coin"]?.intValue
                     self.mycoins = bullscoins!
                     break
                    case .failure:
@@ -268,17 +261,17 @@ class letsplayViewController: UIViewController {
         self.pinkview.isSelected = true
         CustomizeView()
         get_Details()
-        Fetch_Profile()
+       
+        Method()
         self.userIDMerge = savedBatsmanTeams.CompanyID + savedBowlerTeams.CompanyID + savedWicketKeeperTeams.CompanyID
        print("updated:- \(semiFinalBatsmanModel.Captains)")
         print("totalslotsvalue:- \(model.totalSlots[0])")
        print("allusers:- \(userIDMerge)")
        print("usersid:- \(String(describing: userid))")
-        if finalModel.contest_type == "Daily" {
             self.myURL = "http://projectstatus.co.in/Bulls11/api/authentication/create-team"
-        } else {
-            self.myURL = "http://projectstatus.co.in/Bulls11/api/authentication/create-weekly-team"
-        }
+       
+//            self.myURL = "http://projectstatus.co.in/Bulls11/api/authentication/create-weekly-team"
+        
         // Do any additional setup after loading the view.
     }
     
@@ -323,8 +316,8 @@ class letsplayViewController: UIViewController {
     }
     
     @IBAction func pointsBtn(_ sender: Any){
-        self.currency = "100"
-        //print("pointcurrency:-\(self.currency)")
+        self.currency = self.pointslbl.text!
+        print("pointcurrency:-\(self.currency)")
     }
     
     @IBAction func firstBtn(_ sender: Any){
@@ -334,7 +327,7 @@ class letsplayViewController: UIViewController {
         lbl4.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
         self.currency = model.savingFee1
         self.teamtype = "small"
-        finalModel.currency = Int(self.saveFees[0])!
+       // finalModel.currency = Int(self.saveFees[0])!
         print("currenct1-\(self.currency)")
     }
     
@@ -345,7 +338,8 @@ class letsplayViewController: UIViewController {
                lbl4.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
         self.currency = model.savingFee2
         self.teamtype = "medium"
-        finalModel.currency = Int(self.saveFees[1])!
+       // print("modules:- \(self.saveFees[1])")
+        //finalModel.currency = Int(self.saveFees[1])!
         print("currenct2-\(self.currency)")
     }
     
@@ -356,7 +350,7 @@ class letsplayViewController: UIViewController {
                lbl4.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
         self.currency = model.savingFee3
         self.teamtype = "large"
-        finalModel.currency = Int(self.saveFees[2])!
+       // finalModel.currency = Int(self.saveFees[2])!
         print("currenct3-\(self.currency)")
     }
     
@@ -367,30 +361,36 @@ class letsplayViewController: UIViewController {
                lbl4.backgroundColor = UIColor(red: 212/255, green: 100/255, blue: 141/255, alpha: 1.0)
         self.currency = model.savingFee4
         self.teamtype = "extra-large"
-        finalModel.currency = Int(self.saveFees[3])!
+      //  finalModel.currency = Int(self.saveFees[3])!
         print("currenct4-\(self.currency)")
     }
     
     @IBAction func LetsPlay(_ sender: Any) {
-        print(finalModel.currency)
         print(self.currency)
         print(mycoins)
-        if self.currency <= mycoins {
-        Send_Details()
-             let alert = UIAlertController(title: "Team Created Successfully", message: "", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
-
-                  let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                                       let vc = storyboard.instantiateViewController(withIdentifier: "customtab")
-                                                       vc.modalPresentationStyle = .fullScreen
-                                                       self.present(vc, animated: true, completion: nil)
-                                                   }))
-                                                   self.present(alert, animated: true, completion: nil)
+        Fetch_Profile()
+        var changeInt = Int(self.currency)
+        print("curr:- \(changeInt)")
+        
+        if changeInt! > mycoins {
+       
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                      let vc = storyboard.instantiateViewController(withIdentifier: "addcash")
+                      vc.modalPresentationStyle = .currentContext
+                      self.navigationController!.pushViewController(vc, animated: true)
         } else {
-           let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                 let vc = storyboard.instantiateViewController(withIdentifier: "addcash")
-                 vc.modalPresentationStyle = .currentContext
-                 self.navigationController!.pushViewController(vc, animated: true)
+            Send_Details()
+                        let alert = UIAlertController(title: "Team Created Successfully", message: "", preferredStyle: UIAlertController.Style.alert)
+                       alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
+
+                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                                                  let vc = storyboard.instantiateViewController(withIdentifier: "customtab")
+                                                                  vc.modalPresentationStyle = .fullScreen
+                                                                  self.present(vc, animated: true, completion: nil)
+                                                              }))
+                                                              self.present(alert, animated: true, completion: nil)
+            
+          
 }
 }
 }

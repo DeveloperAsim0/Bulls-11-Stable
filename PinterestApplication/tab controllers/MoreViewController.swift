@@ -105,6 +105,7 @@ class MoreViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "refferal")
         vc.modalPresentationStyle = .fullScreen
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -216,7 +217,11 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource {
                   
             
         } else if indexPath.row == 6 {
-           
+           let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "bullspointcalculation")
+            vc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(vc, animated: true)
+                      
         
         } else if indexPath.row == 7 {
            UserDefaults.standard.removeObject(forKey: "UserHasSubmittedPassword")

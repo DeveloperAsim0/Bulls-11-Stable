@@ -122,8 +122,24 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         // Do any additional setup after loading the view.
     }
     
+    func captureScreenshot(){
+              let layer = UIApplication.shared.keyWindow!.layer
+              let scale = UIScreen.main.scale
+              // Creates UIImage of same size as view
+              UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+              layer.render(in: UIGraphicsGetCurrentContext()!)
+              let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+              UIGraphicsEndImageContext()
+              // THIS IS TO SAVE SCREENSHOT TO PHOTOS
+              UIImageWriteToSavedPhotosAlbum(screenshot!, nil, nil, nil)
+    }
+    
     @IBAction func updateProfile(_ sender: Any) {
         Update_Profile()
+    }
+    
+    @IBAction func takeScreenshot(_ sender: Any){
+        captureScreenshot()
     }
     
     @IBAction func setProfile(_ sender: Any) {
@@ -181,6 +197,9 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
               self.present(alert, animated: true, completion: nil)
           }
       }
+    
+    
+    
 }
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {

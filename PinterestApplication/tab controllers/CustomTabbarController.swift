@@ -32,7 +32,8 @@ class CustomTabbarController: UITabBarController, UITabBarControllerDelegate{
              if viewController.isKind(of: HomeViewController.self) {
                 let vc =  HomeViewController()
                 vc.modalPresentationStyle = .currentContext
-                self.present(vc, animated: true, completion: nil)
+                print("goodmornig")
+                self.navigationController?.pushViewController(vc, animated: true)
                 return false
              }
              return true

@@ -15,23 +15,14 @@ class TeamResultViewController: UIViewController {
 
     @IBOutlet weak var topConstraints: NSLayoutConstraint!
     @IBOutlet weak var tableView     : UITableView!
-    @IBOutlet weak var myusername    : UILabel!
-    @IBOutlet weak var mypoints      : UILabel!
-    @IBOutlet weak var myentryfee    : UILabel!
-    @IBOutlet weak var mycaptain     : UILabel!
-    @IBOutlet weak var mystarplayer1 : UILabel!
-    @IBOutlet weak var mystarplayer2 : UILabel!
-    @IBOutlet weak var mystarplayer3 : UILabel!
-    @IBOutlet weak var firstView     : UIView!
-    @IBOutlet weak var thirdView     : UIView!
-    @IBOutlet weak var middleView    : UIView!
-    @IBOutlet weak var rank          : UILabel!
     
     let Api_Key = "BULLS11@2020"
     var d_ID = String()
     var API_URL = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.topItem?.title = ""
         Get_Details()
         customizeView()
         print("myurl:- \(API_URL)")
@@ -151,7 +142,12 @@ class TeamResultViewController: UIViewController {
 
 extension TeamResultViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myPersonalData.teamid.count
+        if section == 0 {
+            return myPersonalData.teamid.count
+        } else {
+            return Result.team_id.count
+        }
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

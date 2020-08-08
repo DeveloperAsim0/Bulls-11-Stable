@@ -84,27 +84,7 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
         }
     }
     
-    func showPaymentForm() {
-        let vars = Int(cashfield.text!)!
-        var two = vars * 100
-        let name = KeychainWrapper.standard.string(forKey: "fullname")
-        let email = KeychainWrapper.standard.string(forKey: "email")
-        let phone = KeychainWrapper.standard.string(forKey: "phone")
-        let params: [String: Any] = [
-            "amount": two,
-            "description": "Sample Product",
-            "image": UIImage(named: "logo bulls 11"),
-            "name": name,
-            "prifill": [
-                "contact": phone,
-                "email": email
-             ],
-            "theme": [
-                "color": "#CB2D88"
-            ]
-        ]
-        razorpayD.open(params)
-    }
+    
 
     func onPaymentError(_ code: Int32, description str: String) {
         let alert = UIAlertController(title: "Failed", message: "\(str)", preferredStyle: .alert)
@@ -116,8 +96,10 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
     func onPaymentSuccess(_ payment_id: String) {
         let refreshAlert = UIAlertController(title: "Alert", message: "Success", preferredStyle: UIAlertController.Style.alert)
                           refreshAlert.addAction(UIAlertAction(title: "Clear", style: .default, handler: { (action: UIAlertAction!) in
+                            
                             finalModel.paymentID = payment_id
                             self.sendDetails()
+                            
                               print("Handle Ok logic here")
                           }))
                self.present(refreshAlert, animated: true, completion: nil)
@@ -134,7 +116,7 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
                     let result = try? JSON(data: response.data!)
                     print("myResult:- \(result!.dictionaryValue)")
                     let finalResult = result!.dictionaryValue
-                   let bullscoins = finalResult["bulls_coin"]?.stringValue
+                    let bullscoins = finalResult["bulls_coin"]?.stringValue
                     self.currentBalance.text = "₹" + bullscoins!
                     break
                    case .failure:
@@ -146,7 +128,7 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = ""
-        razorpayD = RazorpayCheckout.initWithKey("rzp_test_1DP5mmOlF5G5ag", andDelegate: self)
+        
         title = "Add Cash"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -161,6 +143,42 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         fetch_Profile()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        fetch_Profile()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        fetch_Profile()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        fetch_Profile()
+    }
+    
+    fileprivate func showPaymentForm() {
+        razorpayD = RazorpayCheckout.initWithKey("rzp_test_1DP5mmOlF5G5ag", andDelegate: self)
+        let cash = cashfield.text!
+        let convert = Int(cash)!
+        let addHundred = convert * 100
+        let email = KeychainWrapper.standard.string(forKey: "email")
+        let phone = KeychainWrapper.standard.string(forKey: "phone")
+        let name = KeychainWrapper.standard.string(forKey: "fullname")
+        let params: [String: Any] = [
+            "amount": addHundred,
+            "description": "Sample Product",
+            "image": UIImage(named: "logo bulls 11"),
+            "name": name,
+            "prifill": [
+                "contact": phone,
+                "email": email
+             ],
+            "theme": [
+                "color": "#CB2D88"
+            ]
+        ]
+        razorpayD.open(params)
     }
     
     @IBAction func setcashValue1(_ sender: Any) {
@@ -179,7 +197,11 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
     }
     
     @IBAction func addCashRedirect(_ sender: Any){
-        showPaymentForm()
+        perform(#selector(showOff), with: nil, afterDelay: 0.02)
+    }
+    
+    @objc func showOff() {
+         self.showPaymentForm()
     }
     /*
     // MARK: - Navigation
@@ -192,3 +214,4 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
     */
 
 }
+ 

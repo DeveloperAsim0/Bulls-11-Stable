@@ -73,6 +73,7 @@ class SelectYourTradeViewController: UIViewController {
         super.viewDidLoad()
         CustomizeViews()
         get_Current_Time()
+        
         //        refresher = UIRefreshControl()
         //
         //        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
@@ -124,10 +125,10 @@ class SelectYourTradeViewController: UIViewController {
                     model.freeUsers.append(freeUsers)
                     let totalSlots = i["total_slots"].stringValue
                     model.totalSlots.append(totalSlots)
-                    let startContest = i["start_time"].intValue
+                    let startContest = i["start_time"].stringValue
                     print("star:- \(startContest)")
                     model.startingtime.append(startContest)
-                    let timing = i["result_time"].stringValue
+                    let timing = i["result_time"].intValue
                     model.resultTime.append(timing)
                     let fee1 = i["fee1"].stringValue
                     model.fee1.append(fee1)
@@ -135,8 +136,10 @@ class SelectYourTradeViewController: UIViewController {
                     model.fee2.append(fee2)
                     let fee3  = i["fee3"].stringValue
                     model.fee3.append(fee3)
+                    print("myfee:-\(model.fee3)")
                     let fee4 = i["fee4"].stringValue
                     model.fee4.append(fee4)
+                    print("myfee1:-\(model.fee4)")
                 }
                 self.tableView.reloadData()
                 // self.refresher.endRefreshing()
@@ -162,7 +165,7 @@ extension SelectYourTradeViewController: UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "tradecell") as! SelectTradeTableViewCell
         cell.DateLabel.text = model.date[indexPath.row]
         cell.DetailLabel.text = model.date_details[indexPath.row]
-        cell.apidate = model.startingtime[indexPath.row]
+        cell.apidate = model.resultTime[indexPath.row]
     //    cell.ActualTimer = model.resultTime[indexPath.row]
         //        cell.totalPrize.text = "₹" + model.prizeAmount[indexPath.row]
         //        cell.freeUsers.text = model.freeUsers[indexPath.row]
@@ -173,19 +176,34 @@ extension SelectYourTradeViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "choose") as! ChooseTeamViewController
-        vc.ApiURL = self.NextApiUrl
-        // vc.myDateID = model.dateID
-        model.actualDateID = model.dateID[indexPath.row]
-        model.savingFee1 = model.fee1[indexPath.row]
-        model.savingFee2 = model.fee2[indexPath.row]
-        model.savingFee3 = model.fee3[indexPath.row]
-        model.savingFee4 = model.fee4[indexPath.row]
-        model.savingPaidUsers1 = model.paidUsers[indexPath.row]
-        model.savingFreeUsers = model.freeUsers[indexPath.row]
-        model.savingTotalUsers = model.totalSlots[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+        let yourDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let newDateString = dateFormatter.string(from: yourDate)
+        print("mytime:- \(newDateString)")
+       
+//        if newDateString < "09:00" {
+            print("look")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "choose") as! ChooseTeamViewController
+            vc.ApiURL = self.NextApiUrl
+            // vc.myDateID = model.dateID
+            model.actualDateID = model.dateID[indexPath.row]
+            model.savingFee1 = model.fee1[indexPath.row]
+            model.savingFee2 = model.fee2[indexPath.row]
+            model.savingFee3 = model.fee3[indexPath.row]
+            model.savingFee4 = model.fee4[indexPath.row]
+            model.savingPaidUsers1 = model.paidUsers[indexPath.row]
+            model.savingFreeUsers = model.freeUsers[indexPath.row]
+            model.savingTotalUsers = model.totalSlots[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+//        } else {
+//            let refreshAlert = UIAlertController(title: "Alert", message: "You can only play contest before 9 AM", preferredStyle: .alert)
+//            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//            self.present(refreshAlert, animated: true, completion: nil)
+//            print("shutup")
+       // }
+        
     }
 }
 

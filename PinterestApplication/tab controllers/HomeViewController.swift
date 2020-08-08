@@ -292,8 +292,9 @@ class HomeViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "trade") as! SelectYourTradeViewController
         vc.modalPresentationStyle = .fullScreen
         vc.Date_URL = "http://projectstatus.co.in/Bulls11/api/authentication/weekly-date-list"
-        //  vc.NextApiUrl = "http://projectstatus.co.in/Bulls11/api/authentication/list-weekwise-compnaies"
+        vc.NextApiUrl = "http://projectstatus.co.in/Bulls11/api/authentication/choose-player"
         finalModel.contest_type = "Weekly"
+        SaveState.saveController = 1
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -361,11 +362,8 @@ class HomeViewController: UIViewController {
     
     @IBAction func btn1(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "contestVC") as! contestVC
+        let vc = storyboard.instantiateViewController(withIdentifier: "wincoins") as! WinCoinsViewController
         vc.modalPresentationStyle = .fullScreen
-        vc.Quiz_URL = "https://projectstatus.co.in/Bulls11/api/authentication/quick-quiz"
-        vc.numb = "win"
-        vc.resultURL = "https://projectstatus.co.in/Bulls11/api/authentication/quick-quiz-result"
         vc.amount = QuizOptions.coins[0]
        // vc.pay =
         self.navigationController?.pushViewController(vc, animated: true)
@@ -373,11 +371,8 @@ class HomeViewController: UIViewController {
     
     @IBAction func btn2(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "contestVC") as! contestVC
+        let vc = storyboard.instantiateViewController(withIdentifier: "wincoins") as! WinCoinsViewController
         vc.modalPresentationStyle = .fullScreen
-        vc.Quiz_URL = "https://projectstatus.co.in/Bulls11/api/authentication/quick-quiz"
-        vc.numb = "win"
-        vc.resultURL = "https://projectstatus.co.in/Bulls11/api/authentication/quick-quiz-result"
         vc.amount = QuizOptions.coins[1]
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -434,11 +429,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "refferal")
             vc.modalPresentationStyle = .fullScreen
+            vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
             
             
         } else if indexPath.row == 6 {
-            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                      let vc = storyboard.instantiateViewController(withIdentifier: "bullspointcalculation")
+                      vc.modalPresentationStyle = .fullScreen
+                      self.navigationController?.pushViewController(vc, animated: true)
             
         } else if indexPath.row == 7 {
             UserDefaults.standard.removeObject(forKey: "UserHasSubmittedPassword")

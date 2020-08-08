@@ -204,6 +204,7 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "refferal")
             vc.modalPresentationStyle = .fullScreen
+            vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
             
         } else if indexPath.row == 6 {

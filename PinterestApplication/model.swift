@@ -9,13 +9,22 @@
 import Foundation
 
 class model{
-    static var resultTime           = [String]()
+    static var winQuiz_id           = [String]()
+    static var wnQuiz_firstOption   = [String]()
+    static var winQuiz_secondOption = [String]()
+    static var winQuiz_thirdOption  = [String]()
+    static var winQuiz_fourthOption = [String]()
+    static var winQuizRightAns      = [String]()
+    static var winQuizChooseAns     = [String]()
+    static var winQuizQues           = [String]()
+    
+    static var resultTime           = [Int]()
     static var randomques           = [String]()
     static var randomthird          = [String]()
     static var randomsecond         = [String]()
     static var randomfourth         = [String]()
     static var randomfirst          = [String]()
-    static var startingtime         = [Int]()
+    static var startingtime         = [String]()
     static var totalSlots           = [String]()
     static var actualDateID         = String()
     static var paidUsers            = [String]()
@@ -156,4 +165,15 @@ class savedAllRounderTeams {
 class savedWicketKeeperTeams {
     static var CompanyID   = [String]()
     static var CompanyName = [String]()
+}
+
+class WeeklyleaderBoard{
+    static var username = [String]()
+    static var profile = [String]()
+    static var rank = [String]()
+    static var points = [String]()
+}
+
+class SaveState{
+    static var saveController = 0
 }

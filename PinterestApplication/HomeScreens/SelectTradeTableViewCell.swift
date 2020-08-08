@@ -14,10 +14,6 @@ class SelectTradeTableViewCell: UITableViewCell {
     @IBOutlet weak var DetailLabel: UILabel!
     @IBOutlet weak var timeLabel  : UILabel!
     @IBOutlet weak var myview     : UIView!
-    @IBOutlet weak var totalPrize : UILabel!
-    @IBOutlet weak var PaidUsers  : UILabel!
-    @IBOutlet weak var freeUsers  : UILabel!
-    @IBOutlet weak var totalSlots : UILabel!
     var apidate = Int()
     
     func getdate() {
@@ -41,7 +37,7 @@ class SelectTradeTableViewCell: UITableViewCell {
         //here we change the seconds to hours,minutes and days
         let CompetitionDayDifference = calendar.dateComponents([.hour, .minute], from: currentDate!, to: competitionDay)
 
-
+        
         //finally, here we set the variable to our remaining time
         let daysLeft = CompetitionDayDifference.day
         let hoursLeft = CompetitionDayDifference.hour
@@ -50,7 +46,19 @@ class SelectTradeTableViewCell: UITableViewCell {
         print("day:", daysLeft ?? "N/A", "hour:", hoursLeft ?? "N/A", "minute:", minutesLeft ?? "N/A")
 
         //Set countdown label text
+        
+        let yourDate = Date()
+               let dateFormatter = DateFormatter()
+               dateFormatter.dateFormat = "HH:mm"
+               let newDateString = dateFormatter.string(from: yourDate)
+               print("mytime:- \(newDateString)")
+               let wait = "\(hoursLeft):\(minutesLeft)"
+        print("wailt:- \(wait)")
+        if newDateString > String(apidate) {
+            timeLabel.text = "00:00"
+        } else {
         timeLabel.text = "\(hoursLeft ?? 0) Hours, \(minutesLeft ?? 0) Minutes"
+        }
     }
     
     override func layoutSubviews() {

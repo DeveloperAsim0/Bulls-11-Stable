@@ -909,12 +909,21 @@ class SelectSpecialPlayerViewController: UIViewController {
         print("starplayer:- \(finalModel.starPlayer.count)")
         print("captainplayer:- \(finalModel.Captain.count)")
         print("print:-\(clickBtn.count)")
-        
+        print("save:- \(SaveState.saveController)")
+               
+           
         if clickBtn.count == 1{
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "letsplay")
-        vc.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(vc, animated: true)
+       if SaveState.saveController == 1 {
+           let storyboard = UIStoryboard(name: "Main", bundle: nil)
+           let vc = storyboard.instantiateViewController(withIdentifier: "weeklyplay")
+           vc.modalPresentationStyle = .fullScreen
+           self.navigationController?.pushViewController(vc, animated: true)
+       } else {
+       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+       let vc = storyboard.instantiateViewController(withIdentifier: "letsplay")
+       vc.modalPresentationStyle = .fullScreen
+       self.navigationController?.pushViewController(vc, animated: true)
+       }
         } else {
             let alert = UIAlertController(title: "Please Select 1 Captain and 3 Star Players", message: "", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

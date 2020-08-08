@@ -52,16 +52,7 @@ class SelectCaptainViewController: UIViewController{
     }
     
     @IBAction func next(_ sender: Any) {
-//        self.savedBatsmanIDS.append(contentsOf: savedBatsmanTeams.CompanyID)
-//        print("savedBatsmanIDS:- \(self.savedBatsmanIDS)")
-//        self.savedBowlerIDS.append(contentsOf: savedBowlerTeams.CompanyID)
-//        print("savedBowlerIDS:- \(self.savedBowlerIDS)")
-//        self.savedWicketKeeperIDS.append(contentsOf: savedWicketKeeperTeams.CompanyID)
-//        print("savedwicketIDS:- \(self.savedWicketKeeperIDS)")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "letsplay")
-        vc.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(vc, animated: true)
+ 
     }
 }
 

@@ -113,6 +113,8 @@ class SignUpProfileViewController: UIViewController, UIImagePickerControllerDele
                         print("myuser:- \(KeychainWrapper.standard.string(forKey: "userID"))")
                         let emailID = Result["email"]!.stringValue
                         KeychainWrapper.standard.set(emailID, forKey: "email")
+                        let referralCode = Result["referal_code"]!.stringValue
+                        let isRefferal: Bool = KeychainWrapper.standard.set(referralCode, forKey: "refferalCode")
                         let phone = Result["phone"]!.stringValue
                         KeychainWrapper.standard.set(phone, forKey: "phone")
                         let alert = UIAlertController(title: "Successfully Registered", message: "", preferredStyle: UIAlertController.Style.alert)

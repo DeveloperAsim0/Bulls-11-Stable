@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            //let navigationController = UINavigationController.init(rootViewController: vc2)
 //            self.window?.rootViewController = vc2
         }else{
+            
             let vc = storyboard.instantiateViewController(withIdentifier: "view")
             let navigationController = UINavigationController.init(rootViewController: vc)
             //Navigate to rootviewcontroller

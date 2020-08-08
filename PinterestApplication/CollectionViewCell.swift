@@ -20,6 +20,7 @@ class CollectionViewCell: UICollectionViewCell {
    @IBOutlet weak var fourthb: UIButton!
     @IBOutlet weak var questiion: UILabel!
     @IBOutlet weak var number: UILabel!
+    @IBOutlet weak var img: UIImageView!
     
     var choose_Answer = String()
     

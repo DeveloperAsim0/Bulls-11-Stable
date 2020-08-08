@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
             case .success:
                 print(response.result)
                 let myresult = try? JSON(data: response.data!)
-                if myresult?["message"] == nil {
+                if myresult?["status"] == false {
                     let alert = UIAlertController(title: "Alert", message: "Wrong Email or Password", preferredStyle: .alert)
                     self.present(alert, animated: true, completion: nil)
 
@@ -85,10 +85,11 @@ class LoginViewController: UIViewController {
                     }
                 } else {
                     print(Date().description(with: .current))
-                    
                     let Result = myresult!["data"].dictionaryValue
                     let userid = Result["id"]!.stringValue
                     Login_Model.id.append(userid)
+                    let referralCode = Result["referal_code"]!.stringValue
+                    let isRefferal: Bool = KeychainWrapper.standard.set(referralCode, forKey: "refferalCode")
                     let lastname = Result["last_name"]!.stringValue
                     Login_Model.last_name.append(lastname)
                     let firstname = Result["first_name"]!.stringValue

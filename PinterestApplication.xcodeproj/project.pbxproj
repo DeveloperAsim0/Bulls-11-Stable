@@ -18,6 +18,8 @@
 		3A360F7D246E961C00FB95C4 /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A360F7C246E961C00FB95C4 /* HowToPlayViewController.swift */; };
 		3A360F7F246EB11500FB95C4 /* LegalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A360F7E246EB11500FB95C4 /* LegalityViewController.swift */; };
 		3A3C070C246C3E55009D65B0 /* MyHallOfFameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C070B246C3E55009D65B0 /* MyHallOfFameViewController.swift */; };
+		3A3E720224DE800900C2AEE4 /* WeeklyPlaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E720124DE800900C2AEE4 /* WeeklyPlaysViewController.swift */; };
+		3A3E720424DEB09A00C2AEE4 /* WeeklyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E720324DEB09A00C2AEE4 /* WeeklyResultViewController.swift */; };
 		3A42590124C0313D0027F4E8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42590024C0313D0027F4E8 /* LoginModel.swift */; };
 		3A4448DC24D02DBF00482F44 /* razorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4448DB24D02DBF00482F44 /* razorViewController.swift */; };
 		3A478DBD249110FF006A8533 /* CongratulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A478DBC249110FF006A8533 /* CongratulationViewController.swift */; };
@@ -28,6 +30,8 @@
 		3A4DE782246D679A0037969E /* HowToWorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4DE781246D679A0037969E /* HowToWorksViewController.swift */; };
 		3A53479224696A3E00E99240 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53479124696A3E00E99240 /* LoginViewController.swift */; };
 		3A5347962469762100E99240 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5347952469762100E99240 /* OTPViewController.swift */; };
+		3A54969824DD34EE006477BA /* WinCoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54969724DD34EE006477BA /* WinCoinsViewController.swift */; };
+		3A54969A24DD8C34006477BA /* RazViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54969924DD8C34006477BA /* RazViewController.swift */; };
 		3A5ABC34249738D100FFA09D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5ABC33249738D100FFA09D /* Constant.swift */; };
 		3A5D2A5E24A0D28D007C212B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D2A5D24A0D28D007C212B /* CollectionViewCell.swift */; };
 		3A5D2A6024A0D465007C212B /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D2A5F24A0D465007C212B /* model.swift */; };
@@ -96,6 +100,8 @@
 		3A360F7C246E961C00FB95C4 /* HowToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
 		3A360F7E246EB11500FB95C4 /* LegalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalityViewController.swift; sourceTree = "<group>"; };
 		3A3C070B246C3E55009D65B0 /* MyHallOfFameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHallOfFameViewController.swift; sourceTree = "<group>"; };
+		3A3E720124DE800900C2AEE4 /* WeeklyPlaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPlaysViewController.swift; sourceTree = "<group>"; };
+		3A3E720324DEB09A00C2AEE4 /* WeeklyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyResultViewController.swift; sourceTree = "<group>"; };
 		3A42590024C0313D0027F4E8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		3A4448DB24D02DBF00482F44 /* razorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = razorViewController.swift; sourceTree = "<group>"; };
 		3A478DBC249110FF006A8533 /* CongratulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +112,8 @@
 		3A4DE781246D679A0037969E /* HowToWorksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToWorksViewController.swift; sourceTree = "<group>"; };
 		3A53479124696A3E00E99240 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A5347952469762100E99240 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		3A54969724DD34EE006477BA /* WinCoinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinCoinsViewController.swift; sourceTree = "<group>"; };
+		3A54969924DD8C34006477BA /* RazViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RazViewController.swift; sourceTree = "<group>"; };
 		3A5ABC33249738D100FFA09D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3A5D2A5D24A0D28D007C212B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		3A5D2A5F24A0D465007C212B /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 				3AA4944B246BD92000EB45E2 /* CustomTabbarController.swift */,
 				3AA4944D246BD98600EB45E2 /* HomeViewController.swift */,
 				3AA4944F246BD99300EB45E2 /* ContestViewController.swift */,
+				3A3E720324DEB09A00C2AEE4 /* WeeklyResultViewController.swift */,
 				3AA49451246BD9B600EB45E2 /* WalletViewController.swift */,
 				3AA49453246BD9C000EB45E2 /* MoreViewController.swift */,
 			);
@@ -291,6 +300,7 @@
 				3A5D2A5D24A0D28D007C212B /* CollectionViewCell.swift */,
 				3A478DBC249110FF006A8533 /* CongratulationViewController.swift */,
 				DAB9FCFF1FC8E4C300CF64A7 /* Main.storyboard */,
+				3A54969724DD34EE006477BA /* WinCoinsViewController.swift */,
 				3A8587312499FEEA005EA0AB /* WevViewLeagalityViewController.swift */,
 				3A858735249A016A005EA0AB /* WevViewHowToWorkViewController.swift */,
 				3A1D735224921A18002D7AB3 /* letsplayViewController.swift */,
@@ -307,8 +317,10 @@
 				3A9088DB24C6F4DA00B34104 /* SelectSpecialPlayerViewController.swift */,
 				3A9F232024C86C1C00B37B14 /* ResultContestTableViewCell.swift */,
 				3A9F232224C874A600B37B14 /* TeamResultViewController.swift */,
+				3A54969924DD8C34006477BA /* RazViewController.swift */,
 				3AFE93E924C9529000E61381 /* teamresultcell.swift */,
 				3A4448DB24D02DBF00482F44 /* razorViewController.swift */,
+				3A3E720124DE800900C2AEE4 /* WeeklyPlaysViewController.swift */,
 			);
 			path = PinterestApplication;
 			sourceTree = "<group>";
@@ -466,9 +478,11 @@
 				3AF0244E246D1121009D8D5F /* MyProfileViewController.swift in Sources */,
 				3A8587322499FEEA005EA0AB /* WevViewLeagalityViewController.swift in Sources */,
 				3A723D992472F4F8004E2AAF /* ChooseTeamTableViewCell.swift in Sources */,
+				3A3E720424DEB09A00C2AEE4 /* WeeklyResultViewController.swift in Sources */,
 				DAB9FCFC1FC8E4C300CF64A7 /* AppDelegate.swift in Sources */,
 				3A79F82024A479DE007BC669 /* thirdTableViewCell.swift in Sources */,
 				3A53479224696A3E00E99240 /* LoginViewController.swift in Sources */,
+				3A54969824DD34EE006477BA /* WinCoinsViewController.swift in Sources */,
 				3A4DE77C246D327B0037969E /* leaderBoardCell.swift in Sources */,
 				3A0252A12472AA950080C448 /* MorePlayersViewController.swift in Sources */,
 				3A3C070C246C3E55009D65B0 /* MyHallOfFameViewController.swift in Sources */,
@@ -476,6 +490,7 @@
 				3AA4944C246BD92000EB45E2 /* CustomTabbarController.swift in Sources */,
 				3A723D972472DAE3004E2AAF /* ChooseTeamViewController.swift in Sources */,
 				3AA49454246BD9C000EB45E2 /* MoreViewController.swift in Sources */,
+				3A3E720224DE800900C2AEE4 /* WeeklyPlaysViewController.swift in Sources */,
 				3A0252A52472C7280080C448 /* BullsPointCalculationViewController.swift in Sources */,
 				3AA49452246BD9B600EB45E2 /* WalletViewController.swift in Sources */,
 				3AA49450246BD99300EB45E2 /* ContestViewController.swift in Sources */,
@@ -488,6 +503,7 @@
 				3A42590124C0313D0027F4E8 /* LoginModel.swift in Sources */,
 				3A4448DC24D02DBF00482F44 /* razorViewController.swift in Sources */,
 				3AA4944E246BD98600EB45E2 /* HomeViewController.swift in Sources */,
+				3A54969A24DD8C34006477BA /* RazViewController.swift in Sources */,
 				3A85873C249A0667005EA0AB /* WebViewHelpViewController.swift in Sources */,
 				3A360F7F246EB11500FB95C4 /* LegalityViewController.swift in Sources */,
 				3ADAAD15246C359A003B0E3F /* MyRefferalsViewController.swift in Sources */,
