@@ -23,6 +23,9 @@
 		3A42590124C0313D0027F4E8 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42590024C0313D0027F4E8 /* LoginModel.swift */; };
 		3A4448DC24D02DBF00482F44 /* razorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4448DB24D02DBF00482F44 /* razorViewController.swift */; };
 		3A478DBD249110FF006A8533 /* CongratulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A478DBC249110FF006A8533 /* CongratulationViewController.swift */; };
+		3A4825CC24E1333C00DFDB98 /* SDCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4825CB24E1333C00DFDB98 /* SDCTextField.swift */; };
+		3A4825CE24E1675C00DFDB98 /* ForGetviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4825CD24E1675C00DFDB98 /* ForGetviewViewController.swift */; };
+		3A4825D024E16CF600DFDB98 /* UpdatpassotpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4825CF24E16CF600DFDB98 /* UpdatpassotpViewController.swift */; };
 		3A4DE77A246D31400037969E /* WeeklyLeaderBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4DE779246D31400037969E /* WeeklyLeaderBoardViewController.swift */; };
 		3A4DE77C246D327B0037969E /* leaderBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4DE77B246D327B0037969E /* leaderBoardCell.swift */; };
 		3A4DE77E246D480D0037969E /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4DE77D246D480D0037969E /* RewardsViewController.swift */; };
@@ -46,6 +49,7 @@
 		3A858736249A016A005EA0AB /* WevViewHowToWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A858735249A016A005EA0AB /* WevViewHowToWorkViewController.swift */; };
 		3A85873C249A0667005EA0AB /* WebViewHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85873B249A0667005EA0AB /* WebViewHelpViewController.swift */; };
 		3A85873F249A23B8005EA0AB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85873E249A23B8005EA0AB /* Model.swift */; };
+		3A8C828024E11CD000C5D7C9 /* UpdatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8C827F24E11CD000C5D7C9 /* UpdatePasswordViewController.swift */; };
 		3A9088DC24C6F4DA00B34104 /* SelectSpecialPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9088DB24C6F4DA00B34104 /* SelectSpecialPlayerViewController.swift */; };
 		3A9A9F0724C2EE800089A6E9 /* SavedFinalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A9F0624C2EE800089A6E9 /* SavedFinalModel.swift */; };
 		3A9F232124C86C1C00B37B14 /* ResultContestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F232024C86C1C00B37B14 /* ResultContestTableViewCell.swift */; };
@@ -105,6 +109,9 @@
 		3A42590024C0313D0027F4E8 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		3A4448DB24D02DBF00482F44 /* razorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = razorViewController.swift; sourceTree = "<group>"; };
 		3A478DBC249110FF006A8533 /* CongratulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationViewController.swift; sourceTree = "<group>"; };
+		3A4825CB24E1333C00DFDB98 /* SDCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCTextField.swift; sourceTree = "<group>"; };
+		3A4825CD24E1675C00DFDB98 /* ForGetviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForGetviewViewController.swift; sourceTree = "<group>"; };
+		3A4825CF24E16CF600DFDB98 /* UpdatpassotpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatpassotpViewController.swift; sourceTree = "<group>"; };
 		3A4DE779246D31400037969E /* WeeklyLeaderBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyLeaderBoardViewController.swift; sourceTree = "<group>"; };
 		3A4DE77B246D327B0037969E /* leaderBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leaderBoardCell.swift; sourceTree = "<group>"; };
 		3A4DE77D246D480D0037969E /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +135,7 @@
 		3A858735249A016A005EA0AB /* WevViewHowToWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WevViewHowToWorkViewController.swift; sourceTree = "<group>"; };
 		3A85873B249A0667005EA0AB /* WebViewHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewHelpViewController.swift; sourceTree = "<group>"; };
 		3A85873E249A23B8005EA0AB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3A8C827F24E11CD000C5D7C9 /* UpdatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewController.swift; sourceTree = "<group>"; };
 		3A9088DB24C6F4DA00B34104 /* SelectSpecialPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSpecialPlayerViewController.swift; sourceTree = "<group>"; };
 		3A9A9F0624C2EE800089A6E9 /* SavedFinalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFinalModel.swift; sourceTree = "<group>"; };
 		3A9F232024C86C1C00B37B14 /* ResultContestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultContestTableViewCell.swift; sourceTree = "<group>"; };
@@ -191,6 +199,7 @@
 				3AC5B518246ED93000F23701 /* HelpCentreViewController.swift */,
 				3A4DE781246D679A0037969E /* HowToWorksViewController.swift */,
 				3A4DE77F246D4F4F0037969E /* AddCashViewController.swift */,
+				3A4825CF24E16CF600DFDB98 /* UpdatpassotpViewController.swift */,
 			);
 			path = "Other Controllers";
 			sourceTree = "<group>";
@@ -260,6 +269,8 @@
 				3A53479124696A3E00E99240 /* LoginViewController.swift */,
 				3ACECF1824695C9E003354CF /* RegisterViewController.swift */,
 				3A2FFEDC24C019E700B74EB8 /* SignUpProfileViewController.swift */,
+				3A4825CB24E1333C00DFDB98 /* SDCTextField.swift */,
+				3A4825CD24E1675C00DFDB98 /* ForGetviewViewController.swift */,
 			);
 			path = Log_Authentications;
 			sourceTree = "<group>";
@@ -321,6 +332,7 @@
 				3AFE93E924C9529000E61381 /* teamresultcell.swift */,
 				3A4448DB24D02DBF00482F44 /* razorViewController.swift */,
 				3A3E720124DE800900C2AEE4 /* WeeklyPlaysViewController.swift */,
+				3A8C827F24E11CD000C5D7C9 /* UpdatePasswordViewController.swift */,
 			);
 			path = PinterestApplication;
 			sourceTree = "<group>";
@@ -370,7 +382,6 @@
 					DAB9FCF71FC8E4C200CF64A7 = {
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 1150;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -433,25 +444,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PinterestApplication/Pods-PinterestApplication-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ALCameraViewController/ALCameraViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/MHLoadingButton/MHLoadingButton.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PinterestApplication/Pods-PinterestApplication-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ALCameraViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MHLoadingButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PinterestApplication/Pods-PinterestApplication-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -467,6 +465,7 @@
 			files = (
 				3AC7AE11246FC2B4000B2083 /* FantasiPointSystem.swift in Sources */,
 				3A5347962469762100E99240 /* OTPViewController.swift in Sources */,
+				3A8C828024E11CD000C5D7C9 /* UpdatePasswordViewController.swift in Sources */,
 				3A6835E124A9D569005B6077 /* SavedBatsmanTableViewCell.swift in Sources */,
 				DAB9FCFE1FC8E4C300CF64A7 /* ViewController.swift in Sources */,
 				3A79F82224A479E6007BC669 /* fourthTableViewCell.swift in Sources */,
@@ -474,6 +473,7 @@
 				3A2FFEDD24C019E700B74EB8 /* SignUpProfileViewController.swift in Sources */,
 				3A16B31E249B36B70006D89E /* sidemenuCell.swift in Sources */,
 				3A9A9F0724C2EE800089A6E9 /* SavedFinalModel.swift in Sources */,
+				3A4825CC24E1333C00DFDB98 /* SDCTextField.swift in Sources */,
 				3A5ABC34249738D100FFA09D /* Constant.swift in Sources */,
 				3AF0244E246D1121009D8D5F /* MyProfileViewController.swift in Sources */,
 				3A8587322499FEEA005EA0AB /* WevViewLeagalityViewController.swift in Sources */,
@@ -491,6 +491,7 @@
 				3A723D972472DAE3004E2AAF /* ChooseTeamViewController.swift in Sources */,
 				3AA49454246BD9C000EB45E2 /* MoreViewController.swift in Sources */,
 				3A3E720224DE800900C2AEE4 /* WeeklyPlaysViewController.swift in Sources */,
+				3A4825D024E16CF600DFDB98 /* UpdatpassotpViewController.swift in Sources */,
 				3A0252A52472C7280080C448 /* BullsPointCalculationViewController.swift in Sources */,
 				3AA49452246BD9B600EB45E2 /* WalletViewController.swift in Sources */,
 				3AA49450246BD99300EB45E2 /* ContestViewController.swift in Sources */,
@@ -505,6 +506,7 @@
 				3AA4944E246BD98600EB45E2 /* HomeViewController.swift in Sources */,
 				3A54969A24DD8C34006477BA /* RazViewController.swift in Sources */,
 				3A85873C249A0667005EA0AB /* WebViewHelpViewController.swift in Sources */,
+				3A4825CE24E1675C00DFDB98 /* ForGetviewViewController.swift in Sources */,
 				3A360F7F246EB11500FB95C4 /* LegalityViewController.swift in Sources */,
 				3ADAAD15246C359A003B0E3F /* MyRefferalsViewController.swift in Sources */,
 				3A85873F249A23B8005EA0AB /* Model.swift in Sources */,
@@ -662,8 +664,9 @@
 			baseConfigurationReference = B933583CB232BFE67CE48194 /* Pods-PinterestApplication.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V5A7X3J52B;
+				DEVELOPMENT_TEAM = T8P83MK938;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PinterestApplication",
@@ -676,6 +679,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = myBullsProject;
 				PRODUCT_NAME = bulls11;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -686,8 +690,9 @@
 			baseConfigurationReference = C30364A19600B565C05C6B20 /* Pods-PinterestApplication.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V5A7X3J52B;
+				DEVELOPMENT_TEAM = T8P83MK938;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PinterestApplication",
@@ -700,6 +705,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = myBullsProject;
 				PRODUCT_NAME = bulls11;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

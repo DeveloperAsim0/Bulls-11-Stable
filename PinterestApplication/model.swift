@@ -81,6 +81,7 @@ class myPersonalData {
     static var starplay3 = [String]()
     static var rank = [String]()
     static var teamid = [String]()
+    static var winAmount = [String]()
 }
 
 class Result {
@@ -95,6 +96,7 @@ class Result {
     static var amount = [String]()
     static var userna = [String]()
     static var rank = [String]()
+    static var winAmount = [String]()
     
 }
 

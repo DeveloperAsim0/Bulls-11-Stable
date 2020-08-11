@@ -134,10 +134,6 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
               UIImageWriteToSavedPhotosAlbum(screenshot!, nil, nil, nil)
     }
     
-    @IBAction func updateProfile(_ sender: Any) {
-        Update_Profile()
-    }
-    
     @IBAction func takeScreenshot(_ sender: Any){
         captureScreenshot()
     }
@@ -161,6 +157,7 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
           guard let pickerImage = info[UIImagePickerController.InfoKey.editedImage,default: UIImagePickerController.InfoKey.editedImage] as? UIImage else {return}
           profilepic.image = pickerImage
           profilepic.contentMode = .scaleToFill
+         Update_Profile()
           self.dismiss(animated: true, completion: nil)
       }
       

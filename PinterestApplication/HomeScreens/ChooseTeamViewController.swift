@@ -43,7 +43,7 @@ class ChooseTeamViewController: UIViewController {
     @IBOutlet weak var bowler           : UIButton!
     @IBOutlet weak var wicketKeeper     : UIButton!
     @IBOutlet weak var special          : UIButton!
-    @IBOutlet weak var selected         : UIButton!
+    //@IBOutlet weak var selected         : UIButton!
     
     // for saving fees:-
      var Fee1 = String()
@@ -157,9 +157,6 @@ class ChooseTeamViewController: UIViewController {
         playerPointView.layer.borderWidth   = 0.5
         playerPointView.layer.masksToBounds = true
         
-        selected.layer.cornerRadius  = 15
-        selected.layer.masksToBounds = true
-        
         special.layer.cornerRadius  = 15
         special.layer.masksToBounds = true
         
@@ -184,12 +181,19 @@ class ChooseTeamViewController: UIViewController {
         wicketKeeper.layer.masksToBounds = true
     }
     
+    func ShowAlert()  {
+        let refreshAlert = UIAlertController(title: "", message: "Please select players to create team", preferredStyle: .alert)
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(refreshAlert, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         editButton()
         CustomizeViews2()
         circularbutton()
         Fetch_Data()
+        ShowAlert()
         savedBatsmanTeams.CompanyID.removeAll()
         savedBowlerTeams.CompanyID.removeAll()
         savedWicketKeeperTeams.CompanyID.removeAll()
@@ -243,6 +247,7 @@ class ChooseTeamViewController: UIViewController {
                         let coreteams = i["c_name"].stringValue
                         print("core large:- \(coreteams)")
                         let coreteamsID = i["c_id"].stringValue
+                        print("mycores:- \(coreteamsID)")
                         allrounderTeam.Company_ID.append(coreteamsID)
                         allrounderTeam.Company_Name_Batsman_Core.append(coreteams) // 4
                         print("core teams :- \(allrounderTeam.Company_Name_Batsman_Core.prefix(10))")
@@ -255,7 +260,6 @@ class ChooseTeamViewController: UIViewController {
                         print("none:- \(model.NonCoreDiff)")
                         print("bad")
                     }
-                    
                     if set == "Non core" && company == "Mid" {
                         print("bowlers:- \(i["c_name"].stringValue)")
                         let compName = i["c_name"].stringValue

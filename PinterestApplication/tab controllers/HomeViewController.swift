@@ -11,10 +11,12 @@ import SwiftKeychainWrapper
 import SDWebImage
 import Alamofire
 import SwiftyJSON
+import TransitionButton
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var btnview: UIView!
     
     //Home controller outlets:
     @IBOutlet weak var selectview: UIView!
@@ -67,6 +69,9 @@ class HomeViewController: UIViewController {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 212/255, green: 71/255, blue: 140/255, alpha: 1)
+    }
+    
+    func customizeButton() {
     }
     
     fileprivate func CustomizeViews(){
@@ -177,6 +182,25 @@ class HomeViewController: UIViewController {
         thirdinheritview.clipsToBounds = true
     }
     
+    fileprivate func setanimation(_ viewtoanimate: UIView) {
+        UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            viewtoanimate.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+        }) { (_) in
+        UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 2, options: .curveEaseIn, animations: {
+                   viewtoanimate.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }, completion: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                   let vc = storyboard.instantiateViewController(withIdentifier: "trade") as! SelectYourTradeViewController
+                                   vc.modalPresentationStyle = .fullScreen
+                                   vc.Date_URL = "http://projectstatus.co.in/Bulls11/api/authentication/date-list"
+                                   vc.NextApiUrl = "http://projectstatus.co.in/Bulls11/api/authentication/choose-player"
+                                   finalModel.contest_type = "Daily"
+                                   self.navigationController?.pushViewController(vc, animated: true)
+           
+        }
+    }
+    
+    
     func Fetch_Profile() {
         let header:HTTPHeaders = [
             "X-API-KEY": "\(self.Api_Key)"
@@ -242,6 +266,7 @@ class HomeViewController: UIViewController {
 //        self.getsecond.text = QuizOptions.coins[1]
     }
     
+    
     fileprivate func removeModels() {
        savedBatsmanTeams.CompanyName.removeAll()
        savedBatsmanTeams.CompanyID.removeAll()
@@ -250,6 +275,8 @@ class HomeViewController: UIViewController {
        savedWicketKeeperTeams.CompanyName.removeAll()
        savedWicketKeeperTeams.CompanyID.removeAll()
     }
+    
+   // func gradientColor
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -269,6 +296,9 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationItem.title="HOME"
         Fetch_Profile()
+        self.btnview.layer.cornerRadius = 15
+        self.btnview.clipsToBounds = true
+        Daily.layer.cornerRadius = 15
         savedBatsmanTeams.CompanyName.removeAll()
         savedBatsmanTeams.CompanyID.removeAll()
         savedBowlerTeams.CompanyID.removeAll()
@@ -277,17 +307,43 @@ class HomeViewController: UIViewController {
         savedWicketKeeperTeams.CompanyID.removeAll()
     }
     
-    @IBAction func DailyBtnSegue(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "trade") as! SelectYourTradeViewController
-        vc.modalPresentationStyle = .fullScreen
-        vc.Date_URL = "http://projectstatus.co.in/Bulls11/api/authentication/date-list"
-        vc.NextApiUrl = "http://projectstatus.co.in/Bulls11/api/authentication/choose-player"
-        finalModel.contest_type = "Daily"
-        self.navigationController?.pushViewController(vc, animated: true)
+    @IBAction func DailyBtnSegue(_ sender: UIButton) {
+        print("sure")
+        //self.setanimation(sender)
+        
+        Daily.transform = CGAffineTransform(scaleX: 0.50, y: 0.50)
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 6.0,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.Daily.transform = .identity
+            },
+                       completion: nil)
+        
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let vc = storyboard.instantiateViewController(withIdentifier: "trade") as! SelectYourTradeViewController
+    vc.modalPresentationStyle = .fullScreen
+    vc.Date_URL = "http://projectstatus.co.in/Bulls11/api/authentication/date-list"
+    vc.NextApiUrl = "http://projectstatus.co.in/Bulls11/api/authentication/choose-player"
+    finalModel.contest_type = "Daily"
+    self.navigationController?.pushViewController(vc, animated: true)
+            
     }
     
     @IBAction func WeeklyBtnSegue(_ sender: Any) {
+        Weekly.transform = CGAffineTransform(scaleX: 0.50, y: 0.50)
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 6.0,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.Weekly.transform = .identity
+            },
+                       completion: nil)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "trade") as! SelectYourTradeViewController
         vc.modalPresentationStyle = .fullScreen
@@ -299,6 +355,17 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func WinQuiz(_ sender: Any){
+        winQuiz.transform = CGAffineTransform(scaleX: 0.50, y: 0.50)
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 6.0,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.winQuiz.transform = .identity
+            },
+                       completion: nil)
+        
        if (popmenu) {
             topConstraints.constant = 2000
             UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseIn, animations: {
@@ -317,6 +384,17 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func QuizBtnSegue(_ sender: Any) {
+        Quiz.transform = CGAffineTransform(scaleX: 0.50, y: 0.50)
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 6.0,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.Quiz.transform = .identity
+            },
+                       completion: nil)
+        
         let dateFormatter : DateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd"
                     let date = Date()
@@ -338,8 +416,7 @@ class HomeViewController: UIViewController {
                     let refreshAlert = UIAlertController(title: "Alert", message: "You can only play this quiz once a day", preferredStyle: .alert)
                     refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(refreshAlert, animated: true, completion: nil)
-                }
-        
+            }
     }
     
     @IBAction func openSideMenu(_ sender: Any){
@@ -376,7 +453,6 @@ class HomeViewController: UIViewController {
         vc.amount = QuizOptions.coins[1]
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -454,4 +530,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     
+}
+
+extension UIButton{
+    func pulseate () {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.6
+        pulse.fromValue = 0.95
+        pulse.toValue = 1.0
+        pulse.autoreverses = true
+        pulse.repeatCount = 2
+        pulse.initialVelocity = 0.5
+        pulse.damping = 1.0
+        layer.add(pulse, forKey: nil)
+    }
 }

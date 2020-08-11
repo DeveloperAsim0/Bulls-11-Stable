@@ -135,6 +135,13 @@ class LoginViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction func forgetPassword(_ sender: Any){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+               let vc = storyboard.instantiateViewController(withIdentifier: "forgetemail")
+               vc.modalPresentationStyle = .fullScreen
+               self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension UIView {

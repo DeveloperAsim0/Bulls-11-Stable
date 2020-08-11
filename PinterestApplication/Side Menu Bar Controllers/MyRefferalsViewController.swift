@@ -14,9 +14,10 @@ class MyRefferalsViewController: UIViewController {
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var refferalcode: UILabel!
     @IBOutlet weak var filed: UITextField!
+    @IBOutlet weak var shareBtn: UIButton!
     
     let cornerRadius: CGFloat = 6.0
-    
+    var coun = 0
     fileprivate func CustomNavBar(){
         filed.attributedPlaceholder = NSAttributedString(string: "Enter Code", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         title = "My Referrals"
@@ -40,10 +41,17 @@ class MyRefferalsViewController: UIViewController {
         self.refferalcode.text = KeychainWrapper.standard.string(forKey: "refferalCode")
         CustomNavBar()
         CustomizeView()
+        
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+    }
+    
     @IBAction func share(_ sender: Any){
+        
         let code = self.refferalcode.text
         let image = #imageLiteral(resourceName: "bulls point")
         let shares = [code, image] as [Any]
@@ -51,5 +59,22 @@ class MyRefferalsViewController: UIViewController {
                activityVC.popoverPresentationController?.sourceView = self.view
                self.present(activityVC, animated: true, completion: nil)
                print("hurray !!!!!!")
+    }
+    
+    @IBAction func Partner(_ sender: Any){
+        if KeychainWrapper.standard.string(forKey: "validity") != nil {
+            let value = 1
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                           let vc = storyboard.instantiateViewController(withIdentifier: "addcash") as! AddCashViewController
+                           vc.modalPresentationStyle = .fullScreen
+                           vc.valu = value
+                           // vc.hidesBottomBarWhenPushed = true
+                           self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let refreshAlert = UIAlertController(title: "Alert", message: "You can only buy subscription once a month", preferredStyle: .alert)
+            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(refreshAlert, animated: true, completion: nil)
+        }
+       
     }
 }

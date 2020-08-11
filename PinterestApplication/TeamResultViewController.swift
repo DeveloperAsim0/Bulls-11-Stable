@@ -97,7 +97,8 @@ class TeamResultViewController: UIViewController {
                             myPersonalData.rank.append(rank)
                             let teamId = i["team_id"].stringValue
                             myPersonalData.teamid.append(teamId)
-                            
+                            let winAmount = i["win_amount"].stringValue
+                            myPersonalData.winAmount.append(winAmount)
 //                            self.topConstraints.constant = 181
 //                            self.firstView.isHidden = false
                         } else {
@@ -124,6 +125,10 @@ class TeamResultViewController: UIViewController {
                             Result.userna.append(username)
                             let rank = i["rank"].stringValue
                             Result.rank.append(rank)
+                            let winAmount = i["win_amount"].stringValue
+                            print("winam:- \(winAmount)")
+                            Result.winAmount.append(winAmount)
+                            
                         }
                        }
 //
@@ -166,6 +171,7 @@ extension TeamResultViewController: UITableViewDataSource, UITableViewDelegate {
             cell.entryFee.text  = "₹" + myPersonalData.myentryfee[indexPath.row]
             cell.username.text  = myPersonalData.myuserName[indexPath.row]
             cell.rank.text      = "#" + myPersonalData.rank[indexPath.row]
+            cell.winamount.text = "₹" + myPersonalData.winAmount[indexPath.row]
             return cell
         } else {
         cell.captain.text   = Result.captain[indexPath.row]
@@ -176,6 +182,7 @@ extension TeamResultViewController: UITableViewDataSource, UITableViewDelegate {
         cell.entryFee.text  = "₹" + Result.amount[indexPath.row]
         cell.username.text  = Result.userna[indexPath.row]
         cell.rank.text      = "#" + Result.rank[indexPath.row]
+        cell.winamount.text = "₹" + Result.winAmount[indexPath.row]
             return cell
         }
     }

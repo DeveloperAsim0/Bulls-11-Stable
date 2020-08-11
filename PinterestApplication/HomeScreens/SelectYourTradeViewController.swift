@@ -108,6 +108,7 @@ class SelectYourTradeViewController: UIViewController {
                 model.fee3.removeAll()
                 model.fee2.removeAll()
                 model.fee1.removeAll()
+                model.resultTime.removeAll()
                 for i in resultArray.arrayValue {
                     print("y i value:- \(i)")
                     let details = i["small_content"].stringValue
@@ -129,6 +130,7 @@ class SelectYourTradeViewController: UIViewController {
                     print("star:- \(startContest)")
                     model.startingtime.append(startContest)
                     let timing = i["result_time"].intValue
+                    print("timing:- \(timing)")
                     model.resultTime.append(timing)
                     let fee1 = i["fee1"].stringValue
                     model.fee1.append(fee1)
@@ -165,7 +167,8 @@ extension SelectYourTradeViewController: UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "tradecell") as! SelectTradeTableViewCell
         cell.DateLabel.text = model.date[indexPath.row]
         cell.DetailLabel.text = model.date_details[indexPath.row]
-        cell.apidate = model.resultTime[indexPath.row]
+        print("times:- \(model.resultTime)")
+        //cell.apidate = model.resultTime[indexPath.row]
     //    cell.ActualTimer = model.resultTime[indexPath.row]
         //        cell.totalPrize.text = "₹" + model.prizeAmount[indexPath.row]
         //        cell.freeUsers.text = model.freeUsers[indexPath.row]

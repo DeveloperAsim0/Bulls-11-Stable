@@ -105,7 +105,7 @@ class SignUpProfileViewController: UIViewController, UIImagePickerControllerDele
                           alert.dismiss(animated: true, completion: nil)
                         }
                     } else if myresult?["status"] == true{
-                        UserDefaults.standard.set(true, forKey: "UserHasSubmittedPassword")
+                       // UserDefaults.standard.set(true, forKey: "UserHasSubmittedPassword")
                         let Result = myresult!["data"].dictionaryValue
                         print("myresult:- \(Result["id"]?.stringValue)")
                         let userID = Result["id"]!.stringValue
@@ -119,13 +119,11 @@ class SignUpProfileViewController: UIViewController, UIImagePickerControllerDele
                         KeychainWrapper.standard.set(phone, forKey: "phone")
                         let alert = UIAlertController(title: "Successfully Registered", message: "", preferredStyle: UIAlertController.Style.alert)
                                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
-                                            UserDefaults.standard.set(true, forKey: "UserHasSubmittedPassword")
+                                            
                                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                            let vc = storyboard.instantiateViewController(withIdentifier: "customtab")
-                                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                                                               appDelegate.window?.rootViewController = vc
-//                                            vc.modalPresentationStyle = .fullScreen
-//                                            self.present(vc, animated: true, completion: nil)
+                                            let vc = storyboard.instantiateViewController(withIdentifier: "otpSegue")
+                                            self.navigationController?.pushViewController(vc, animated: true)
+//
                                         }))
                                         self.present(alert, animated: true, completion: nil)
                                         self.activictyView.stopAnimating()

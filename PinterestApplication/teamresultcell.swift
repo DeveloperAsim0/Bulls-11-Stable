@@ -21,6 +21,7 @@ class teamresultcell: UITableViewCell {
     @IBOutlet weak var entryFee: UILabel!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var rank: UILabel!
+    @IBOutlet weak var winamount: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

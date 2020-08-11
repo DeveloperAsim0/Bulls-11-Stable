@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PinterestApplication.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>B0A661E47CF2CFCD8841016FB2B251DB3B0EBE53</string>
+				<key>dateExpires</key>
+				<string>10/08/21</string>
+				<key>type</key>
+				<string>Apple Distribution</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B0A661E47CF2CFCD8841016FB2B251DB3B0EBE53</string>
+						<key>dateExpires</key>
+						<string>10/08/21</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>ALCameraViewController.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>T8P83MK938</string>
+						<key>name</key>
+						<string>Amit Agarwal</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B0A661E47CF2CFCD8841016FB2B251DB3B0EBE53</string>
+						<key>dateExpires</key>
+						<string>10/08/21</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>Alamofire.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>T8P83MK938</string>
+						<key>name</key>
+						<string>Amit Agarwal</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B0A661E47CF2CFCD8841016FB2B251DB3B0EBE53</string>
+						<key>dateExpires</key>
+						<string>10/08/21</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>IQKeyboardManager.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>T8P83MK938</string>
+						<key>name</key>
+						<string>Amit Agarwal</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B0A661E47CF2CFCD8841016FB2B251DB3B0EBE53</string>
+						<key>dateExpires</key>
+						<string>10/08/21</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>MHLoadingButton.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>T8P83MK938</string>
+						<key>name</key>
+						<string>Amit Agarwal</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B0A661E47CF2CFCD8841016FB2B251DB3B0EBE53</string>
+						<key>dateExpires</key>
+						<string>10/08/21</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>Razorpay.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>T8P83MK938</string>
+						<key>name</key>
+						<string>Amit Agarwal</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B0A661E47CF2CFCD8841016FB2B251DB3B0EBE53</string>
+						<key>dateExpires</key>
+						<string>10/08/21</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>SDWebImage.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>T8P83MK938</string>
+						<key>name</key>
+						<string>Amit Agarwal</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B0A661E47CF2CFCD8841016FB2B251DB3B0EBE53</string>
+						<key>dateExpires</key>
+						<string>10/08/21</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>SwiftKeychainWrapper.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>T8P83MK938</string>
+						<key>name</key>
+						<string>Amit Agarwal</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B0A661E47CF2CFCD8841016FB2B251DB3B0EBE53</string>
+						<key>dateExpires</key>
+						<string>10/08/21</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>SwiftyJSON.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>T8P83MK938</string>
+						<key>name</key>
+						<string>Amit Agarwal</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B0A661E47CF2CFCD8841016FB2B251DB3B0EBE53</string>
+						<key>dateExpires</key>
+						<string>10/08/21</string>
+						<key>type</key>
+						<string>Apple Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>TransitionButton.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>T8P83MK938</string>
+						<key>name</key>
+						<string>Amit Agarwal</string>
+					</dict>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>T8P83MK938.myBullsProject</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>T8P83MK938</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>T8P83MK938.myBullsProject</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>bulls11.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>febe8da5-2be0-4722-ac42-d643a3244fcf</string>
+				<key>name</key>
+				<string>iOS Team Ad Hoc Provisioning Profile: myBullsProject</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>T8P83MK938</string>
+				<key>name</key>
+				<string>Amit Agarwal</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

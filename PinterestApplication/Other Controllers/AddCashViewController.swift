@@ -15,6 +15,7 @@ import SwiftKeychainWrapper
 
 class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol {
   
+    
     @IBOutlet weak var myview       : UIView!
     @IBOutlet weak var firstBtn     : UIButton!
     @IBOutlet weak var secondBtn    : UIButton!
@@ -22,6 +23,7 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
     @IBOutlet weak var cashfield    : UITextField!
     @IBOutlet weak var currentBalance: UILabel!
     
+    var valu = 0
     var pofileUrl = "http://projectstatus.co.in/Bulls11/api/authentication/user/"
     var pressamount = String()
     var actualamount = finalModel.currency * 100
@@ -67,7 +69,8 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
                let parameter = [
                 "user_id": KeychainWrapper.standard.string(forKey: "userID")!,
                 "amount": cashfield.text!,
-                "ref_no": finalModel.paymentID
+                "ref_no": finalModel.paymentID,
+                "subs": valu
                    
                    ] as [String : Any]
                    print("params:- \(parameter)")
@@ -94,15 +97,30 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
     }
     
     func onPaymentSuccess(_ payment_id: String) {
-        let refreshAlert = UIAlertController(title: "Alert", message: "Success", preferredStyle: UIAlertController.Style.alert)
-                          refreshAlert.addAction(UIAlertAction(title: "Clear", style: .default, handler: { (action: UIAlertAction!) in
-                            
-                            finalModel.paymentID = payment_id
-                            self.sendDetails()
-                            
-                              print("Handle Ok logic here")
-                          }))
-               self.present(refreshAlert, animated: true, completion: nil)
+        if self.valu == 0 {
+            let refreshAlert = UIAlertController(title: "Alert", message: "Success", preferredStyle: UIAlertController.Style.alert)
+                                     refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                                       self.fetch_Profile()
+                                       finalModel.paymentID = payment_id
+                                       self.sendDetails()
+                                       
+                                         print("Handle Ok logic here")
+                                     }))
+                          self.present(refreshAlert, animated: true, completion: nil)
+        } else {
+            let refreshAlert = UIAlertController(title: "Alert", message: "Successfully purchased subscription program", preferredStyle: UIAlertController.Style.alert)
+                                     refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                                        var co = 2
+                                        KeychainWrapper.standard.set(co, forKey: "validity")
+                                       self.fetch_Profile()
+                                       finalModel.paymentID = payment_id
+                                       self.sendDetails()
+                                       
+                                         print("Handle Ok logic here")
+                                     }))
+                          self.present(refreshAlert, animated: true, completion: nil)
+        }
+       
     }
     
     func fetch_Profile() {

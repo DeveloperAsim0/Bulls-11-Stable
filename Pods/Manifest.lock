@@ -8,6 +8,7 @@ PODS:
   - SDWebImage/Core (5.8.3)
   - SwiftKeychainWrapper (3.4.0)
   - SwiftyJSON (5.0.0)
+  - TransitionButton (0.5.3)
 
 DEPENDENCIES:
   - Alamofire
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - SDWebImage
   - SwiftKeychainWrapper
   - SwiftyJSON
+  - TransitionButton
 
 SPEC REPOS:
   trunk:
@@ -27,6 +29,7 @@ SPEC REPOS:
     - SDWebImage
     - SwiftKeychainWrapper
     - SwiftyJSON
+    - TransitionButton
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
@@ -36,7 +39,8 @@ SPEC CHECKSUMS:
   SDWebImage: 112503ec94a5a2a41869503844a15e8d8f1ead5c
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  TransitionButton: 36283346e17c64775a1b3bc3a7a72940a367de1f
 
-PODFILE CHECKSUM: 2e4022eae775c0a1cb8608be1acfdd4bcaf103b0
+PODFILE CHECKSUM: b2f0098544cdb0caf66fa0b2845814b0c3921cca
 
 COCOAPODS: 1.8.4

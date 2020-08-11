@@ -44,9 +44,7 @@ class SelectTradeTableViewCell: UITableViewCell {
         let minutesLeft = CompetitionDayDifference.minute
 
         print("day:", daysLeft ?? "N/A", "hour:", hoursLeft ?? "N/A", "minute:", minutesLeft ?? "N/A")
-
         //Set countdown label text
-        
         let yourDate = Date()
                let dateFormatter = DateFormatter()
                dateFormatter.dateFormat = "HH:mm"

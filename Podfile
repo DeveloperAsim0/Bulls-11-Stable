@@ -13,4 +13,5 @@ target 'PinterestApplication' do
    pod 'MHLoadingButton'
    pod 'SDWebImage'
    pod 'SwiftKeychainWrapper'
+   pod 'TransitionButton'
 end

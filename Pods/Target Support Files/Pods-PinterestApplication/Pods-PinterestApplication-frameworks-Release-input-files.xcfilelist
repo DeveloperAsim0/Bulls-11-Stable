@@ -1,0 +1,9 @@
+${PODS_ROOT}/Target Support Files/Pods-PinterestApplication/Pods-PinterestApplication-frameworks.sh
+${BUILT_PRODUCTS_DIR}/ALCameraViewController/ALCameraViewController.framework
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/MHLoadingButton/MHLoadingButton.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework
