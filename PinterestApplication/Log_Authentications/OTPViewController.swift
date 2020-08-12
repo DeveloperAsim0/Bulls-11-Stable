@@ -17,6 +17,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate {
     
     let maxValue = 1
     let api_key = "BULLS11@2020"
+    var emailSaved = ""
     
     fileprivate func switch_text_field() {
         
@@ -27,18 +28,31 @@ class OTPViewController: UIViewController, UITextFieldDelegate {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 203/255, green: 41/255, blue: 122/255, alpha: 1)
-        email.text = KeychainWrapper.standard.string(forKey: "email")
+        email.text = emailSaved
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+         let currentText = text.text ?? ""
+
+           // attempt to read the range they are trying to change, or exit if we can't
+           guard let stringRange = Range(range, in: currentText) else { return false }
+
+           // add their new text to the existing text
+           let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+
+           // make sure the result is under 16 characters
+           return updatedText.count <= 6
     }
     
     func Fetch_Details() {
        
-        let email = KeychainWrapper.standard.string(forKey: "email")
+//        let email = KeychainWrapper.standard.string(forKey: "email")
         let header:HTTPHeaders = [
             "X-API-KEY": "\(self.api_key)"
         ]
         
         let parameters = [
-            "email": email,
+            "email": email.text,
             "otp": text.text
         ]
         
@@ -55,16 +69,17 @@ class OTPViewController: UIViewController, UITextFieldDelegate {
                     self.present(refreshAlert, animated: true, completion: nil)
                     
                 } else {
-                    UserDefaults.standard.set(true, forKey: "UserHasSubmittedPassword")
                     let refreshAlert = UIAlertController(title: "Successfully Activated", message: "", preferredStyle: .alert)
                     refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let vc = storyboard.instantiateViewController(withIdentifier: "customtab")
-                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        appDelegate.window?.rootViewController = vc
-                        vc.modalPresentationStyle = .fullScreen
-                        self.present(vc, animated: true, completion: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "loginSegue") as! LoginViewController
+                        
+//                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                        appDelegate.window?.rootViewController = vc
+                         vc.modalPresentationStyle = .fullScreen
+                        vc.navigationItem.hidesBackButton = true
+                        self.navigationController!.pushViewController(vc, animated: true)
                     }))
                     self.present(refreshAlert, animated: true, completion: nil)
                 }
@@ -73,6 +88,30 @@ class OTPViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    func resendOTP() {
+    let header:HTTPHeaders = [
+               "X-API-KEY": "\(self.api_key)"
+           ]
+           
+           let parameters = [
+            "email": email.text,
+               ] as [String : Any]
+           
+           AF.request("https://projectstatus.co.in/Bulls11/api/authentication/resend-otp", method: .post, parameters: parameters as Parameters,encoding: JSONEncoding.default, headers: header).authenticate(username: "admin", password: "1234").responseJSON { response in
+               switch response.result {
+               case .success:
+                   print(response.result)
+                       let refreshAlert = UIAlertController(title:"Alert", message: "Please check your mail for otp", preferredStyle: .alert)
+                       refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                       }))
+                       self.present(refreshAlert, animated: true, completion: nil)
+                   
+               case .failure(let eror):
+                   print(eror.errorDescription)
+               }
+           }
+       }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +122,10 @@ class OTPViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func activate(_ sender: Any){
         Fetch_Details()
+    }
+    
+    @IBAction func resendOTP(_ sender: Any){
+        resendOTP()
     }
     
 }

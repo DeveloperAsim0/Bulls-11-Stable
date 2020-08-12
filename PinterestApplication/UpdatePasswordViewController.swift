@@ -17,7 +17,7 @@ class UpdatePasswordViewController: UIViewController {
     @IBOutlet weak var pass1: UITextField!
     @IBOutlet weak var passview1: UIView!
     
-    
+    var savedString = ""
     var apikey = "BULLS11@2020"
     fileprivate func CustomNavBar(){
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -40,15 +40,14 @@ class UpdatePasswordViewController: UIViewController {
        }
     
     func Get_Details() {
-         let email = KeychainWrapper.standard.string(forKey: "emailtext")
         let header:HTTPHeaders = [
                    "X-API-KEY": "\(self.apikey)"
                ]
                
                let parameters = [
-                "email": email,
+                "email": savedString,
                 "password": pass1.text
-               ]
+                ] as [String : Any]
                
                AF.request("https://projectstatus.co.in/Bulls11/api/authentication/update-password", method: .post, parameters: parameters,encoding: JSONEncoding.default, headers: header).authenticate(username: "admin", password: "1234").responseJSON { response in
                    switch response.result {

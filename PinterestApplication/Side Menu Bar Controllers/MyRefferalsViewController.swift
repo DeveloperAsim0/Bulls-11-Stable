@@ -62,19 +62,19 @@ class MyRefferalsViewController: UIViewController {
     }
     
     @IBAction func Partner(_ sender: Any){
-        if KeychainWrapper.standard.string(forKey: "validity") != nil {
-            let value = 1
+//        if KeychainWrapper.standard.string(forKey: "validity") != nil {
+//            let value = 1
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                           let vc = storyboard.instantiateViewController(withIdentifier: "addcash") as! AddCashViewController
+                           let vc = storyboard.instantiateViewController(withIdentifier: "partner") as! SubscriptionPartner
                            vc.modalPresentationStyle = .fullScreen
-                           vc.valu = value
+//                           vc.valu = value
                            // vc.hidesBottomBarWhenPushed = true
                            self.navigationController?.pushViewController(vc, animated: true)
-        } else {
-            let refreshAlert = UIAlertController(title: "Alert", message: "You can only buy subscription once a month", preferredStyle: .alert)
-            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(refreshAlert, animated: true, completion: nil)
-        }
+//        } else {
+//            let refreshAlert = UIAlertController(title: "Alert", message: "You can only buy subscription once a month", preferredStyle: .alert)
+//            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//            self.present(refreshAlert, animated: true, completion: nil)
+//        }
        
     }
 }

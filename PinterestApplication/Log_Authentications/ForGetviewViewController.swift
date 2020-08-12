@@ -38,15 +38,16 @@ class ForGetviewViewController: UIViewController {
                 "email": emailField.text
                ]
                
-               AF.request("https://projectstatus.co.in/Bulls11/api/authentication/email-validate", method: .post, parameters: parameters,encoding: JSONEncoding.default, headers: header).authenticate(username: "admin", password: "1234").responseJSON { response in
+        AF.request("https://projectstatus.co.in/Bulls11/api/authentication/email-validate", method: .post, parameters: parameters as Parameters,encoding: JSONEncoding.default, headers: header).authenticate(username: "admin", password: "1234").responseJSON { response in
                    switch response.result {
                    case .success:
                    print(response.result)
                   let refreshAlert = UIAlertController(title: "Alert", message: "Check your mail for otp", preferredStyle: UIAlertController.Style.alert)
                              refreshAlert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action: UIAlertAction!) in
-                          KeychainWrapper.standard.set(self.emailField.text!, forKey: "emailtext")
+//                          KeychainWrapper.standard.set(self.emailField.text!, forKey: "emailtext")
                                              let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                            let vc = storyboard.instantiateViewController(withIdentifier: "updatepassotp")
+                                            let vc = storyboard.instantiateViewController(withIdentifier: "updatepassotp") as! UpdatpassotpViewController
+                                vc.emailstring = self.emailField.text!
                                             self.navigationController?.pushViewController(vc, animated: true)
                                  print("Handle Ok logic here")
                              }))

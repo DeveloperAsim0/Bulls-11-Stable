@@ -61,7 +61,7 @@ class model{
     static var fee2                 = [String]()
     static var fee3                 = [String]()
     static var fee4                 = [String]()
-    
+    static var final_batsman_details = [String]()
     static var savingFee1           = String()
     static var savingFee2           = String()
     static var savingFee3           = String()
@@ -70,11 +70,13 @@ class model{
     static var savingPaidUsers1     = String()
     static var savingFreeUsers      = String()
     static var savingTotalUsers     = String()
+    static var final_bowler_details = [String]()
+    static var final_wicketkeepar_details = [String]()
 }
 class myPersonalData {
- static var myuserName = [String]()
- static var mypoints = [String]()
- static var myentryfee = [String]()
+    static var myuserName = [String]()
+    static var mypoints = [String]()
+    static var myentryfee = [String]()
     static var captain = [String]()
     static var starplay1 = [String]()
     static var starplay2 = [String]()
@@ -146,7 +148,12 @@ class allrounderTeam {
     static var Company_Type                  = [String]()
     static var BowlerCompID                  = [String]()
     static var wicketkeeperID                = [String]()
-    
+    static var Company_Details_batsman_core       = [String]()
+    static var Company_Details_batsman_noncore       = [String]()
+    static var Company_Details_bowler_core       = [String]()
+    static var Company_Details_bowler_noncore       = [String]()
+    static var Company_Details_wicketkeepar_core       = [String]()
+    static var Company_Details_wicketkeepar_noncore       = [String]()
 }
 
 class savedBatsmanTeams {

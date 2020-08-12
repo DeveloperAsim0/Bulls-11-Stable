@@ -15,7 +15,6 @@ import SwiftKeychainWrapper
 
 class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol {
   
-    
     @IBOutlet weak var myview       : UIView!
     @IBOutlet weak var firstBtn     : UIButton!
     @IBOutlet weak var secondBtn    : UIButton!
@@ -24,6 +23,9 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
     @IBOutlet weak var currentBalance: UILabel!
     
     var valu = 0
+    var check = 0
+    var amou = ""
+    var subsfor = ""
     var pofileUrl = "http://projectstatus.co.in/Bulls11/api/authentication/user/"
     var pressamount = String()
     var actualamount = finalModel.currency * 100
@@ -70,7 +72,8 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
                 "user_id": KeychainWrapper.standard.string(forKey: "userID")!,
                 "amount": cashfield.text!,
                 "ref_no": finalModel.paymentID,
-                "subs": valu
+                "subs": valu,
+                "subs_for": subsfor
                    
                    ] as [String : Any]
                    print("params:- \(parameter)")
@@ -160,6 +163,12 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        if check == 1{
+            self.cashfield.isUserInteractionEnabled = false
+            self.cashfield.text = amou
+        } else {
+            self.cashfield.isUserInteractionEnabled = true
+        }
         fetch_Profile()
     }
     

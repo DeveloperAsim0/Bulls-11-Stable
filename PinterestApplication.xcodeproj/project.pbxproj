@@ -10,6 +10,8 @@
 		3A0252A12472AA950080C448 /* MorePlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0252A02472AA950080C448 /* MorePlayersViewController.swift */; };
 		3A0252A32472BAAE0080C448 /* SelectCaptainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0252A22472BAAE0080C448 /* SelectCaptainViewController.swift */; };
 		3A0252A52472C7280080C448 /* BullsPointCalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0252A42472C7280080C448 /* BullsPointCalculationViewController.swift */; };
+		3A1199F024E2A47D00C7CE45 /* pageCollectionviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1199EF24E2A47D00C7CE45 /* pageCollectionviewCell.swift */; };
+		3A1199F224E2ADCD00C7CE45 /* SubscriptionPartner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1199F124E2ADCD00C7CE45 /* SubscriptionPartner.swift */; };
 		3A16B31E249B36B70006D89E /* sidemenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16B31D249B36B70006D89E /* sidemenuCell.swift */; };
 		3A1D735324921A18002D7AB3 /* letsplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D735224921A18002D7AB3 /* letsplayViewController.swift */; };
 		3A226C0824A1DFD300D0AB44 /* BetterluckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A226C0724A1DFD300D0AB44 /* BetterluckViewController.swift */; };
@@ -96,6 +98,8 @@
 		3A0252A02472AA950080C448 /* MorePlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePlayersViewController.swift; sourceTree = "<group>"; };
 		3A0252A22472BAAE0080C448 /* SelectCaptainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCaptainViewController.swift; sourceTree = "<group>"; };
 		3A0252A42472C7280080C448 /* BullsPointCalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsPointCalculationViewController.swift; sourceTree = "<group>"; };
+		3A1199EF24E2A47D00C7CE45 /* pageCollectionviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pageCollectionviewCell.swift; sourceTree = "<group>"; };
+		3A1199F124E2ADCD00C7CE45 /* SubscriptionPartner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionPartner.swift; sourceTree = "<group>"; };
 		3A16B31D249B36B70006D89E /* sidemenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sidemenuCell.swift; sourceTree = "<group>"; };
 		3A1D735224921A18002D7AB3 /* letsplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = letsplayViewController.swift; sourceTree = "<group>"; };
 		3A226C0724A1DFD300D0AB44 /* BetterluckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterluckViewController.swift; sourceTree = "<group>"; };
@@ -333,6 +337,8 @@
 				3A4448DB24D02DBF00482F44 /* razorViewController.swift */,
 				3A3E720124DE800900C2AEE4 /* WeeklyPlaysViewController.swift */,
 				3A8C827F24E11CD000C5D7C9 /* UpdatePasswordViewController.swift */,
+				3A1199EF24E2A47D00C7CE45 /* pageCollectionviewCell.swift */,
+				3A1199F124E2ADCD00C7CE45 /* SubscriptionPartner.swift */,
 			);
 			path = PinterestApplication;
 			sourceTree = "<group>";
@@ -490,11 +496,13 @@
 				3AA4944C246BD92000EB45E2 /* CustomTabbarController.swift in Sources */,
 				3A723D972472DAE3004E2AAF /* ChooseTeamViewController.swift in Sources */,
 				3AA49454246BD9C000EB45E2 /* MoreViewController.swift in Sources */,
+				3A1199F024E2A47D00C7CE45 /* pageCollectionviewCell.swift in Sources */,
 				3A3E720224DE800900C2AEE4 /* WeeklyPlaysViewController.swift in Sources */,
 				3A4825D024E16CF600DFDB98 /* UpdatpassotpViewController.swift in Sources */,
 				3A0252A52472C7280080C448 /* BullsPointCalculationViewController.swift in Sources */,
 				3AA49452246BD9B600EB45E2 /* WalletViewController.swift in Sources */,
 				3AA49450246BD99300EB45E2 /* ContestViewController.swift in Sources */,
+				3A1199F224E2ADCD00C7CE45 /* SubscriptionPartner.swift in Sources */,
 				3A4DE782246D679A0037969E /* HowToWorksViewController.swift in Sources */,
 				3A1D735324921A18002D7AB3 /* letsplayViewController.swift in Sources */,
 				3AFE93EA24C9529000E61381 /* teamresultcell.swift in Sources */,

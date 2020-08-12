@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
+        if #available(iOS 13.0, *) {
+            window?.overrideUserInterfaceStyle = .light
+            application.statusBarStyle = .lightContent
+        }
       //   so in this example name is "Main".
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let storyboard2 = UIStoryboard(name: "Main", bundle: nil)

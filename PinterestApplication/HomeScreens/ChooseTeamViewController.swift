@@ -230,8 +230,10 @@ class ChooseTeamViewController: UIViewController {
                 model.final_wicket_keeper.removeAll()
                 model.final_Bowler.removeAll()
                 model.final_Batsman.removeAll()
-                
+                model.final_batsman_details.removeAll()
                 savedBatsmanTeams.CompanyID.removeAll()
+                model.final_bowler_details.removeAll()
+                model.final_wicketkeepar_details.removeAll()
                 self.BatsmanNumber = 1
                 self.BowlerNumber = 1
                 self.WicketKeeperNumber = 1
@@ -249,14 +251,19 @@ class ChooseTeamViewController: UIViewController {
                         let coreteamsID = i["c_id"].stringValue
                         print("mycores:- \(coreteamsID)")
                         allrounderTeam.Company_ID.append(coreteamsID)
-                        allrounderTeam.Company_Name_Batsman_Core.append(coreteams) // 4
+                        allrounderTeam.Company_Name_Batsman_Core.append(coreteams)// 4
                         print("core teams :- \(allrounderTeam.Company_Name_Batsman_Core.prefix(10))")
+                        let coreDetails = i["c_detail"].stringValue
+                        allrounderTeam.Company_Details_batsman_core.append(coreDetails)
+                        
                     } else if set == "Non core" && company == "Large"{
                         model.NonCoreDiff.append(diff)
                         let nonCoreTeams = i["c_name"].stringValue
                         print("noncorebatsman:- \(nonCoreTeams)")
                         allrounderTeam.Company_Name_Batsman_NonCore.append(nonCoreTeams)
                         print("Noncore teams :- \(allrounderTeam.Company_Name_Batsman_NonCore.prefix(8))")
+                        let noncoredetails = i["c_detail"].stringValue
+                        allrounderTeam.Company_Details_batsman_noncore.append(noncoredetails)
                         print("none:- \(model.NonCoreDiff)")
                         print("bad")
                     }
@@ -264,15 +271,19 @@ class ChooseTeamViewController: UIViewController {
                         print("bowlers:- \(i["c_name"].stringValue)")
                         let compName = i["c_name"].stringValue
                         let compID = i["c_id"].stringValue
+                        let compDetails = i["c_detail"].stringValue
                         allrounderTeam.BowlerCompID.append(compID)
                         allrounderTeam.Company_Name_Bowler.append(compName)
+                        allrounderTeam.Company_Details_bowler_core.append(compDetails)
                     }
                     
                     if set == "Non core" && company == "Small" {
                         let compName = i["c_name"].stringValue
                         let compID = i["c_id"].stringValue
+                        let compDetails = i["c_detail"].stringValue
                         allrounderTeam.wicketkeeperID.append(compID)
                         allrounderTeam.Company_Name_Wicket_Keeper.append(compName)
+                        allrounderTeam.Company_Details_wicketkeepar_core.append(compDetails)
                     }
                 }
                 print("company_Count:- \(allrounderTeam.Company_Name_Batsman_Core.count)")
@@ -282,18 +293,25 @@ class ChooseTeamViewController: UIViewController {
                     print("allbatsman")
                     model.final_Batsman.append(contentsOf: allrounderTeam.Company_Name_Batsman_Core.prefix(10))
                     model.final_Batsman.append(contentsOf: allrounderTeam.Company_Name_Batsman_NonCore.prefix(8))
+                    model.final_batsman_details.append(contentsOf: allrounderTeam.Company_Details_batsman_core.prefix(10))
+                    model.final_batsman_details.append(contentsOf: allrounderTeam.Company_Details_batsman_noncore.prefix(8))
+                   // model.final_batsman_details.append()
                     print("finalCount:- \(model.final_Batsman)")
                     
                 } else if allrounderTeam.Company_Name_Batsman_Core.count < 10 {
                     model.final_Batsman.append(contentsOf: allrounderTeam.Company_Name_Batsman_Core)
                     model.final_Batsman.append(contentsOf: allrounderTeam.Company_Name_Batsman_NonCore)
+                    model.final_batsman_details.append(contentsOf: allrounderTeam.Company_Details_batsman_core)
+                    model.final_batsman_details.append(contentsOf: allrounderTeam.Company_Details_batsman_noncore)
                     print("paagal")
                 }
                 // for bowlers
                 model.final_Bowler.append(contentsOf: allrounderTeam.Company_Name_Bowler.prefix(12))
+                model.final_bowler_details.append(contentsOf: allrounderTeam.Company_Details_bowler_core.prefix(12))
                 print("bowlers:- \(model.final_Bowler)")
                 // for wicket_Keeper
                 model.final_wicket_keeper.append(contentsOf: allrounderTeam.Company_Name_Wicket_Keeper.prefix(3))
+                model.final_wicketkeepar_details.append(contentsOf: allrounderTeam.Company_Details_wicketkeepar_core.prefix(3))
                 print("bowlers:- \(model.final_wicket_keeper)")
                 
                 self.table1.reloadData()
@@ -824,6 +842,7 @@ extension ChooseTeamViewController: UITableViewDelegate, UITableViewDataSource {
             cell.conView.layer.borderWidth = 0.5
             cell.CompanyNameLbl.text = model.final_Batsman[indexPath.row]
             cell.userIds = allrounderTeam.Company_ID[indexPath.row]
+            cell.CompanyDetailLbl.text = model.final_batsman_details[indexPath.row]
             // cell.CompanyDetailLbl.text = batsmanTeam.Company_Details[indexPath.row]
             return cell
         } else if tableView.tag == 2 {
@@ -835,6 +854,7 @@ extension ChooseTeamViewController: UITableViewDelegate, UITableViewDataSource {
             cell.conView.layer.borderWidth = 0.5
             cell.CompanyNameLbl.text = model.final_Bowler[indexPath.row]
             cell.userIds = allrounderTeam.BowlerCompID[indexPath.row]
+            cell.CompanyDetailLbl.text = model.final_bowler_details[indexPath.row]
             //cell.CompanyNameLbl.text = bowlerTeam.Company_Name[indexPath.row]
             // cell.CompanyDetailLbl.text = bowlerTeam.Company_Details[indexPath.row]
             return cell
@@ -854,6 +874,7 @@ extension ChooseTeamViewController: UITableViewDelegate, UITableViewDataSource {
             cell.conView.layer.borderColor = UIColor.gray.cgColor
             cell.conView.layer.borderWidth = 0.5
             cell.CompanyNameLbl.text = model.final_wicket_keeper[indexPath.row]
+            cell.CompanyDetailLbl.text = model.final_wicketkeepar_details[indexPath.row]
             cell.userIds = allrounderTeam.wicketkeeperID[indexPath.row]
             //               cell.CompanyNameLbl.text = wicketkeeparTeam.Company_Name[indexPath.row]
             //               cell.CompanyDetailLbl.text = wicketkeeparTeam.Company_Details[indexPath.row]

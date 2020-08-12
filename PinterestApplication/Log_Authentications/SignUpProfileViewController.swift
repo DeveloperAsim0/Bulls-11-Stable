@@ -31,9 +31,9 @@ class SignUpProfileViewController: UIViewController, UIImagePickerControllerDele
     var refferal = "nil"
     
     fileprivate func CustomizeTextField() {
-      firstName.attributedPlaceholder = NSAttributedString(string: "  First-Name.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-      lastName.attributedPlaceholder = NSAttributedString(string: "  Last-Name.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-              }
+        firstName.attributedPlaceholder = NSAttributedString(string: "  First-Name.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        lastName.attributedPlaceholder = NSAttributedString(string: "  Last-Name.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
     
     fileprivate func CustomizeRegisterBtn() {
         saveBtn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
@@ -50,7 +50,7 @@ class SignUpProfileViewController: UIViewController, UIImagePickerControllerDele
     }
     
     fileprivate func CustomNavBar(){
-     self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         title = "Profile"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -66,75 +66,85 @@ class SignUpProfileViewController: UIViewController, UIImagePickerControllerDele
     }
     
     func Fetch_Data() {
-            self.activictyView.isHidden = false
-            self.activictyView.startAnimating()
-    //        let image = UIImage.init(named: "1.png")
-            let imgData = imageViewRef.image!.jpegData(compressionQuality: 0.2)!
-            let header:HTTPHeaders = [
-                "X-API-KEY": "\(self.Api_Key)"
-            ]
-
-            let parameters = [
-                "first_name": firstName.text!,
-                "last_name": lastName.text!,
-                "email": emailString,
-                "password": passwordString,
-                "phone": phoneNumber,
-                "referal": refferal
-                ]
-            
-            AF.upload(multipartFormData: { (multipartFormData) in
-                multipartFormData.append(imgData, withName: "profile_pic", fileName: "file.jpg", mimeType: "image/jpg")
-                for (key, value) in parameters {
-                    multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
-                    }
-            }, to:Registration_URL, method: .post, headers: header).authenticate(username: "admin", password: "1234").responseJSON { (response) in
-                switch response.result {
-                case .success:
-                    print(response.result)
-                    let myresult = try? JSON(data: response.data!)
-                    print("my:- \(String(describing: myresult?["status"]))")
-                    if myresult?["status"] == false  {
-                        let alert = UIAlertController(title: "Alert", message: "\(myresult!["message"])", preferredStyle: .alert)
-                        self.present(alert, animated: true, completion: nil)
-
-                        // change to desired number of seconds (in this case 5 seconds)
-                        let when = DispatchTime.now() + 2
-                        DispatchQueue.main.asyncAfter(deadline: when){
-                          // your code with delay
-                          alert.dismiss(animated: true, completion: nil)
-                        }
-                    } else if myresult?["status"] == true{
-                       // UserDefaults.standard.set(true, forKey: "UserHasSubmittedPassword")
-                        let Result = myresult!["data"].dictionaryValue
-                        print("myresult:- \(Result["id"]?.stringValue)")
-                        let userID = Result["id"]!.stringValue
-                        let isSaved: Bool = KeychainWrapper.standard.set(userID, forKey: "userID")
-                        print("myuser:- \(KeychainWrapper.standard.string(forKey: "userID"))")
-                        let emailID = Result["email"]!.stringValue
-                        KeychainWrapper.standard.set(emailID, forKey: "email")
-                        let referralCode = Result["referal_code"]!.stringValue
-                        let isRefferal: Bool = KeychainWrapper.standard.set(referralCode, forKey: "refferalCode")
-                        let phone = Result["phone"]!.stringValue
-                        KeychainWrapper.standard.set(phone, forKey: "phone")
-                        let alert = UIAlertController(title: "Successfully Registered", message: "", preferredStyle: UIAlertController.Style.alert)
-                                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
-                                            
-                                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                            let vc = storyboard.instantiateViewController(withIdentifier: "otpSegue")
-                                            self.navigationController?.pushViewController(vc, animated: true)
-//
-                                        }))
-                                        self.present(alert, animated: true, completion: nil)
-                                        self.activictyView.stopAnimating()
-                                        self.activictyView.isHidden = true
-                    }
-    //
-                case .failure(let err):
-                    print(err.errorDescription)
+        self.activictyView.isHidden = false
+        self.activictyView.startAnimating()
+        //        let image = UIImage.init(named: "1.png")
+        let imgData = imageViewRef.image!.jpegData(compressionQuality: 0.2)!
+        let header:HTTPHeaders = [
+            "X-API-KEY": "\(self.Api_Key)"
+        ]
+        
+        let parameters = [
+            "first_name": firstName.text!,
+            "last_name": lastName.text!,
+            "email": emailString,
+            "password": passwordString,
+            "phone": phoneNumber,
+            "referal": refferal
+        ]
+        
+        AF.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(imgData, withName: "profile_pic", fileName: "file.jpg", mimeType: "image/jpg")
+            for (key, value) in parameters {
+                multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+            }
+        }, to:Registration_URL, method: .post, headers: header).authenticate(username: "admin", password: "1234").responseJSON { (response) in
+            switch response.result {
+            case .success:
+                print(response.result)
+                let myresult = try? JSON(data: response.data!)
+                print("my:- \(String(describing: myresult?["status"]))")
+                if myresult?["status"] == false  {
+                    let alert = UIAlertController(title: "Alert", message: "\(myresult!["message"])", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "otpSegue") as! OTPViewController
+                        vc.emailSaved = self.emailString
+                        self.navigationController?.pushViewController(vc, animated: true)
+                        //
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    // self.present(alert, animated: true, completion: nil)
+                    
+                    // change to desired number of seconds (in this case 5 seconds)
+                    //                        let when = DispatchTime.now() + 2
+                    //                        DispatchQueue.main.asyncAfter(deadline: when){
+                    //                          // your code with delay
+                    //                          alert.dismiss(animated: true, completion: nil)
+                    //                        }
+                } else if myresult?["status"] == true{
+//                    // UserDefaults.standard.set(true, forKey: "UserHasSubmittedPassword")
+                    let Result = myresult!["data"].dictionaryValue
+//                    print("myresult:- \(Result["id"]?.stringValue)")
+//                    let userID = Result["id"]!.stringValue
+//                    let isSaved: Bool = KeychainWrapper.standard.set(userID, forKey: "userID")
+//                    print("myuser:- \(KeychainWrapper.standard.string(forKey: "userID"))")
+                   // let emailID = Result["email"]!.stringValue
+                   // KeychainWrapper.standard.set(emailID, forKey: "email")
+//                    let referralCode = Result["referal_code"]!.stringValue
+//                    let isRefferal: Bool = KeychainWrapper.standard.set(referralCode, forKey: "refferalCode")
+//                    let phone = Result["phone"]!.stringValue
+//                    KeychainWrapper.standard.set(phone, forKey: "phone")
+                    let alert = UIAlertController(title: "Successfully Registered", message: "", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "otpSegue") as! OTPViewController
+                        vc.emailSaved = self.emailString
+                        self.navigationController?.pushViewController(vc, animated: true)
+                        //
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    self.activictyView.stopAnimating()
+                    self.activictyView.isHidden = true
                 }
+            //
+            case .failure(let err):
+                print(err.errorDescription)
             }
         }
+    }
     
     @IBAction func saveDetails(_ sender: Any) {
         if firstName.text == "" && lastName.text == "" {
@@ -145,19 +155,19 @@ class SignUpProfileViewController: UIViewController, UIImagePickerControllerDele
             print("textField has some text")
         }
     }
-
+    
     @IBAction func open(_ sender: Any) {
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
             self.openCamera()
         }))
-
+        
         alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
             self.openGallery()
         }))
-
+        
         alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-
+        
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -184,7 +194,7 @@ class SignUpProfileViewController: UIViewController, UIImagePickerControllerDele
             self.present(alert, animated: true, completion: nil)
         }
     }
-
+    
     func openCamera()
     {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {

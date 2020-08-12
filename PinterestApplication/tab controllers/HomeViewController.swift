@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var btnview: UIView!
+    @IBOutlet weak var collectionV: UICollectionView!
     
     //Home controller outlets:
     @IBOutlet weak var selectview: UIView!
@@ -62,6 +63,10 @@ class HomeViewController: UIViewController {
     
     var iconArr = ["myprofile", "my_contest_icon", "hall_of_fame", "mybalance", "myrewardsoffers", "myreferrals", "myinfosettings", "logout"]
     
+    var images = [UIImage(named: "banner"),
+                  UIImage(named: "ad"),
+                  UIImage(named: "download")
+    ]
     var quizDetails = "https://projectstatus.co.in/Bulls11/api/authentication/quick-quiz-options"
     
     fileprivate func CustomNavBar(){
@@ -160,26 +165,7 @@ class HomeViewController: UIViewController {
         thirdView.layer.shadowOpacity = 1.0
         thirdView.layer.shadowRadius = 7.0
         thirdView.layer.masksToBounds = false
-        
-        firstinheritview.layer.cornerRadius = 7
-        firstinheritview.layer.borderColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0).cgColor
-        firstinheritview.layer.borderWidth = 1.3
-        firstinheritview.clipsToBounds = true
-        
-        fourthInheritView.layer.cornerRadius = 7
-        fourthInheritView.layer.borderColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0).cgColor
-        fourthInheritView.layer.borderWidth = 1.3
-        fourthInheritView.clipsToBounds = true
-        
-        secondinheritview.layer.cornerRadius = 7
-        secondinheritview.layer.borderColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0).cgColor
-        secondinheritview.layer.borderWidth = 1.3
-        secondinheritview.clipsToBounds = true
-        
-        thirdinheritview.layer.cornerRadius = 7
-        thirdinheritview.layer.borderColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0).cgColor
-        thirdinheritview.layer.borderWidth = 1.3
-        thirdinheritview.clipsToBounds = true
+    
     }
     
     fileprivate func setanimation(_ viewtoanimate: UIView) {
@@ -205,7 +191,7 @@ class HomeViewController: UIViewController {
         let header:HTTPHeaders = [
             "X-API-KEY": "\(self.Api_Key)"
         ]
-        
+
         AF.request(self.Profile_URL + KeychainWrapper.standard.string(forKey: "userID")!, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: header).authenticate(username: "admin", password: "1234").responseJSON{ response in
             switch response.result {
             case .success:
@@ -261,6 +247,33 @@ class HomeViewController: UIViewController {
         }
     }
     
+    func startTimer() {
+
+        let timer =  Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
+    }
+
+
+    @objc func scrollAutomatically(_ timer1: Timer) {
+
+        if let coll  = collectionV {
+            for cell in coll.visibleCells {
+                let indexPath: IndexPath? = coll.indexPath(for: cell)
+                if ((indexPath?.row)! < images.count - 1){
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
+
+                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                }
+                else{
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+                    coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
+                }
+
+            }
+        }
+    }
+    
     fileprivate func getQuizOptionsDetails() {
 //        self.getfirst.text = QuizOptions.coins[0]
 //        self.getsecond.text = QuizOptions.coins[1]
@@ -280,6 +293,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startTimer()
         Fetch_Profile()
          SetWin_Details()
         getQuizOptionsDetails()
@@ -296,8 +310,8 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationItem.title="HOME"
         Fetch_Profile()
-        self.btnview.layer.cornerRadius = 15
-        self.btnview.clipsToBounds = true
+//        self.btnview.layer.cornerRadius = 15
+//        self.btnview.clipsToBounds = true
         Daily.layer.cornerRadius = 15
         savedBatsmanTeams.CompanyName.removeAll()
         savedBatsmanTeams.CompanyID.removeAll()
@@ -442,7 +456,7 @@ class HomeViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "wincoins") as! WinCoinsViewController
         vc.modalPresentationStyle = .fullScreen
         vc.amount = QuizOptions.coins[0]
-       // vc.pay =
+       
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -527,9 +541,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
     }
-    
-    
-    
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionV.dequeueReusableCell(withReuseIdentifier: "page", for: indexPath) as! pageCollectionviewCell
+        cell.imagess.image = images[indexPath.row]
+        return cell
+    }
 }
 
 extension UIButton{

@@ -17,12 +17,13 @@ class UpdatpassotpViewController: UIViewController {
     @IBOutlet weak var textfil: UITextField!
     @IBOutlet weak var myView: UIView!
     
+    var emailstring = ""
     fileprivate func CustomNavBar(){
         title = "OTP"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 203/255, green: 41/255, blue: 122/255, alpha: 1)
-        emaillbl.text = KeychainWrapper.standard.string(forKey: "email")
+        emaillbl.text = emailstring
     }
      let api_key = "BULLS11@2020"
     
@@ -34,15 +35,15 @@ class UpdatpassotpViewController: UIViewController {
     
     func Fetch_Details() {
        
-        let email = KeychainWrapper.standard.string(forKey: "emailtext")
+//        let email = KeychainWrapper.standard.string(forKey: "emailtext")
         let header:HTTPHeaders = [
             "X-API-KEY": "\(self.api_key)"
         ]
         
         let parameters = [
-            "email": email,
+            "email": emailstring,
             "otp": textfil.text
-        ]
+            ] as [String : Any]
         
         AF.request("https://projectstatus.co.in/Bulls11/api/authentication/otp-varify", method: .post, parameters: parameters as Parameters,encoding: JSONEncoding.default, headers: header).authenticate(username: "admin", password: "1234").responseJSON { response in
             switch response.result {
@@ -60,7 +61,8 @@ class UpdatpassotpViewController: UIViewController {
                     refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
                         
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let vc = storyboard.instantiateViewController(withIdentifier: "updatepassword")
+                        let vc = storyboard.instantiateViewController(withIdentifier: "updatepassword") as! UpdatePasswordViewController
+                        vc.savedString = self.emailstring
                         vc.modalPresentationStyle = .fullScreen
                         self.navigationController!.pushViewController(vc, animated: true)
                     }))
@@ -72,6 +74,30 @@ class UpdatpassotpViewController: UIViewController {
         }
     }
     
+    func resendOTP() {
+        let header:HTTPHeaders = [
+                   "X-API-KEY": "\(self.api_key)"
+               ]
+               
+               let parameters = [
+                   "email": emailstring,
+                   ] as [String : Any]
+               
+               AF.request("https://projectstatus.co.in/Bulls11/api/authentication/resend-otp", method: .post, parameters: parameters as Parameters,encoding: JSONEncoding.default, headers: header).authenticate(username: "admin", password: "1234").responseJSON { response in
+                   switch response.result {
+                   case .success:
+                       print(response.result)
+                           let refreshAlert = UIAlertController(title:"Alert", message: "Please check your mail for otp", preferredStyle: .alert)
+                           refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                           }))
+                           self.present(refreshAlert, animated: true, completion: nil)
+                       
+                   case .failure(let eror):
+                       print(eror.errorDescription)
+                   }
+               }
+           }
+    
     
     @IBAction func validateOTP(_ sender: Any){
         if textfil.text == "" {
@@ -81,7 +107,13 @@ class UpdatpassotpViewController: UIViewController {
                           Fetch_Details()
                          print("textField has some text")
                      }
-        
     }
+        @IBAction func ResendOTP(_ sender: Any){
+               resendOTP()
+           }
 
+    
 }
+    
+   
+

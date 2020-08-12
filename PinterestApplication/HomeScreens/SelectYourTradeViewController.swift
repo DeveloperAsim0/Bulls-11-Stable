@@ -168,7 +168,7 @@ extension SelectYourTradeViewController: UITableViewDelegate, UITableViewDataSou
         cell.DateLabel.text = model.date[indexPath.row]
         cell.DetailLabel.text = model.date_details[indexPath.row]
         print("times:- \(model.resultTime)")
-        //cell.apidate = model.resultTime[indexPath.row]
+        cell.apidate = model.resultTime[indexPath.row]
     //    cell.ActualTimer = model.resultTime[indexPath.row]
         //        cell.totalPrize.text = "₹" + model.prizeAmount[indexPath.row]
         //        cell.freeUsers.text = model.freeUsers[indexPath.row]

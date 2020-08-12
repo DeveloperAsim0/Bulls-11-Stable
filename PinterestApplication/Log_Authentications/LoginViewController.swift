@@ -106,8 +106,8 @@ class LoginViewController: UIViewController {
                     let vc = storyboard.instantiateViewController(withIdentifier: "customtab")
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.window?.rootViewController = vc
-//                    vc.modalPresentationStyle = .fullScreen
-//                    self.present(vc, animated: true, completion: nil)
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
                 }
                 self.myactivity.stopAnimating()
                 self.myactivity.isHidden = true
