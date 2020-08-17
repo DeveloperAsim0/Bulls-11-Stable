@@ -43,6 +43,7 @@ class ChooseTeamViewController: UIViewController {
     @IBOutlet weak var bowler           : UIButton!
     @IBOutlet weak var wicketKeeper     : UIButton!
     @IBOutlet weak var special          : UIButton!
+    @IBOutlet weak var more             : UIButton!
     //@IBOutlet weak var selected         : UIButton!
     
     // for saving fees:-
@@ -160,25 +161,42 @@ class ChooseTeamViewController: UIViewController {
         special.layer.cornerRadius  = 15
         special.layer.masksToBounds = true
         
+        more.layer.cornerRadius = 15
+        more.layer.masksToBounds = true
+        
+        batsmen.layer.masksToBounds = false
         batsmen.layer.cornerRadius  = 12.5
         batsmen.layer.borderColor   = UIColor.gray.cgColor
         batsmen.layer.borderWidth   = 0.5
-        batsmen.layer.masksToBounds = true
-        
+        batsmen.layer.shadowColor = UIColor.black.cgColor
+        batsmen.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        batsmen.layer.shadowOpacity = 0.5
+        batsmen.layer.shadowRadius = 1.0
+        //batsmen.layer.masksToBounds = true
+      
+        bowler.layer.masksToBounds = false
         bowler.layer.cornerRadius  = 12.5
         bowler.layer.borderColor   = UIColor.gray.cgColor
         bowler.layer.borderWidth   = 0.5
-        bowler.layer.masksToBounds = true
-        
+        bowler.layer.shadowColor = UIColor.black.cgColor
+        bowler.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        bowler.layer.shadowOpacity = 0.5
+        bowler.layer.shadowRadius = 1.0
+        bowler.backgroundColor = .clear
         //        allRounder.layer.cornerRadius  = 12.5
         //        allRounder.layer.borderColor   = UIColor.gray.cgColor
         //        allRounder.layer.borderWidth   = 0.5
         //        allRounder.layer.masksToBounds = true
         
+        wicketKeeper.layer.masksToBounds = false
         wicketKeeper.layer.cornerRadius  = 12.5
         wicketKeeper.layer.borderColor   = UIColor.gray.cgColor
         wicketKeeper.layer.borderWidth   = 0.5
-        wicketKeeper.layer.masksToBounds = true
+        wicketKeeper.layer.shadowColor = UIColor.black.cgColor
+        wicketKeeper.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        wicketKeeper.layer.shadowOpacity = 0.5
+        wicketKeeper.layer.shadowRadius = 1.0
+        wicketKeeper.backgroundColor = .clear
     }
     
     func ShowAlert()  {
@@ -442,7 +460,7 @@ class ChooseTeamViewController: UIViewController {
     @IBAction func chooseSpecialPlayer(_ sender: Any){
         if self.sixthcircle.image != nil && tenthcircle.image != nil && eleventhcircle.image != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "moreplayer")
+            let vc = storyboard.instantiateViewController(withIdentifier: "specialplay")
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
             let alert = UIAlertController(title: "Please choose 11 players to create Team", message: "", preferredStyle: UIAlertController.Style.alert)
@@ -450,9 +468,10 @@ class ChooseTeamViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
     @IBAction func viewSelectedPlayer(_ sender: Any){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "selectedPlayer")
+        let vc = storyboard.instantiateViewController(withIdentifier: "moreplayers")
         vc.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(vc, animated: true)
     }

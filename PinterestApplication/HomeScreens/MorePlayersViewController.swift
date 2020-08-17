@@ -10,40 +10,43 @@ import UIKit
 
 class MorePlayersViewController: UIViewController {
 
-    @IBOutlet weak var backBtn          : UIButton!
-    @IBOutlet weak var ActiveBtn        : UIButton!
-    @IBOutlet weak var passiveBtn       : UIButton!
-    
     @IBOutlet weak var selectview       : UIView!
     @IBOutlet weak var createview       : UIView!
     @IBOutlet weak var joinview         : UIView!
     
-    @IBOutlet weak var batsmanbtn       : UIButton!
-    @IBOutlet weak var allrounderbtn    : UIButton!
-    @IBOutlet weak var bowlerbtn        : UIButton!
-    @IBOutlet weak var wicketkeeperbtn  : UIButton!
+    @IBOutlet weak var btplay1: UIView!
+    @IBOutlet weak var btplay2: UIView!
+    @IBOutlet weak var btplay3: UIView!
+    @IBOutlet weak var btplay4: UIView!
+    @IBOutlet weak var btplay5: UIView!
+    @IBOutlet weak var btplay6: UIView!
     
-    @IBOutlet weak var batsmanview1     : UIView!
-    @IBOutlet weak var batsmanview2     : UIView!
-    @IBOutlet weak var batsmanview3     : UIView!
+    // outlet for bowlerViews
+    @IBOutlet weak var bwplay1: UIView!
+    @IBOutlet weak var bwplay2: UIView!
+    @IBOutlet weak var bwplay3: UIView!
+    @IBOutlet weak var bwplay4: UIView!
     
-    @IBOutlet weak var allrounderview1  : UIView!
-    @IBOutlet weak var allrounderview2  : UIView!
-    @IBOutlet weak var allrounderview3  : UIView!
+    // outlet for wicketKeeper
+    @IBOutlet weak var wkplay1: UIView!
     
-    @IBOutlet weak var bowlerbtn1       : UIView!
-    @IBOutlet weak var bowlerbtn2       : UIView!
-    @IBOutlet weak var bowlerbtn3       : UIView!
+    // outlet for batsman
+    @IBOutlet weak var batsmanPlayer1: UILabel!
+    @IBOutlet weak var batsmanPlayer2: UILabel!
+    @IBOutlet weak var batsmanPlayer3: UILabel!
+    @IBOutlet weak var batsmanPlayer4: UILabel!
+    @IBOutlet weak var batsmanPlayer5: UILabel!
+    @IBOutlet weak var batsmanPlayer6: UILabel!
     
-    @IBOutlet weak var wicketkeeperbtn1 : UIView!
-    @IBOutlet weak var wicketkeeperbtn2 : UIView!
-    @IBOutlet weak var wicketkeeperbtn3 : UIView!
+    // outlet for bowler
+    @IBOutlet weak var bowlerPlayer1: UILabel!
+    @IBOutlet weak var bowlerPlayer2: UILabel!
+    @IBOutlet weak var bowlerPlayer3: UILabel!
+    @IBOutlet weak var bowlerPlayer4: UILabel!
     
-//    fileprivate func CustomizeButton(){
-//        ActiveBtn.layer.cornerRadius  = 15
-//        passiveBtn.layer.cornerRadius = 15
-//    }
-//
+    // outlet for wicketkeeper
+    @IBOutlet weak var wicketkeeperPlayer1: UILabel!
+    
     fileprivate func CustomizeViews2() {
         selectview.backgroundColor    = .clear
         selectview.layer.cornerRadius = selectview.frame.size.width/2
@@ -63,78 +66,88 @@ class MorePlayersViewController: UIViewController {
         joinview.clipsToBounds      = true
     }
     
-    fileprivate func CustomizeViews(){
-        batsmanbtn.layer.cornerRadius      = 15
-        allrounderbtn.layer.cornerRadius   = 15
-        bowlerbtn.layer.cornerRadius       = 15
-        wicketkeeperbtn.layer.cornerRadius = 15
-        //backBtn.layer.cornerRadius = 15
+    fileprivate func CustomizedView() {
+        self.btplay1.layer.cornerRadius     = 10
+        self.btplay1.layer.borderColor      = UIColor.black.cgColor
+        self.btplay1.layer.borderWidth      = 0.15
+        self.btplay1.clipsToBounds          = true
         
-        batsmanview1.layer.cornerRadius = 5
-        batsmanview1.layer.borderColor  = UIColor.black.cgColor
-        batsmanview1.layer.borderWidth  = 0.15
-        batsmanview1.clipsToBounds      = true
+        self.btplay2.layer.cornerRadius     = 10
+        self.btplay2.layer.borderColor      = UIColor.black.cgColor
+        self.btplay2.layer.borderWidth      = 0.15
+        self.btplay2.clipsToBounds          = true
         
-        batsmanview2.layer.cornerRadius = 5
-        batsmanview2.layer.borderColor  = UIColor.black.cgColor
-        batsmanview2.layer.borderWidth  = 0.15
-        batsmanview2.clipsToBounds      = true
+        self.btplay3.layer.cornerRadius     = 10
+        self.btplay3.layer.borderColor      = UIColor.black.cgColor
+        self.btplay3.layer.borderWidth      = 0.15
+        self.btplay3.clipsToBounds          = true
         
-        batsmanview3.layer.cornerRadius = 5
-        batsmanview3.layer.borderColor  = UIColor.black.cgColor
-        batsmanview3.layer.borderWidth  = 0.15
-        batsmanview3.clipsToBounds      = true
+        self.btplay4.layer.cornerRadius     = 10
+        self.btplay4.layer.borderColor      = UIColor.black.cgColor
+        self.btplay4.layer.borderWidth      = 0.15
+        self.btplay4.clipsToBounds          = true
         
-        allrounderview1.layer.cornerRadius = 5
-        allrounderview1.layer.borderColor  = UIColor.black.cgColor
-        allrounderview1.layer.borderWidth  = 0.15
-        allrounderview1.clipsToBounds      = true
-         
-        allrounderview2.layer.cornerRadius = 5
-        allrounderview2.layer.borderColor  = UIColor.black.cgColor
-        allrounderview2.layer.borderWidth  = 0.15
-        allrounderview2.clipsToBounds      = true
+        self.btplay5.layer.cornerRadius     = 10
+        self.btplay5.layer.borderColor      = UIColor.black.cgColor
+        self.btplay5.layer.borderWidth      = 0.15
+        self.btplay5.clipsToBounds          = true
         
-        allrounderview3.layer.cornerRadius = 5
-        allrounderview3.layer.borderColor  = UIColor.black.cgColor
-        allrounderview3.layer.borderWidth  = 0.15
-        allrounderview3.clipsToBounds      = true
+        self.btplay6.layer.cornerRadius     = 10
+        self.btplay6.layer.borderColor      = UIColor.black.cgColor
+        self.btplay6.layer.borderWidth      = 0.15
+        self.btplay6.clipsToBounds          = true
         
-        bowlerbtn1.layer.cornerRadius = 5
-        bowlerbtn1.layer.borderColor  = UIColor.black.cgColor
-        bowlerbtn1.layer.borderWidth  = 0.15
-        bowlerbtn1.clipsToBounds      = true
+        self.bwplay1.layer.cornerRadius     = 10
+        self.bwplay1.layer.borderColor      = UIColor.black.cgColor
+        self.bwplay1.layer.borderWidth      = 0.15
+        self.bwplay1.clipsToBounds          = true
         
-        bowlerbtn2.layer.cornerRadius = 5
-        bowlerbtn2.layer.borderColor  = UIColor.black.cgColor
-        bowlerbtn2.layer.borderWidth  = 0.15
-        bowlerbtn2.clipsToBounds      = true
+        self.bwplay2.layer.cornerRadius     = 10
+        self.bwplay2.layer.borderColor      = UIColor.black.cgColor
+        self.bwplay2.layer.borderWidth      = 0.15
+        self.bwplay2.clipsToBounds          = true
         
-        bowlerbtn3.layer.cornerRadius = 5
-        bowlerbtn3.layer.borderColor  = UIColor.black.cgColor
-        bowlerbtn3.layer.borderWidth  = 0.15
-        bowlerbtn3.clipsToBounds      = true
+        self.bwplay3.layer.cornerRadius     = 10
+        self.bwplay3.layer.borderColor      = UIColor.black.cgColor
+        self.bwplay3.layer.borderWidth      = 0.15
+        self.bwplay3.clipsToBounds          = true
         
-       wicketkeeperbtn1.layer.cornerRadius = 5
-       wicketkeeperbtn1.layer.borderColor  = UIColor.black.cgColor
-       wicketkeeperbtn1.layer.borderWidth  = 0.15
-       wicketkeeperbtn1.clipsToBounds      = true
+        self.bwplay4.layer.cornerRadius     = 10
+        self.bwplay4.layer.borderColor      = UIColor.black.cgColor
+        self.bwplay4.layer.borderWidth      = 0.15
+        self.bwplay4.clipsToBounds          = true
         
-        wicketkeeperbtn2.layer.cornerRadius = 5
-        wicketkeeperbtn2.layer.borderColor  = UIColor.black.cgColor
-        wicketkeeperbtn2.layer.borderWidth  = 0.15
-        wicketkeeperbtn2.clipsToBounds      = true
+        self.wkplay1.layer.cornerRadius     = 10
+        self.wkplay1.layer.borderColor      = UIColor.black.cgColor
+        self.wkplay1.layer.borderWidth      = 0.15
+        self.wkplay1.clipsToBounds          = true
+    }
+    
+    fileprivate func Set_Value() {
         
-        wicketkeeperbtn3.layer.cornerRadius = 5
-        wicketkeeperbtn3.layer.borderColor  = UIColor.black.cgColor
-        wicketkeeperbtn3.layer.borderWidth  = 0.15
-        wicketkeeperbtn3.clipsToBounds      = true
+        // for batsman
+        self.batsmanPlayer1.text = savedBatsmanTeams.CompanyName[0]
+        self.batsmanPlayer2.text = savedBatsmanTeams.CompanyName[1]
+        self.batsmanPlayer3.text = savedBatsmanTeams.CompanyName[2]
+        self.batsmanPlayer4.text = savedBatsmanTeams.CompanyName[3]
+        self.batsmanPlayer5.text = savedBatsmanTeams.CompanyName[4]
+        self.batsmanPlayer6.text = savedBatsmanTeams.CompanyName[5]
+        
+        // for bowler
+        self.bowlerPlayer1.text = savedBowlerTeams.CompanyName[0]
+        self.bowlerPlayer2.text = savedBowlerTeams.CompanyName[1]
+        self.bowlerPlayer3.text = savedBowlerTeams.CompanyName[2]
+        self.bowlerPlayer4.text = savedBowlerTeams.CompanyName[3]
+        
+        // for wicketKeeper
+        self.wicketkeeperPlayer1.text = savedWicketKeeperTeams.CompanyName[0]
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-          CustomizeViews()
         CustomizeViews2()
+        Set_Value()
+        CustomizedView()
       //  CustomizeButton()
         // Do any additional setup after loading the view.
     }
@@ -145,15 +158,4 @@ class MorePlayersViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -24,6 +24,7 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var phoneNumber   : UILabel!
     @IBOutlet weak var quizContests  : UILabel!
     @IBOutlet weak var quizWins      : UILabel!
+    @IBOutlet weak var exptime: UILabel!
     
     let Profile_URL = "http://projectstatus.co.in/Bulls11/api/authentication/user/"
     let Api_Key = "BULLS11@2020"
@@ -72,6 +73,8 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
                     self.phoneNumber.text = phoneNo
                     let quiz = finalResult["quiz"]?.stringValue
                     self.quizContests.text = quiz
+                    let exptime = finalResult["subs_exp"]!.stringValue
+                    self.exptime.text = exptime
                     break
                    case .failure:
                     print(response.error.debugDescription)

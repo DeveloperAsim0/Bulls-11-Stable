@@ -35,6 +35,7 @@
 		3A4DE782246D679A0037969E /* HowToWorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4DE781246D679A0037969E /* HowToWorksViewController.swift */; };
 		3A53479224696A3E00E99240 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53479124696A3E00E99240 /* LoginViewController.swift */; };
 		3A5347962469762100E99240 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5347952469762100E99240 /* OTPViewController.swift */; };
+		3A536A9824EA5F0800D9BC17 /* RegexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A536A9724EA5F0800D9BC17 /* RegexExtension.swift */; };
 		3A54969824DD34EE006477BA /* WinCoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54969724DD34EE006477BA /* WinCoinsViewController.swift */; };
 		3A54969A24DD8C34006477BA /* RazViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A54969924DD8C34006477BA /* RazViewController.swift */; };
 		3A5ABC34249738D100FFA09D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5ABC33249738D100FFA09D /* Constant.swift */; };
@@ -123,6 +124,7 @@
 		3A4DE781246D679A0037969E /* HowToWorksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToWorksViewController.swift; sourceTree = "<group>"; };
 		3A53479124696A3E00E99240 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3A5347952469762100E99240 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		3A536A9724EA5F0800D9BC17 /* RegexExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexExtension.swift; sourceTree = "<group>"; };
 		3A54969724DD34EE006477BA /* WinCoinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinCoinsViewController.swift; sourceTree = "<group>"; };
 		3A54969924DD8C34006477BA /* RazViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RazViewController.swift; sourceTree = "<group>"; };
 		3A5ABC33249738D100FFA09D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				3A8C827F24E11CD000C5D7C9 /* UpdatePasswordViewController.swift */,
 				3A1199EF24E2A47D00C7CE45 /* pageCollectionviewCell.swift */,
 				3A1199F124E2ADCD00C7CE45 /* SubscriptionPartner.swift */,
+				3A536A9724EA5F0800D9BC17 /* RegexExtension.swift */,
 			);
 			path = PinterestApplication;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				3A4DE780246D4F4F0037969E /* AddCashViewController.swift in Sources */,
 				3A0252A32472BAAE0080C448 /* SelectCaptainViewController.swift in Sources */,
 				3AD09439247294C20069310A /* SelectTradeTableViewCell.swift in Sources */,
+				3A536A9824EA5F0800D9BC17 /* RegexExtension.swift in Sources */,
 				3A9F232324C874A600B37B14 /* TeamResultViewController.swift in Sources */,
 				3AD0943724728F6C0069310A /* SelectYourTradeViewController.swift in Sources */,
 			);

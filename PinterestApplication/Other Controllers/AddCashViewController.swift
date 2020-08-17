@@ -22,7 +22,8 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
     @IBOutlet weak var cashfield    : UITextField!
     @IBOutlet weak var currentBalance: UILabel!
     
-    var valu = 0
+    var valu = "N"
+    var valu1 = 0
     var check = 0
     var amou = ""
     var subsfor = ""
@@ -72,8 +73,7 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
                 "user_id": KeychainWrapper.standard.string(forKey: "userID")!,
                 "amount": cashfield.text!,
                 "ref_no": finalModel.paymentID,
-                "subs": valu,
-                "subs_for": subsfor
+                "subs": valu
                    
                    ] as [String : Any]
                    print("params:- \(parameter)")
@@ -100,7 +100,7 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
     }
     
     func onPaymentSuccess(_ payment_id: String) {
-        if self.valu == 0 {
+        if self.valu1 == 0 {
             let refreshAlert = UIAlertController(title: "Alert", message: "Success", preferredStyle: UIAlertController.Style.alert)
                                      refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                                        self.fetch_Profile()
@@ -230,15 +230,5 @@ class AddCashViewController: UIViewController, RazorpayPaymentCompletionProtocol
     @objc func showOff() {
          self.showPaymentForm()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
  
