@@ -422,7 +422,7 @@ class ChooseTeamViewController: UIViewController {
     }
     @IBAction func clearData(_ sender: Any) {
         let refreshAlert = UIAlertController(title: "Alert", message: "Clear Data", preferredStyle: UIAlertController.Style.alert)
-                   refreshAlert.addAction(UIAlertAction(title: "Clear", style: .default, handler: { (action: UIAlertAction!) in
+                   refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                  self.dataClear()
                        print("Handle Ok logic here")
                    }))

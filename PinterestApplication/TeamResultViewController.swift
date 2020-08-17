@@ -137,7 +137,7 @@ class TeamResultViewController: UIViewController {
                        break
                    case .failure(let eror):
                     let refreshAlert = UIAlertController(title: "Alert", message: "No Contest Found", preferredStyle: .alert)
-                    refreshAlert.addAction(UIAlertAction(title: "Try After Some Time", style: .default, handler: nil))
+                    refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(refreshAlert, animated: true, completion: nil)
                        print(eror.errorDescription)
                    }

@@ -467,443 +467,294 @@ class SelectSpecialPlayerViewController: UIViewController {
     @IBAction func starPlayer1(_ sender: UIButton){
         if sender.isSelected {
             sender.isSelected = false
-            self.buttonCount.remove(at: 0)
-            finalModel.starPlayer.removeLast()
+            finalModel.starPlayer.removeAll()
             print("vla:- \(finalModel.starPlayer)")
-             starPlayer2.isUserInteractionEnabled = true
-             starPlayer3.isUserInteractionEnabled = true
-             starPlayer4.isUserInteractionEnabled = true
-             starPlayer5.isUserInteractionEnabled = true
-             starPlayer6.isUserInteractionEnabled = true
-             starPlayer7.isUserInteractionEnabled = true
-             starPlayer8.isUserInteractionEnabled = true
-             starPlayer9.isUserInteractionEnabled = true
-             starPlayer10.isUserInteractionEnabled = true
-             starPlayer11.isUserInteractionEnabled = true
+             
         }else {
             sender.isSelected = true
-            let value = 1
-            self.buttonCount.append(value)
+            finalModel.starPlayer.removeAll()
+               starPlayer2.isSelected = false
+               starPlayer3.isSelected = false
+               starPlayer4.isSelected = false
+               starPlayer5.isSelected = false
+               starPlayer6.isSelected = false
+               starPlayer7.isSelected = false
+               starPlayer8.isSelected = false
+               starPlayer9.isSelected = false
+            starPlayer10.isSelected = false
+            starPlayer11.isSelected = false
+                print("value = \(self.buttonCount)")
             let myst = savedBatsmanTeams.CompanyID[0]
             finalModel.starPlayer.append(myst)
-            print("valuer:- \(finalModel.starPlayer)")
-            print("updatedValue = \(self.buttonCount)")
-            if buttonCount.count >= 3 {
-                print("no more clicks")
-               starPlayer2.isUserInteractionEnabled = false
-               starPlayer3.isUserInteractionEnabled = false
-               starPlayer4.isUserInteractionEnabled = false
-               starPlayer5.isUserInteractionEnabled = false
-               starPlayer6.isUserInteractionEnabled = false
-               starPlayer7.isUserInteractionEnabled = false
-               starPlayer8.isUserInteractionEnabled = false
-               starPlayer9.isUserInteractionEnabled = false
-               starPlayer10.isUserInteractionEnabled = false
-               starPlayer11.isUserInteractionEnabled = false
-                print("value = \(self.buttonCount)")
+            print("updated starplayer:- \(finalModel.starPlayer)")
             }
         }
-    }
+    
     @IBAction func starPlayer2(_ sender: UIButton){
            if sender.isSelected {
                sender.isSelected = false
-               self.buttonCount.remove(at: 0)
-               finalModel.starPlayer.removeLast()
-               print("vla:- \(finalModel.starPlayer)")
-                starPlayer1.isUserInteractionEnabled = true
-                starPlayer3.isUserInteractionEnabled = true
-                starPlayer4.isUserInteractionEnabled = true
-                starPlayer5.isUserInteractionEnabled = true
-                starPlayer6.isUserInteractionEnabled = true
-                starPlayer7.isUserInteractionEnabled = true
-                starPlayer8.isUserInteractionEnabled = true
-                starPlayer9.isUserInteractionEnabled = true
-                starPlayer10.isUserInteractionEnabled = true
-                starPlayer11.isUserInteractionEnabled = true
+               finalModel.starPlayer.removeAll()
            }else {
                sender.isSelected = true
-               let value = 1
-               self.buttonCount.append(value)
+              finalModel.starPlayer.removeAll()
+                  starPlayer1.isSelected = false
+                  starPlayer3.isSelected = false
+                  starPlayer4.isSelected = false
+                  starPlayer5.isSelected = false
+                  starPlayer6.isSelected = false
+                  starPlayer7.isSelected = false
+                  starPlayer8.isSelected = false
+                  starPlayer9.isSelected = false
+                  starPlayer10.isSelected = false
+                  starPlayer11.isSelected = false
             let myst = savedBatsmanTeams.CompanyID[1]
             finalModel.starPlayer.append(myst)
-               print("valuer:- \(finalModel.starPlayer)")
-               print("updatedValue = \(self.buttonCount)")
-               if buttonCount.count >= 3 {
-                   print("no more clicks")
-                  starPlayer1.isUserInteractionEnabled = false
-                  starPlayer3.isUserInteractionEnabled = false
-                  starPlayer4.isUserInteractionEnabled = false
-                  starPlayer5.isUserInteractionEnabled = false
-                  starPlayer6.isUserInteractionEnabled = false
-                  starPlayer7.isUserInteractionEnabled = false
-                  starPlayer8.isUserInteractionEnabled = false
-                  starPlayer9.isUserInteractionEnabled = false
-                  starPlayer10.isUserInteractionEnabled = false
-                  starPlayer11.isUserInteractionEnabled = false
                    print("value = \(self.buttonCount)")
+             print("updated starplayer:- \(finalModel.starPlayer)")
                }
            }
-       }
+       
     @IBAction func starPlayer3(_ sender: UIButton){
            if sender.isSelected {
                sender.isSelected = false
-               self.buttonCount.remove(at: 0)
-               finalModel.starPlayer.removeLast()
-               print("vla:- \(finalModel.starPlayer)")
-                starPlayer2.isUserInteractionEnabled = true
-                starPlayer1.isUserInteractionEnabled = true
-                starPlayer4.isUserInteractionEnabled = true
-                starPlayer5.isUserInteractionEnabled = true
-                starPlayer6.isUserInteractionEnabled = true
-                starPlayer7.isUserInteractionEnabled = true
-                starPlayer8.isUserInteractionEnabled = true
-                starPlayer9.isUserInteractionEnabled = true
-                starPlayer10.isUserInteractionEnabled = true
-                starPlayer11.isUserInteractionEnabled = true
+            finalModel.starPlayer.removeAll()
            }else {
                sender.isSelected = true
-               let value = 1
-               self.buttonCount.append(value)
-            let myst = savedBatsmanTeams.CompanyID[2]
-            finalModel.starPlayer.append(myst)
-               print("valuer:- \(finalModel.starPlayer)")
-               print("updatedValue = \(self.buttonCount)")
-               if buttonCount.count >= 3 {
-                   print("no more clicks")
-                  starPlayer2.isUserInteractionEnabled = false
-                  starPlayer1.isUserInteractionEnabled = false
-                  starPlayer4.isUserInteractionEnabled = false
-                  starPlayer5.isUserInteractionEnabled = false
-                  starPlayer6.isUserInteractionEnabled = false
-                  starPlayer7.isUserInteractionEnabled = false
-                  starPlayer8.isUserInteractionEnabled = false
-                  starPlayer9.isUserInteractionEnabled = false
-                  starPlayer10.isUserInteractionEnabled = false
-                  starPlayer11.isUserInteractionEnabled = false
+            finalModel.starPlayer.removeAll()
+
+                  starPlayer2.isSelected = false
+                  starPlayer1.isSelected = false
+                  starPlayer4.isSelected = false
+                  starPlayer5.isSelected = false
+                  starPlayer6.isSelected = false
+                  starPlayer7.isSelected = false
+                  starPlayer8.isSelected = false
+                  starPlayer9.isSelected = false
+                  starPlayer10.isSelected = false
+                  starPlayer11.isSelected = false
+                let myst = savedBatsmanTeams.CompanyID[2]
+                           finalModel.starPlayer.append(myst)
                    print("value = \(self.buttonCount)")
                }
            }
-       }
+       
     @IBAction func starPlayer4(_ sender: UIButton){
            if sender.isSelected {
                sender.isSelected = false
-               self.buttonCount.remove(at: 0)
-               finalModel.starPlayer.removeLast()
+               
+               finalModel.starPlayer.removeAll()
                print("vla:- \(finalModel.starPlayer)")
-                starPlayer2.isUserInteractionEnabled = true
-                starPlayer3.isUserInteractionEnabled = true
-                starPlayer1.isUserInteractionEnabled = true
-                starPlayer5.isUserInteractionEnabled = true
-                starPlayer6.isUserInteractionEnabled = true
-                starPlayer7.isUserInteractionEnabled = true
-                starPlayer8.isUserInteractionEnabled = true
-                starPlayer9.isUserInteractionEnabled = true
-                starPlayer10.isUserInteractionEnabled = true
-                starPlayer11.isUserInteractionEnabled = true
+                
            }else {
                sender.isSelected = true
-               let value = 1
-               self.buttonCount.append(value)
-            let myst = savedBatsmanTeams.CompanyID[3]
-            finalModel.starPlayer.append(myst)
+            
                print("valuer:- \(finalModel.starPlayer)")
                print("updatedValue = \(self.buttonCount)")
-               if buttonCount.count >= 3 {
-                   print("no more clicks")
-                  starPlayer2.isUserInteractionEnabled = false
-                  starPlayer3.isUserInteractionEnabled = false
-                  starPlayer1.isUserInteractionEnabled = false
-                  starPlayer5.isUserInteractionEnabled = false
-                  starPlayer6.isUserInteractionEnabled = false
-                  starPlayer7.isUserInteractionEnabled = false
-                  starPlayer8.isUserInteractionEnabled = false
-                  starPlayer9.isUserInteractionEnabled = false
-                  starPlayer10.isUserInteractionEnabled = false
-                  starPlayer11.isUserInteractionEnabled = false
+        
+                  starPlayer2.isSelected = false
+                  starPlayer3.isSelected = false
+                  starPlayer1.isSelected = false
+                  starPlayer5.isSelected = false
+                  starPlayer6.isSelected = false
+                  starPlayer7.isSelected = false
+                  starPlayer8.isSelected = false
+                  starPlayer9.isSelected = false
+                  starPlayer10.isSelected = false
+                  starPlayer11.isSelected = false
+            let myst = savedBatsmanTeams.CompanyID[3]
+            finalModel.starPlayer.append(myst)
                    print("value = \(self.buttonCount)")
                }
            }
-       }
+       
     @IBAction func starPlayer5(_ sender: UIButton){
            if sender.isSelected {
                sender.isSelected = false
-               self.buttonCount.remove(at: 0)
-               finalModel.starPlayer.removeLast()
+              
+               finalModel.starPlayer.removeAll()
                print("vla:- \(finalModel.starPlayer)")
-                starPlayer2.isUserInteractionEnabled = true
-                starPlayer3.isUserInteractionEnabled = true
-                starPlayer4.isUserInteractionEnabled = true
-                starPlayer1.isUserInteractionEnabled = true
-                starPlayer6.isUserInteractionEnabled = true
-                starPlayer7.isUserInteractionEnabled = true
-                starPlayer8.isUserInteractionEnabled = true
-                starPlayer9.isUserInteractionEnabled = true
-                starPlayer10.isUserInteractionEnabled = true
-                starPlayer11.isUserInteractionEnabled = true
+                
            }else {
                sender.isSelected = true
-               let value = 1
-               self.buttonCount.append(value)
-            let myst = savedBatsmanTeams.CompanyID[4]
-            finalModel.starPlayer.append(myst)
+             
+           
                print("valuer:- \(finalModel.starPlayer)")
                print("updatedValue = \(self.buttonCount)")
-               if buttonCount.count >= 3 {
-                   print("no more clicks")
-                  starPlayer2.isUserInteractionEnabled = false
-                  starPlayer3.isUserInteractionEnabled = false
-                  starPlayer4.isUserInteractionEnabled = false
-                  starPlayer1.isUserInteractionEnabled = false
-                  starPlayer6.isUserInteractionEnabled = false
-                  starPlayer7.isUserInteractionEnabled = false
-                  starPlayer8.isUserInteractionEnabled = false
-                  starPlayer9.isUserInteractionEnabled = false
-                  starPlayer10.isUserInteractionEnabled = false
-                  starPlayer11.isUserInteractionEnabled = false
+            
+                  starPlayer2.isSelected = false
+                  starPlayer3.isSelected = false
+                  starPlayer4.isSelected = false
+                  starPlayer1.isSelected = false
+                  starPlayer6.isSelected = false
+                  starPlayer7.isSelected = false
+                  starPlayer8.isSelected = false
+                  starPlayer9.isSelected = false
+                  starPlayer10.isSelected = false
+                  starPlayer11.isSelected = false
+                let myst = savedBatsmanTeams.CompanyID[4]
+                           finalModel.starPlayer.append(myst)
                    print("value = \(self.buttonCount)")
                }
            }
-       }
+       
     @IBAction func starPlayer6(_ sender: UIButton){
            if sender.isSelected {
                sender.isSelected = false
-               self.buttonCount.remove(at: 0)
-               finalModel.starPlayer.removeLast()
+               finalModel.starPlayer.removeAll()
                print("vla:- \(finalModel.starPlayer)")
-                starPlayer2.isUserInteractionEnabled = true
-                starPlayer3.isUserInteractionEnabled = true
-                starPlayer4.isUserInteractionEnabled = true
-                starPlayer5.isUserInteractionEnabled = true
-                starPlayer1.isUserInteractionEnabled = true
-                starPlayer7.isUserInteractionEnabled = true
-                starPlayer8.isUserInteractionEnabled = true
-                starPlayer9.isUserInteractionEnabled = true
-                starPlayer10.isUserInteractionEnabled = true
-                starPlayer11.isUserInteractionEnabled = true
+                
            }else {
                sender.isSelected = true
-               let value = 1
-               self.buttonCount.append(value)
-            let myst = savedBatsmanTeams.CompanyID[5]
-            finalModel.starPlayer.append(myst)
-               print("valuer:- \(finalModel.starPlayer)")
-               print("updatedValue = \(self.buttonCount)")
-               if buttonCount.count >= 3 {
-                   print("no more clicks")
-                  starPlayer2.isUserInteractionEnabled = false
-                  starPlayer3.isUserInteractionEnabled = false
-                  starPlayer4.isUserInteractionEnabled = false
-                  starPlayer5.isUserInteractionEnabled = false
-                  starPlayer1.isUserInteractionEnabled = false
-                  starPlayer7.isUserInteractionEnabled = false
-                  starPlayer8.isUserInteractionEnabled = false
-                  starPlayer9.isUserInteractionEnabled = false
-                  starPlayer10.isUserInteractionEnabled = false
-                  starPlayer11.isUserInteractionEnabled = false
+   
+                  starPlayer2.isSelected = false
+                  starPlayer3.isSelected = false
+                  starPlayer4.isSelected = false
+                  starPlayer5.isSelected = false
+                  starPlayer1.isSelected = false
+                  starPlayer7.isSelected = false
+                  starPlayer8.isSelected = false
+                  starPlayer9.isSelected = false
+                  starPlayer10.isSelected = false
+                  starPlayer11.isSelected = false
+                let myst = savedBatsmanTeams.CompanyID[5]
+                           finalModel.starPlayer.append(myst)
                    print("value = \(self.buttonCount)")
                }
            }
-       }
+       
     @IBAction func starPlayer7(_ sender: UIButton){
            if sender.isSelected {
                sender.isSelected = false
-               self.buttonCount.remove(at: 0)
-               finalModel.starPlayer.removeLast()
+              
+               finalModel.starPlayer.removeAll()
                print("vla:- \(finalModel.starPlayer)")
-                starPlayer2.isUserInteractionEnabled = true
-                starPlayer3.isUserInteractionEnabled = true
-                starPlayer4.isUserInteractionEnabled = true
-                starPlayer5.isUserInteractionEnabled = true
-                starPlayer6.isUserInteractionEnabled = true
-                starPlayer1.isUserInteractionEnabled = true
-                starPlayer8.isUserInteractionEnabled = true
-                starPlayer9.isUserInteractionEnabled = true
-                starPlayer10.isUserInteractionEnabled = true
-                starPlayer11.isUserInteractionEnabled = true
+               
            }else {
                sender.isSelected = true
-               let value = 1
-               self.buttonCount.append(value)
-            let myst = savedBowlerTeams.CompanyID[0]
-            finalModel.starPlayer.append(myst)
-               print("valuer:- \(finalModel.starPlayer)")
-               print("updatedValue = \(self.buttonCount)")
-               if buttonCount.count >= 3 {
-                   print("no more clicks")
-                  starPlayer2.isUserInteractionEnabled = false
-                  starPlayer3.isUserInteractionEnabled = false
-                  starPlayer4.isUserInteractionEnabled = false
-                  starPlayer5.isUserInteractionEnabled = false
-                  starPlayer6.isUserInteractionEnabled = false
-                  starPlayer1.isUserInteractionEnabled = false
-                  starPlayer8.isUserInteractionEnabled = false
-                  starPlayer9.isUserInteractionEnabled = false
-                  starPlayer10.isUserInteractionEnabled = false
-                  starPlayer11.isUserInteractionEnabled = false
+                  starPlayer2.isSelected = false
+                  starPlayer3.isSelected = false
+                  starPlayer4.isSelected = false
+                  starPlayer5.isSelected = false
+                  starPlayer6.isSelected = false
+                  starPlayer1.isSelected = false
+                  starPlayer8.isSelected = false
+                  starPlayer9.isSelected = false
+                  starPlayer10.isSelected = false
+                  starPlayer11.isSelected = false
+                let myst = savedBowlerTeams.CompanyID[0]
+                           finalModel.starPlayer.append(myst)
                    print("value = \(self.buttonCount)")
                }
            }
-       }
+       
     @IBAction func starPlayer8(_ sender: UIButton){
            if sender.isSelected {
                sender.isSelected = false
-               self.buttonCount.remove(at: 0)
-               finalModel.starPlayer.removeLast()
+               
+               finalModel.starPlayer.removeAll()
                print("vla:- \(finalModel.starPlayer)")
-                starPlayer2.isUserInteractionEnabled = true
-                starPlayer3.isUserInteractionEnabled = true
-                starPlayer4.isUserInteractionEnabled = true
-                starPlayer5.isUserInteractionEnabled = true
-                starPlayer6.isUserInteractionEnabled = true
-                starPlayer7.isUserInteractionEnabled = true
-                starPlayer1.isUserInteractionEnabled = true
-                starPlayer9.isUserInteractionEnabled = true
-                starPlayer10.isUserInteractionEnabled = true
-                starPlayer11.isUserInteractionEnabled = true
+                
            }else {
                sender.isSelected = true
-               let value = 1
-               self.buttonCount.append(value)
-            let myst = savedBowlerTeams.CompanyID[1]
-            finalModel.starPlayer.append(myst)
-               print("valuer:- \(finalModel.starPlayer)")
-               print("updatedValue = \(self.buttonCount)")
-               if buttonCount.count >= 3 {
-                   print("no more clicks")
-                  starPlayer2.isUserInteractionEnabled = false
-                  starPlayer3.isUserInteractionEnabled = false
-                  starPlayer4.isUserInteractionEnabled = false
-                  starPlayer5.isUserInteractionEnabled = false
-                  starPlayer6.isUserInteractionEnabled = false
-                  starPlayer7.isUserInteractionEnabled = false
-                  starPlayer1.isUserInteractionEnabled = false
-                  starPlayer9.isUserInteractionEnabled = false
-                  starPlayer10.isUserInteractionEnabled = false
-                  starPlayer11.isUserInteractionEnabled = false
+                  starPlayer2.isSelected = false
+                  starPlayer3.isSelected = false
+                  starPlayer4.isSelected = false
+                  starPlayer5.isSelected = false
+                  starPlayer6.isSelected = false
+                  starPlayer7.isSelected = false
+                  starPlayer1.isSelected = false
+                  starPlayer9.isSelected = false
+                  starPlayer10.isSelected = false
+                  starPlayer11.isSelected = false
+                let myst = savedBowlerTeams.CompanyID[1]
+                           finalModel.starPlayer.append(myst)
                    print("value = \(self.buttonCount)")
                }
            }
-       }
+       
     @IBAction func starPlayer9(_ sender: UIButton){
            if sender.isSelected {
                sender.isSelected = false
-               self.buttonCount.remove(at: 0)
-               finalModel.starPlayer.removeLast()
+              
+               finalModel.starPlayer.removeAll()
                print("vla:- \(finalModel.starPlayer)")
-                starPlayer2.isUserInteractionEnabled = true
-                starPlayer3.isUserInteractionEnabled = true
-                starPlayer4.isUserInteractionEnabled = true
-                starPlayer5.isUserInteractionEnabled = true
-                starPlayer6.isUserInteractionEnabled = true
-                starPlayer7.isUserInteractionEnabled = true
-                starPlayer8.isUserInteractionEnabled = true
-                starPlayer1.isUserInteractionEnabled = true
-                starPlayer10.isUserInteractionEnabled = true
-                starPlayer11.isUserInteractionEnabled = true
+               
            }else {
                sender.isSelected = true
-               let value = 1
-               self.buttonCount.append(value)
-            let myst = savedBowlerTeams.CompanyID[2]
-            finalModel.starPlayer.append(myst)
+            
+           
                print("valuer:- \(finalModel.starPlayer)")
                print("updatedValue = \(self.buttonCount)")
-               if buttonCount.count >= 3 {
-                   print("no more clicks")
-                  starPlayer2.isUserInteractionEnabled = false
-                  starPlayer3.isUserInteractionEnabled = false
-                  starPlayer4.isUserInteractionEnabled = false
-                  starPlayer5.isUserInteractionEnabled = false
-                  starPlayer6.isUserInteractionEnabled = false
-                  starPlayer7.isUserInteractionEnabled = false
-                  starPlayer8.isUserInteractionEnabled = false
-                  starPlayer1.isUserInteractionEnabled = false
-                  starPlayer10.isUserInteractionEnabled = false
-                  starPlayer11.isUserInteractionEnabled = false
+
+                  starPlayer2.isSelected = false
+                  starPlayer3.isSelected = false
+                  starPlayer4.isSelected = false
+                  starPlayer5.isSelected = false
+                  starPlayer6.isSelected = false
+                  starPlayer7.isSelected = false
+                  starPlayer8.isSelected = false
+                  starPlayer1.isSelected = false
+                  starPlayer10.isSelected = false
+                  starPlayer11.isSelected = false
+                let myst = savedBowlerTeams.CompanyID[2]
+                           finalModel.starPlayer.append(myst)
                    print("value = \(self.buttonCount)")
                }
            }
-       }
+       
     @IBAction func starPlayer10(_ sender: UIButton){
            if sender.isSelected {
                sender.isSelected = false
-               self.buttonCount.remove(at: 0)
-               finalModel.starPlayer.removeLast()
+              
+               finalModel.starPlayer.removeAll()
                print("vla:- \(finalModel.starPlayer)")
-                starPlayer2.isUserInteractionEnabled = true
-                starPlayer3.isUserInteractionEnabled = true
-                starPlayer4.isUserInteractionEnabled = true
-                starPlayer5.isUserInteractionEnabled = true
-                starPlayer6.isUserInteractionEnabled = true
-                starPlayer7.isUserInteractionEnabled = true
-                starPlayer8.isUserInteractionEnabled = true
-                starPlayer9.isUserInteractionEnabled = true
-                starPlayer1.isUserInteractionEnabled = true
-                starPlayer11.isUserInteractionEnabled = true
+                
            }else {
                sender.isSelected = true
-               let value = 1
-               self.buttonCount.append(value)
-            let myst = savedBowlerTeams.CompanyID[3]
-            finalModel.starPlayer.append(myst)
+            
                print("valuer:- \(finalModel.starPlayer)")
                print("updatedValue = \(self.buttonCount)")
-               if buttonCount.count >= 3 {
-                   print("no more clicks")
-                  starPlayer2.isUserInteractionEnabled = false
-                  starPlayer3.isUserInteractionEnabled = false
-                  starPlayer4.isUserInteractionEnabled = false
-                  starPlayer5.isUserInteractionEnabled = false
-                  starPlayer6.isUserInteractionEnabled = false
-                  starPlayer7.isUserInteractionEnabled = false
-                  starPlayer8.isUserInteractionEnabled = false
-                  starPlayer9.isUserInteractionEnabled = false
-                  starPlayer1.isUserInteractionEnabled = false
-                  starPlayer11.isUserInteractionEnabled = false
+          
+                  starPlayer2.isSelected = false
+                  starPlayer3.isSelected = false
+                  starPlayer4.isSelected = false
+                  starPlayer5.isSelected = false
+                  starPlayer6.isSelected = false
+                  starPlayer7.isSelected = false
+                  starPlayer8.isSelected = false
+                  starPlayer9.isSelected = false
+                  starPlayer1.isSelected = false
+                  starPlayer11.isSelected = false
+                let myst = savedBowlerTeams.CompanyID[3]
+                finalModel.starPlayer.append(myst)
                    print("value = \(self.buttonCount)")
                }
            }
-       }
+       
     @IBAction func starPlayer11(_ sender: UIButton){
            if sender.isSelected {
-               sender.isSelected = false
-               self.buttonCount.remove(at: 0)
-               finalModel.starPlayer.removeLast()
+               
+               finalModel.starPlayer.removeAll()
                print("vla:- \(finalModel.starPlayer)")
-                starPlayer2.isUserInteractionEnabled = true
-                starPlayer3.isUserInteractionEnabled = true
-                starPlayer4.isUserInteractionEnabled = true
-                starPlayer5.isUserInteractionEnabled = true
-                starPlayer6.isUserInteractionEnabled = true
-                starPlayer7.isUserInteractionEnabled = true
-                starPlayer8.isUserInteractionEnabled = true
-                starPlayer9.isUserInteractionEnabled = true
-                starPlayer10.isUserInteractionEnabled = true
-                starPlayer1.isUserInteractionEnabled = true
+                
            }else {
                sender.isSelected = true
-               let value = 1
-               self.buttonCount.append(value)
-            let myst = savedWicketKeeperTeams.CompanyID[0]
-            finalModel.starPlayer.append(myst)
-               print("valuer:- \(finalModel.starPlayer)")
-               print("updatedValue = \(self.buttonCount)")
-               if buttonCount.count >= 3 {
-                   print("no more clicks")
-                  starPlayer2.isUserInteractionEnabled = false
-                  starPlayer3.isUserInteractionEnabled = false
-                  starPlayer4.isUserInteractionEnabled = false
-                  starPlayer5.isUserInteractionEnabled = false
-                  starPlayer6.isUserInteractionEnabled = false
-                  starPlayer7.isUserInteractionEnabled = false
-                  starPlayer8.isUserInteractionEnabled = false
-                  starPlayer9.isUserInteractionEnabled = false
-                  starPlayer10.isUserInteractionEnabled = false
-                  starPlayer1.isUserInteractionEnabled = false
+                  starPlayer2.isSelected = false
+                  starPlayer3.isSelected = false
+                  starPlayer4.isSelected = false
+                  starPlayer5.isSelected = false
+                  starPlayer6.isSelected = false
+                  starPlayer7.isSelected = false
+                  starPlayer8.isSelected = false
+                  starPlayer9.isSelected = false
+                  starPlayer10.isSelected = false
+                  starPlayer1.isSelected = false
+                let myst = savedWicketKeeperTeams.CompanyID[0]
+                finalModel.starPlayer.append(myst)
                    print("value = \(self.buttonCount)")
                }
            }
-       }
+       
     
     @IBAction func CreateTeam(_ sender: Any){
         print("starplayer:- \(finalModel.starPlayer.count)")

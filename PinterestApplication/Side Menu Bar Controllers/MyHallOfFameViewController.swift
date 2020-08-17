@@ -20,7 +20,7 @@ class MyHallOfFameViewController: UIViewController {
         title = "Hall of Fame"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 203/255, green: 41/255, blue: 122/255, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 203/255, green: 19/255, blue: 126/255, alpha: 1)
         self.pic.layer.cornerRadius = self.pic.bounds.width/2
         self.pic.layer.borderWidth = 1
         self.pic.layer.borderColor = UIColor.white.cgColor

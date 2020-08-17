@@ -12,7 +12,7 @@ class finalModel {
     static var userCash = Int()
     static var paymentID = String()
     static var Captain = String()
-    static var starPlayer = [String]()
+    static var starPlayer = String()
     static var AllPlayer = [String]()
     static var contest_type = String()
     static var saveFees = [String]()

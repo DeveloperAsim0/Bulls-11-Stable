@@ -22,7 +22,7 @@ class UpdatpassotpViewController: UIViewController {
         title = "OTP"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 203/255, green: 41/255, blue: 122/255, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 203/255, green: 19/255, blue: 126/255, alpha: 1)
         emaillbl.text = emailstring
     }
      let api_key = "BULLS11@2020"
@@ -54,7 +54,7 @@ class UpdatpassotpViewController: UIViewController {
                 let status = myresult!["status"]
                 if status == false {
                     let refreshAlert = UIAlertController(title: "Wrong Otp", message: "Please insert correct otp", preferredStyle: .alert)
-                    refreshAlert.addAction(UIAlertAction(title: "Enter Again", style: .default, handler: nil))
+                    refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(refreshAlert, animated: true, completion: nil)
                 } else {
                     let refreshAlert = UIAlertController(title:"Email Verified", message: "", preferredStyle: .alert)

@@ -28,7 +28,7 @@ class thirdTableViewCell: UITableViewCell {
         }
         
         @IBAction func popupViewBtn(_ sender: UIButton){
-            delegate?.didTapForStatus3(Title: "OK")
+           // delegate?.didTapForStatus3(Title: "OK")
         }
         
         override func setHighlighted(_ highlighted: Bool, animated: Bool) {

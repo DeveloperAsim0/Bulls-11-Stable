@@ -55,7 +55,7 @@ class RazViewController: UIViewController, RazorpayPaymentCompletionProtocol {
     
     func onPaymentSuccess(_ payment_id: String) {
         let refreshAlert = UIAlertController(title: "Alert", message: "Success", preferredStyle: UIAlertController.Style.alert)
-                          refreshAlert.addAction(UIAlertAction(title: "Clear", style: .default, handler: { (action: UIAlertAction!) in
+                          refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                             finalModel.paymentID = payment_id
                             self.sendDetails()
                               print("Handle Ok logic here")

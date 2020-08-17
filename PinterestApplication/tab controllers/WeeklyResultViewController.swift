@@ -134,7 +134,7 @@ class WeeklyResultViewController: UIViewController {
                         self.tableView.isHidden = true
                        let refreshAlert = UIAlertController(title: "Alert", message: "No Contest Found", preferredStyle: .alert)
                        self.view.backgroundColor = .white
-                       refreshAlert.addAction(UIAlertAction(title: "Try After Some Time", style: .default, handler: nil))
+                       refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                        self.present(refreshAlert, animated: true, completion: nil)
                           print(eror.errorDescription)
                       }

@@ -16,7 +16,9 @@ class UpdatePasswordViewController: UIViewController {
     @IBOutlet weak var passBtn: UIButton!
     @IBOutlet weak var pass1: UITextField!
     @IBOutlet weak var passview1: UIView!
+    @IBOutlet weak var errorlbl: UILabel!
     
+    let validityType: String.ValidityType = .password
     var savedString = ""
     var apikey = "BULLS11@2020"
     fileprivate func CustomNavBar(){
@@ -24,11 +26,12 @@ class UpdatePasswordViewController: UIViewController {
            title = "Update Password"
            let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
            navigationController?.navigationBar.titleTextAttributes = textAttributes
-           self.navigationController?.navigationBar.barTintColor = UIColor(red: 212/255, green: 71/255, blue: 140/255, alpha: 1)
+           self.navigationController?.navigationBar.barTintColor = UIColor(red: 203/255, green: 19/255, blue: 126/255, alpha: 1)
        }
        
        fileprivate func CustomizeTextField() {
                pass1.attributedPlaceholder = NSAttributedString(string: "  Enter Password.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        pass1.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
            }
        
        fileprivate func CustomizePasswordBtn() {
@@ -80,14 +83,31 @@ class UpdatePasswordViewController: UIViewController {
     
     @IBAction func set(_ sender: Any){
         if pass1.text == "" {
-                         passview1.shake()
-                         
-                     } else {
-                         Get_Details()
-                         print("textField has some text")
-                     }
+           passview1.shake()
+        } else {
+            guard let text = pass1.text else { return }
+            if text.isValid(validityType) {
+             errorlbl.text = "Valid \(validityType)"
+        Get_Details()
+         print("textField has some text")
+            } else {
+                errorlbl.text = "Not Valid \(validityType)"
+            }
+}
         
     }
+    
+    @objc fileprivate func handleTextChange() {
+          guard let text = pass1.text else { return }
+          if text.isValid(validityType) {
+              print("valid")
+              errorlbl.text = "Valid \(validityType)"
+              
+          } else {
+              print("not valid")
+              errorlbl.text = "Not Valid \(validityType)"
+          }
+      }
     
 }
 

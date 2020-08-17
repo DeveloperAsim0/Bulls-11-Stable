@@ -30,7 +30,7 @@ class fourthTableViewCell: UITableViewCell {
     var userIds = String()
     
         @IBAction func popupViewBtn(_ sender: UIButton){
-            delegate?.didTapForStatus4(Title: "OK")
+           // delegate?.didTapForStatus4(Title: "OK")
         }
         
         override func setHighlighted(_ highlighted: Bool, animated: Bool) {

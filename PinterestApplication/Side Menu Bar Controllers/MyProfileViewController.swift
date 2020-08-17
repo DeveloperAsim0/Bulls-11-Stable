@@ -120,7 +120,7 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         title = "My Profile"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 203/255, green: 41/255, blue: 122/255, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 203/255, green: 19/255, blue: 126/255, alpha: 1)
 
         // Do any additional setup after loading the view.
     }

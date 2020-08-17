@@ -29,7 +29,7 @@ class secondTableViewCell: UITableViewCell {
         }
         
         @IBAction func popupViewBtn(_ sender: UIButton){
-            delegate?.didTapForStatus2(Title: "OK")
+          //  delegate?.didTapForStatus2(Title: "OK")
         }
         
         override func setHighlighted(_ highlighted: Bool, animated: Bool) {

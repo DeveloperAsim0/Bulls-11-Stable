@@ -31,7 +31,7 @@ class ChooseTeamTableViewCell: UITableViewCell {
     }
     
     @IBAction func popupViewBtn(_ sender: UIButton){
-        delegate?.didTapForStatus(Title: "OK")
+        //delegate?.didTapForStatus(Title: "OK")
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {

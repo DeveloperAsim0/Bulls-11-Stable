@@ -39,7 +39,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         self.navigationController!.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 212/255, green: 71/255, blue: 140/255, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 203/255, green: 19/255, blue: 126/255, alpha: 1)
     }
     
     fileprivate func CustomizeTextField() {
@@ -47,9 +47,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
             emailField.attributedPlaceholder = NSAttributedString(string: "  Enter Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
             mobileNo.attributedPlaceholder = NSAttributedString(string: "  Enter Mobile No", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
             inviteCode.attributedPlaceholder = NSAttributedString(string: "  Enter Invite code", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        
-                
-                         passwordField.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
+            passwordField.addTarget(self, action: #selector(handleTextChange), for: .editingChanged)
                 
                     
         }

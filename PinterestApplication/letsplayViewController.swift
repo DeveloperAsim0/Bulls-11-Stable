@@ -12,7 +12,7 @@ import SwiftyJSON
 import SwiftKeychainWrapper
 
 class letsplayViewController: UIViewController {
-
+    
     @IBOutlet weak var selectView: UIView!
     @IBOutlet weak var createview: UIView!
     @IBOutlet weak var joinview: UIView!
@@ -55,7 +55,11 @@ class letsplayViewController: UIViewController {
     @IBOutlet weak var firstprizeLbl4:UIButton!
     @IBOutlet weak var priceKittylbl14: UILabel!
     @IBOutlet weak var totalprizeLbl4:UIButton!
+    @IBOutlet weak var firstletsplay: UIButton!
+    @IBOutlet weak var secondletsplay: UIButton!
     
+    var mypoints = Int()
+    var mymessage = String()
     var teamtype = String()
     var mycoins = Int()
     var saveFees = [String]()
@@ -66,10 +70,10 @@ class letsplayViewController: UIViewController {
     var userIDMerge = [String]()
     var specialplayer = [String]()
     var selection = "paid"
-    var currency = String()
+    var currency = ""
     var currencyType = "coins"
     var userid = KeychainWrapper.standard.string(forKey: "userID")
-    var myURL = String()
+    
     var detailsURL = "http://projectstatus.co.in/Bulls11/api/authentication/user/"
     fileprivate func CustomizeView() {
         pointsview.layer.cornerRadius = 7
@@ -164,12 +168,12 @@ class letsplayViewController: UIViewController {
         self.priceKittylbl2.text = "Paid User -" + model.savingPaidUsers1
         self.priceKittylbl13.text = "Paid User -" + model.savingPaidUsers1
         self.priceKittylbl14.text = "Paid User -" + model.savingPaidUsers1
-
+        
         self.totalprizeLbl1.titleLabel?.text = "Total Slots -" + model.savingTotalUsers
         self.totalprizeLbl2.titleLabel?.text = "Total Slots -" + model.savingTotalUsers
         self.totalprizeLbl3.titleLabel?.text = "Total Slots -" + model.savingTotalUsers
         self.totalprizeLbl4.titleLabel?.text = "Total Slots -" + model.savingTotalUsers
-
+        
         self.firstprizeLbl1.titleLabel?.text = "Free User -" + model.savingFreeUsers
         self.firstprizeLbl2.titleLabel?.text = "Free User -" + model.savingFreeUsers
         self.firstprizeLbl3.titleLabel?.text = "Free User -" + model.savingFreeUsers
@@ -186,27 +190,27 @@ class letsplayViewController: UIViewController {
         ]
         
         AF.request(self.Profile_URL, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: header).authenticate(username: "admin", password: "1234").responseJSON { response in
-                   switch response.result {
-                   case .success:
-                    print(response.result)
-                    let result = try? JSON(data: response.data!)
-                    
-                    for i in result!.arrayValue {
-                        print("myvalue:- \(i["game_play_points"].stringValue)")
-                        let points = i["game_play_points"].stringValue
-                        self.pointslbl.text = points
-                    }
-                    break
-                   case .failure:
-                    print(response.error.debugDescription)
+            switch response.result {
+            case .success:
+                print(response.result)
+                let result = try? JSON(data: response.data!)
+                
+                for i in result!.arrayValue {
+                    print("myvalue:- \(i["game_play_points"].stringValue)")
+                    let points = i["game_play_points"].stringValue
+                    self.pointslbl.text = points
+                }
+                break
+            case .failure:
+                print(response.error.debugDescription)
             }
         }
     }
     
-    func Send_Details() {
-            let header:HTTPHeaders = [
-                "X-API-KEY": "\(self.Api_Key)"
-            ]
+    fileprivate func Send_Details() {
+        let header:HTTPHeaders = [
+            "X-API-KEY": "\(self.Api_Key)"
+        ]
         let parameter = [
             "user_id": userid!,
             "paid_unpaid": selection,
@@ -218,19 +222,44 @@ class letsplayViewController: UIViewController {
             "contest_id": model.actualDateID,
             "team_type": teamtype
             ] as [String : Any]
-            print("params:- \(parameter)")
-            AF.request(self.myURL, method: .post, parameters: parameter,encoding: JSONEncoding.default, headers: header).authenticate(username: "admin", password: "1234").responseJSON { response in
-                       switch response.result {
-                       case .success:
-                        print(response.result)
-                        let result = try? JSON(data: response.data!)
-                        print("dailyresult:- \(String(describing: result))")
-                        break
-                       case .failure:
-                        print(response.error?.errorDescription)
+        print("params:- \(parameter)")
+        AF.request("http://projectstatus.co.in/Bulls11/api/authentication/create-team", method: .post, parameters: parameter,encoding: JSONEncoding.default, headers: header).authenticate(username: "admin", password: "1234").responseJSON { response in
+            switch response.result {
+            case .success:
+                print(response.result)
+                let result = try? JSON(data: response.data!)
+                print("dailyresult:- \(String(describing: result!["status"].stringValue))")
+                let status = result!["status"].stringValue
+                if status == "false" {
+                    let message = result!["message"].stringValue
+                    self.mymessage = message
+                    let alert = UIAlertController(title: "Alert", message: self.mymessage, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "customtab")
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true, completion: nil)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    print("mymessage:- \(self.mymessage)")
+                } else {
+                    let message = result!["message"].stringValue
+                    self.mymessage = message
+                    let alert = UIAlertController(title: "Alert", message: self.mymessage, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "customtab")
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true, completion: nil)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
                 }
+                break
+            case .failure(let erro):
+                print("myerror:- \(erro.errorDescription)")
             }
         }
+    }
     
     func Fetch_Profile() {
         let header:HTTPHeaders = [
@@ -239,18 +268,19 @@ class letsplayViewController: UIViewController {
         print("userid::-\(KeychainWrapper.standard.string(forKey: "userID")!)")
         print("url::-\(self.detailsURL + KeychainWrapper.standard.string(forKey: "userID")!)")
         AF.request(self.detailsURL + KeychainWrapper.standard.string(forKey: "userID")!, method: .get, parameters: nil,encoding: JSONEncoding.default, headers: header).authenticate(username: "admin", password: "1234").responseJSON { response in
-                   switch response.result {
-                   case .success:
-                    print(response.result)
-                    let result = try? JSON(data: response.data!)
-                    print("myResult:- \(result!.dictionaryValue)")
-                    let finalResult = result!.dictionaryValue
-                    let bullspoints = finalResult["bull_points"]?.stringValue
-                    let bullscoins = finalResult["bulls_coin"]?.intValue
-                    self.mycoins = bullscoins!
-                    break
-                   case .failure:
-                    print(response.error.debugDescription)
+            switch response.result {
+            case .success:
+                print(response.result)
+                let result = try? JSON(data: response.data!)
+                print("myResult:- \(result!.dictionaryValue)")
+                let finalResult = result!.dictionaryValue
+                let bullspoints = finalResult["bull_points"]?.intValue
+                let bullscoins = finalResult["bulls_coin"]?.intValue
+                self.mycoins = bullscoins!
+                self.mypoints = bullspoints!
+                break
+            case .failure:
+                print(response.error.debugDescription)
             }
         }
     }
@@ -261,16 +291,16 @@ class letsplayViewController: UIViewController {
         self.pinkview.isSelected = true
         CustomizeView()
         get_Details()
-       
+        
         Method()
         self.userIDMerge = savedBatsmanTeams.CompanyID + savedBowlerTeams.CompanyID + savedWicketKeeperTeams.CompanyID
-       print("updated:- \(semiFinalBatsmanModel.Captains)")
+        print("updated:- \(semiFinalBatsmanModel.Captains)")
         print("totalslotsvalue:- \(model.totalSlots[0])")
-       print("allusers:- \(userIDMerge)")
-       print("usersid:- \(String(describing: userid))")
-            self.myURL = "http://projectstatus.co.in/Bulls11/api/authentication/create-team"
-       
-//            self.myURL = "http://projectstatus.co.in/Bulls11/api/authentication/create-weekly-team"
+        print("allusers:- \(userIDMerge)")
+        print("usersid:- \(String(describing: userid))")
+        
+        
+        //            self.myURL = "http://projectstatus.co.in/Bulls11/api/authentication/create-weekly-team"
         
         // Do any additional setup after loading the view.
     }
@@ -289,7 +319,10 @@ class letsplayViewController: UIViewController {
             blackview.isSelected = false
             self.unpaidView.isHidden = true
             self.currencyType = "coins"
-        //    self.unpaidView.isHidden = false
+            self.currency = ""
+            self.firstletsplay.isHidden = false
+            self.secondletsplay.isHidden = true
+            //    self.unpaidView.isHidden = false
             self.firstView.isHidden = false
             self.secondview.isHidden = false
             self.thirdview.isHidden = false
@@ -300,11 +333,15 @@ class letsplayViewController: UIViewController {
     
     @IBAction func unpaid(_ sender: UIButton) {
         if sender.isSelected {
-                   sender.isSelected = false
+            sender.isSelected = false
             pinkview.isSelected = false
-               } else {
+        } else {
+            
             sender.isSelected = true
             self.currencyType = "points"
+            self.currency = ""
+            self.firstletsplay.isHidden = true
+            self.secondletsplay.isHidden = false
             pinkview.isSelected = false
             self.unpaidView.isHidden = false
             self.firstView.isHidden = true
@@ -312,7 +349,7 @@ class letsplayViewController: UIViewController {
             self.thirdview.isHidden = true
             self.fourthview.isHidden = true
             self.selection = "unpaid"
-       }
+        }
     }
     
     @IBAction func pointsBtn(_ sender: Any){
@@ -327,42 +364,66 @@ class letsplayViewController: UIViewController {
         lbl4.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
         self.currency = model.savingFee1
         self.teamtype = "small"
-       // finalModel.currency = Int(self.saveFees[0])!
+        // finalModel.currency = Int(self.saveFees[0])!
         print("currenct1-\(self.currency)")
     }
     
     @IBAction func secondBtn(_ sender: Any){
         lbl.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
-               lbl2.backgroundColor = UIColor(red: 212/255, green: 100/255, blue: 141/255, alpha: 1.0)
-               lbl3.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
-               lbl4.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
+        lbl2.backgroundColor = UIColor(red: 212/255, green: 100/255, blue: 141/255, alpha: 1.0)
+        lbl3.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
+        lbl4.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
         self.currency = model.savingFee2
         self.teamtype = "medium"
-       // print("modules:- \(self.saveFees[1])")
+        // print("modules:- \(self.saveFees[1])")
         //finalModel.currency = Int(self.saveFees[1])!
         print("currenct2-\(self.currency)")
     }
     
     @IBAction func thirdBtn(_ sender: Any){
         lbl.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
-               lbl2.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
-               lbl3.backgroundColor = UIColor(red: 212/255, green: 100/255, blue: 141/255, alpha: 1.0)
-               lbl4.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
+        lbl2.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
+        lbl3.backgroundColor = UIColor(red: 212/255, green: 100/255, blue: 141/255, alpha: 1.0)
+        lbl4.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
         self.currency = model.savingFee3
         self.teamtype = "large"
-       // finalModel.currency = Int(self.saveFees[2])!
+        // finalModel.currency = Int(self.saveFees[2])!
         print("currenct3-\(self.currency)")
     }
     
     @IBAction func fourthBtn(_ sender: Any){
         lbl.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
-               lbl2.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
-               lbl3.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
-               lbl4.backgroundColor = UIColor(red: 212/255, green: 100/255, blue: 141/255, alpha: 1.0)
+        lbl2.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
+        lbl3.backgroundColor = UIColor(red: 212/255, green: 71/255, blue: 141/255, alpha: 1.0)
+        lbl4.backgroundColor = UIColor(red: 212/255, green: 100/255, blue: 141/255, alpha: 1.0)
         self.currency = model.savingFee4
         self.teamtype = "extra-large"
-      //  finalModel.currency = Int(self.saveFees[3])!
+        //  finalModel.currency = Int(self.saveFees[3])!
         print("currenct4-\(self.currency)")
+    }
+    
+    @IBAction func letsplayPoints(_ sender: Any){
+        print(self.currency)
+        print(mycoins)
+        Fetch_Profile()
+        var changeInt = Int(self.currency)
+        print("curr:- \(changeInt)")
+        if changeInt == nil {
+            let refreshalert = UIAlertController(title: "Alert", message: "Please select an amount!!!", preferredStyle: .alert)
+            refreshalert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(refreshalert, animated: true, completion: nil)
+        } else {
+            if changeInt! > mypoints {
+                let alert = UIAlertController(title: "Not enough points to play contest", message: "", preferredStyle: UIAlertController.Style.alert)
+                               alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                Send_Details()
+                
+                
+                
+            }
+        }
     }
     
     @IBAction func LetsPlay(_ sender: Any) {
@@ -371,26 +432,30 @@ class letsplayViewController: UIViewController {
         Fetch_Profile()
         var changeInt = Int(self.currency)
         print("curr:- \(changeInt)")
-        
-        if changeInt! > mycoins {
-       
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                      let vc = storyboard.instantiateViewController(withIdentifier: "addcash")
-                      vc.modalPresentationStyle = .currentContext
-                      self.navigationController!.pushViewController(vc, animated: true)
+        if changeInt == nil {
+            let refreshalert = UIAlertController(title: "Alert", message: "Please select an amount!!!", preferredStyle: .alert)
+            refreshalert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(refreshalert, animated: true, completion: nil)
         } else {
-            Send_Details()
-                        let alert = UIAlertController(title: "Team Created Successfully", message: "", preferredStyle: UIAlertController.Style.alert)
-                       alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
-
-                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                                                  let vc = storyboard.instantiateViewController(withIdentifier: "customtab")
-                                                                  vc.modalPresentationStyle = .fullScreen
-                                                                  self.present(vc, animated: true, completion: nil)
-                                                              }))
-                                                              self.present(alert, animated: true, completion: nil)
-            
-          
-}
-}
+            if changeInt! > mycoins {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "addcash")
+                vc.modalPresentationStyle = .currentContext
+                self.navigationController!.pushViewController(vc, animated: true)
+            } else {
+                Send_Details()
+                let alert = UIAlertController(title: "\(self.mymessage)", message: "", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "customtab")
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
+                
+                
+            }
+        }
+    }
 }
