@@ -100,16 +100,17 @@ class WeeklyPlaysViewController: UIViewController {
             
             selectView.layer.cornerRadius = selectView.frame.size.width/2
             selectView.layer.borderColor = UIColor.white.cgColor
-            selectView.layer.borderWidth = 1.5
+            selectView.layer.borderWidth = 3
             selectView.clipsToBounds = true
             
             createview.layer.cornerRadius = createview.frame.size.width/2
             createview.layer.borderColor = UIColor.white.cgColor
-            createview.layer.borderWidth = 1.5
+            createview.layer.borderWidth = 3
             createview.clipsToBounds = true
             
             joinview.layer.cornerRadius = joinview.frame.size.width/2
             joinview.backgroundColor = .white
+            joinview.layer.borderWidth = 3
             joinview.clipsToBounds = true
             
             

@@ -81,16 +81,19 @@ class SelectSpecialPlayerViewController: UIViewController {
         // for select create and join views
         selectView.layer.cornerRadius = selectView.frame.size.width/2
         selectView.layer.borderColor = UIColor.white.cgColor
-        selectView.layer.borderWidth = 1.5
+        selectView.layer.borderWidth = 3
+        selectView.backgroundColor = .clear
         selectView.clipsToBounds = true
         
         createView.layer.cornerRadius = createView.frame.size.width/2
         createView.layer.borderColor = UIColor.white.cgColor
-        createView.layer.borderWidth = 1.5
+        createView.layer.borderWidth = 3
         createView.clipsToBounds = true
         
         joinView.layer.cornerRadius = joinView.frame.size.width/2
         joinView.backgroundColor = .white
+        joinView.layer.borderColor = UIColor.white.cgColor
+        joinView.layer.borderWidth = 3
         joinView.clipsToBounds = true
         
         // for batsman

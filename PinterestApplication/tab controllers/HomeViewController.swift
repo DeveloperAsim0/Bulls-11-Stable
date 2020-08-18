@@ -92,12 +92,12 @@ class HomeViewController: UIViewController {
         
         createview.layer.cornerRadius = createview.frame.size.width/2
         createview.layer.borderColor = UIColor.white.cgColor
-        createview.layer.borderWidth = 1.5
+        createview.layer.borderWidth = 3
         createview.clipsToBounds = true
         
         joinview.layer.cornerRadius = joinview.frame.size.width/2
         joinview.layer.borderColor = UIColor.white.cgColor
-        joinview.layer.borderWidth = 1.5
+        joinview.layer.borderWidth = 3
         joinview.clipsToBounds = true
         
         firstView.layer.cornerRadius = 7

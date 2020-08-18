@@ -26,18 +26,18 @@ class SelectYourTradeViewController: UIViewController {
         selectview.backgroundColor      = .clear
         selectview.layer.cornerRadius   = selectview.frame.size.width/2
         selectview.layer.borderColor    = UIColor.white.cgColor
-        selectview.layer.borderWidth    = 1.5
+        selectview.layer.borderWidth    = 3
         selectview.clipsToBounds        = true
         
         createview.backgroundColor      = .white
         createview.layer.cornerRadius   = createview.frame.size.width/2
         createview.layer.borderColor    = UIColor.white.cgColor
-        createview.layer.borderWidth    = 1.5
+        createview.layer.borderWidth    = 3
         createview.clipsToBounds        = true
         
         joinview.layer.cornerRadius     = joinview.frame.size.width/2
         joinview.layer.borderColor      = UIColor.white.cgColor
-        joinview.layer.borderWidth      = 1.5
+        joinview.layer.borderWidth      = 3
         joinview.clipsToBounds          = true
     }
     
