@@ -123,31 +123,107 @@ class MorePlayersViewController: UIViewController {
         self.wkplay1.clipsToBounds          = true
     }
     
-    fileprivate func Set_Value() {
+    fileprivate func checkNilValue() {
+        if savedBatsmanTeams.CompanyName[0].isEmpty == true {
+            self.batsmanPlayer1.text = ""
+        } else {
+            self.batsmanPlayer1.text = savedBatsmanTeams.CompanyName[0]
+        }
+        if savedBatsmanTeams.CompanyName[1].isEmpty == true {
+                   self.batsmanPlayer2.text = ""
+               } else {
+                   self.batsmanPlayer2.text = savedBatsmanTeams.CompanyName[1]
+               }
         
-        // for batsman
-        self.batsmanPlayer1.text = savedBatsmanTeams.CompanyName[0]
-        self.batsmanPlayer2.text = savedBatsmanTeams.CompanyName[1]
-        self.batsmanPlayer3.text = savedBatsmanTeams.CompanyName[2]
-        self.batsmanPlayer4.text = savedBatsmanTeams.CompanyName[3]
-        self.batsmanPlayer5.text = savedBatsmanTeams.CompanyName[4]
-        self.batsmanPlayer6.text = savedBatsmanTeams.CompanyName[5]
+        if savedBatsmanTeams.CompanyName[2].isEmpty == true {
+                   self.batsmanPlayer3.text = ""
+               } else {
+                   self.batsmanPlayer3.text = savedBatsmanTeams.CompanyName[2]
+               }
         
-        // for bowler
-        self.bowlerPlayer1.text = savedBowlerTeams.CompanyName[0]
-        self.bowlerPlayer2.text = savedBowlerTeams.CompanyName[1]
-        self.bowlerPlayer3.text = savedBowlerTeams.CompanyName[2]
-        self.bowlerPlayer4.text = savedBowlerTeams.CompanyName[3]
+        if savedBatsmanTeams.CompanyName[3].isEmpty == true {
+                   self.batsmanPlayer4.text = ""
+               } else {
+                   self.batsmanPlayer4.text = savedBatsmanTeams.CompanyName[3]
+               }
         
-        // for wicketKeeper
-        self.wicketkeeperPlayer1.text = savedWicketKeeperTeams.CompanyName[0]
+        if savedBatsmanTeams.CompanyName[4].isEmpty == true {
+                   self.batsmanPlayer5.text = ""
+               } else {
+                   self.batsmanPlayer5.text = savedBatsmanTeams.CompanyName[4]
+               }
+        
+        if savedBatsmanTeams.CompanyName[5].isEmpty == true {
+                   self.batsmanPlayer6.text = ""
+               } else {
+                   self.batsmanPlayer6.text = savedBatsmanTeams.CompanyName[5]
+               }
     }
+    
+    fileprivate func getNilValueBowler() {
+        if savedBowlerTeams.CompanyName[0].isEmpty == true {
+            self.bowlerPlayer1.text = ""
+        } else {
+            self.bowlerPlayer1.text = savedBowlerTeams.CompanyName[0]
+        }
+        
+        if savedBowlerTeams.CompanyName[1].isEmpty == true {
+            self.bowlerPlayer2.text = ""
+        } else {
+            self.bowlerPlayer2.text = savedBowlerTeams.CompanyName[1]
+        }
+        
+        if savedBowlerTeams.CompanyName[2].isEmpty == true {
+            self.bowlerPlayer3.text = ""
+        } else {
+            self.bowlerPlayer3.text = savedBowlerTeams.CompanyName[2]
+        }
+        
+        if savedBowlerTeams.CompanyName[3].isEmpty == true {
+            self.bowlerPlayer4.text = ""
+        } else {
+            self.bowlerPlayer4.text = savedBowlerTeams.CompanyName[3]
+        }
+        
+    }
+    
+    fileprivate func getNilValueWK() {
+        if savedWicketKeeperTeams.CompanyName[0].isEmpty == true {
+            self.wicketkeeperPlayer1.text = ""
+        } else {
+            self.wicketkeeperPlayer1.text = savedWicketKeeperTeams.CompanyName[0]
+        }
+    }
+    
+//    fileprivate func Set_Value() {
+//
+//        // for batsman
+//
+//        self.batsmanPlayer1.text = savedBatsmanTeams.CompanyName[0]
+//        self.batsmanPlayer2.text = savedBatsmanTeams.CompanyName[1]
+//        self.batsmanPlayer3.text = savedBatsmanTeams.CompanyName[2]
+//        self.batsmanPlayer4.text = savedBatsmanTeams.CompanyName[3]
+//        self.batsmanPlayer5.text = savedBatsmanTeams.CompanyName[4]
+//        self.batsmanPlayer6.text = savedBatsmanTeams.CompanyName[5]
+//
+//        // for bowler
+//        self.bowlerPlayer1.text = savedBowlerTeams.CompanyName[0]
+//        self.bowlerPlayer2.text = savedBowlerTeams.CompanyName[1]
+//        self.bowlerPlayer3.text = savedBowlerTeams.CompanyName[2]
+//        self.bowlerPlayer4.text = savedBowlerTeams.CompanyName[3]
+//
+//        // for wicketKeeper
+//        self.wicketkeeperPlayer1.text = savedWicketKeeperTeams.CompanyName[0]
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         CustomizeViews2()
-        Set_Value()
+      //  Set_Value()
+        checkNilValue()
         CustomizedView()
+        getNilValueWK()
+        getNilValueBowler()
       //  CustomizeButton()
         // Do any additional setup after loading the view.
     }
